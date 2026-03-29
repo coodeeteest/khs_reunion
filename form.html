@@ -6,32 +6,22 @@
 <title>নিবন্ধন ফর্ম - কুলানন্দপুর উচ্চ বিদ্যালয় পুনর্মিলনী ২০২৭</title>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Baloo+Da+2:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--g:#1a6b3c;--gl:#2d9b5a;--gp:#e8f5ee;--gold:#c9962a;--gdl:#f0c060;--cream:#fdf8ef;--dk:#1a1a1a;--tx:#2c2c2c;--mu:#6b7280;--err:#dc2626;--ok:#16a34a;--blue:#2563eb;--bp:#eff6ff}
+:root{--g:#1a6b3c;--gl:#2d9b5a;--gp:#e8f5ee;--gold:#c9962a;--gdl:#f0c060;--cream:#fdf8ef;--dk:#1a1a1a;--tx:#2c2c2c;--mu:#6b7280;--err:#dc2626;--ok:#16a34a;--blue:#2563eb}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{font-family:'Hind Siliguri',sans-serif;background:var(--cream);color:var(--tx);min-height:100vh}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,107,60,.97);backdrop-filter:blur(12px);height:64px;padding:0 4%;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 20px rgba(0,0,0,.2)}
 .nb{display:flex;align-items:center;gap:10px;text-decoration:none}
 .nl2{width:36px;height:36px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px}
 .nt{color:#fff;font-family:'Baloo Da 2',cursive;font-size:13px;font-weight:700;line-height:1.2}
-.nbk{color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;display:flex;align-items:center;gap:5px;padding:8px 14px;border:1px solid rgba(255,255,255,.25);border-radius:8px;transition:all .2s}
+.nbk{color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;padding:7px 14px;border:1px solid rgba(255,255,255,.25);border-radius:8px;transition:all .2s}
 .nbk:hover{background:rgba(255,255,255,.1);color:#fff}
 .fhero{background:linear-gradient(135deg,#0a3d1f,#1a6b3c);padding:96px 4% 52px;text-align:center;color:#fff}
 .fhero h1{font-family:'Baloo Da 2',cursive;font-size:clamp(24px,5vw,46px);font-weight:800;margin-bottom:8px}
 .fhero h1 span{color:var(--gdl)}
 .fhero p{font-size:15px;opacity:.78;max-width:480px;margin:0 auto}
 .fw{max-width:740px;margin:0 auto;padding:44px 4% 80px}
-/* STEPS INDICATOR */
-.steps{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:36px;flex-wrap:wrap;gap:4px}
-.step-dot{display:flex;align-items:center;gap:4px}
-.step-dot .dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;border:2px solid #d1d5db;color:var(--mu);background:#fff;transition:all .3s;flex-shrink:0}
-.step-dot .dot.done{background:var(--g);border-color:var(--g);color:#fff}
-.step-dot .dot.active{background:var(--gold);border-color:var(--gold);color:var(--dk)}
-.step-dot .lbl{font-size:11px;color:var(--mu);white-space:nowrap}
-.step-line{width:28px;height:2px;background:#e5e7eb;flex-shrink:0}
-/* CARD */
 .card{background:#fff;border-radius:18px;box-shadow:0 6px 32px rgba(0,0,0,.08);padding:32px;margin-bottom:20px}
 .ctitle{font-family:'Baloo Da 2',cursive;font-size:19px;font-weight:700;color:var(--dk);margin-bottom:22px;padding-bottom:14px;border-bottom:2px solid var(--gp);display:flex;align-items:center;gap:9px}
-/* FIELDS */
 .fr{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
 .f{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
 .f:last-child{margin-bottom:0}
@@ -43,24 +33,38 @@ input::placeholder,textarea::placeholder{color:#b0b8c4}
 select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:16px}
 textarea{resize:vertical;min-height:80px}
 .hint{font-size:11px;color:var(--mu)}
-/* RADIO / CHIP */
 .rg{display:flex;flex-wrap:wrap;gap:9px}
 .ro{display:flex;align-items:center;gap:7px;cursor:pointer;padding:9px 15px;border:2px solid #e5e7eb;border-radius:10px;transition:all .2s;font-size:13px;font-weight:500;color:var(--tx);user-select:none}
 .ro input[type=radio]{display:none}
 .ro:hover{border-color:var(--gl)}
 .ro.sel{border-color:var(--g);background:var(--gp);color:var(--g);font-weight:600}
-/* TSHIRT SIZE GRID */
 .tg{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
 .ts{cursor:pointer;text-align:center;padding:10px 4px;border:2px solid #e5e7eb;border-radius:10px;font-size:13px;font-weight:600;color:var(--mu);transition:all .2s;user-select:none}
 .ts:hover{border-color:var(--gl);color:var(--g)}
 .ts.sel{border-color:var(--g);background:var(--gp);color:var(--g)}
-/* MEMBER */
 .madd{display:flex;align-items:center;gap:7px;background:var(--gp);color:var(--g);border:2px dashed #b2dfcc;border-radius:10px;padding:11px 18px;font-size:13px;font-weight:600;cursor:pointer;width:100%;justify-content:center;transition:all .2s;font-family:'Hind Siliguri',sans-serif;margin-top:8px}
 .madd:hover{background:#d4ede0;border-color:var(--g)}
 .mrow{background:var(--gp);border-radius:12px;padding:14px;margin-top:8px;position:relative}
 .mrow .rm{position:absolute;top:10px;right:10px;background:none;border:none;cursor:pointer;font-size:17px;color:var(--mu);line-height:1;transition:color .2s}
 .mrow .rm:hover{color:var(--err)}
-.mrow .fr{margin-bottom:0}
+/* PHOTO UPLOAD */
+.photo-wrap{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
+.photo-preview-box{width:120px;height:160px;border:2px dashed #d1d5db;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;background:#f9fafb;position:relative;cursor:pointer;transition:border-color .2s}
+.photo-preview-box:hover{border-color:var(--g)}
+.photo-preview-box img{width:100%;height:100%;object-fit:cover;display:none;position:absolute;inset:0}
+.photo-preview-box .ph-icon{font-size:28px;color:#d1d5db}
+.photo-preview-box .ph-txt{font-size:10px;color:var(--mu);text-align:center;margin-top:6px;line-height:1.4}
+.photo-preview-box.has-img .ph-icon,.photo-preview-box.has-img .ph-txt{display:none}
+.photo-preview-box.has-img img{display:block}
+.photo-preview-box.has-img{border-color:var(--g);border-style:solid}
+.photo-info{flex:1;min-width:200px}
+.photo-info .info-item{display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;font-size:13px;color:var(--mu);line-height:1.5}
+.photo-info .info-item .ii{font-size:16px;flex-shrink:0;margin-top:1px}
+input[type=file]{display:none}
+.upload-btn{display:inline-flex;align-items:center;gap:7px;background:var(--gp);color:var(--g);border:2px solid #b2dfcc;border-radius:10px;padding:10px 18px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Hind Siliguri',sans-serif}
+.upload-btn:hover{background:#d4ede0;border-color:var(--g)}
+.photo-error{color:var(--err);font-size:12px;font-weight:600;margin-top:6px;display:none}
+.photo-ok{color:var(--ok);font-size:12px;font-weight:600;margin-top:6px;display:none}
 /* DONATION */
 .dcard{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #bfdbfe;border-radius:14px;padding:22px;margin-bottom:20px}
 .dtitle{font-family:'Baloo Da 2',cursive;font-size:17px;font-weight:700;color:var(--blue);margin-bottom:4px}
@@ -68,23 +72,39 @@ textarea{resize:vertical;min-height:80px}
 .das{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
 .dab{padding:8px 18px;border:2px solid #93c5fd;border-radius:50px;background:#fff;color:var(--blue);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Hind Siliguri',sans-serif}
 .dab:hover,.dab.sel{background:var(--blue);color:#fff;border-color:var(--blue)}
-/* FEE SUMMARY */
-.fsbox{background:linear-gradient(135deg,var(--g),#1d5c34);border-radius:16px;padding:24px;color:#fff;margin-bottom:20px}
-.fsbox h3{font-family:'Baloo Da 2',cursive;font-size:18px;font-weight:700;margin-bottom:18px;color:var(--gdl);display:flex;align-items:center;gap:8px}
-.srow{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.10);font-size:14px}
-.srow:last-child{border-bottom:none}
-.srow .lv{opacity:.82}
-.srow .rv{font-weight:600}
-.srow .rv.free{color:#86efac;font-size:12px}
-.sdiv{border:none;border-top:1px dashed rgba(255,255,255,.2);margin:12px 0}
-.stotal{display:flex;justify-content:space-between;align-items:center;padding-top:10px}
-.stotal .lv{font-size:16px;font-weight:700}
-.stotal .rv{font-family:'Baloo Da 2',cursive;font-size:32px;font-weight:800;color:var(--gdl)}
+/* FEE SUMMARY — সম্পূর্ণ নতুন */
+.fsbox{background:linear-gradient(135deg,#0a3d1f,#1d5c34);border-radius:18px;padding:28px;color:#fff;margin-bottom:20px}
+.fsbox h3{font-family:'Baloo Da 2',cursive;font-size:18px;font-weight:700;margin-bottom:20px;color:var(--gdl)}
+.fs-section{margin-bottom:16px}
+.fs-sec-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;opacity:.55;margin-bottom:8px}
+.fs-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px}
+.fs-row:last-child{border-bottom:none}
+.fs-row .lv{opacity:.85}
+.fs-row .rv{font-weight:600}
+.fs-row .rv.free{color:#86efac;font-size:12px}
+.fs-divider{border:none;border-top:1px dashed rgba(255,255,255,.18);margin:14px 0}
+/* ফী বাক্স */
+.fs-box-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.fs-mini-box{background:rgba(255,255,255,.09);border-radius:12px;padding:14px 16px;text-align:center}
+.fs-mini-box .mb-label{font-size:11px;opacity:.6;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px}
+.fs-mini-box .mb-val{font-family:'Baloo Da 2',cursive;font-size:26px;font-weight:800;line-height:1}
+.fs-mini-box.reg .mb-val{color:var(--gdl)}
+.fs-mini-box.don .mb-val{color:#93c5fd}
+.fs-total-row{display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.10);border-radius:12px;padding:16px 20px}
+.fs-total-row .lv{font-size:16px;font-weight:700}
+.fs-total-row .rv{font-family:'Baloo Da 2',cursive;font-size:34px;font-weight:800;color:var(--gdl)}
+/* STAGE */
+.stage-opts{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.stage-opt{border:2px solid #e5e7eb;border-radius:10px;padding:11px 15px;cursor:pointer;transition:all .2s;user-select:none}
+.stage-opt.sel{border-color:var(--g);background:var(--gp)}
+.stage-opt input[type=radio]{display:none}
+.stage-opt .so-title{font-size:14px;font-weight:600;color:var(--dk)}
+.stage-opt .so-desc{font-size:11px;color:var(--mu);margin-top:1px}
+.stage-opt.sel .so-title{color:var(--g)}
 /* SUBMIT */
 .subtn{width:100%;padding:15px;background:var(--g);color:#fff;border:none;border-radius:12px;font-family:'Baloo Da 2',cursive;font-size:19px;font-weight:700;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:9px}
 .subtn:hover:not(:disabled){background:var(--gl);transform:translateY(-2px);box-shadow:0 8px 22px rgba(26,107,60,.28)}
 .subtn:disabled{opacity:.65;cursor:not-allowed;transform:none}
-/* ALERT */
 .alert{border-radius:10px;padding:12px 16px;font-size:13px;font-weight:500;display:none;margin-bottom:16px}
 .alert.err{background:#fef2f2;border:1px solid #fca5a5;color:var(--err)}
 /* SUCCESS */
@@ -95,15 +115,12 @@ textarea{resize:vertical;min-height:80px}
 .rid{display:inline-block;background:var(--gp);border:2px solid #b2dfcc;color:var(--g);padding:10px 26px;border-radius:10px;font-family:'Baloo Da 2',cursive;font-size:22px;font-weight:700;margin:16px 0}
 .bkhome{display:inline-block;margin-top:12px;background:var(--g);color:#fff;padding:11px 26px;border-radius:50px;text-decoration:none;font-weight:700;font-size:14px;transition:all .2s}
 .bkhome:hover{background:var(--gl)}
-/* STAGE SECTION */
-.stage-opts{display:flex;flex-direction:column;gap:10px;margin-top:6px}
-.stage-opt{border:2px solid #e5e7eb;border-radius:10px;padding:12px 16px;cursor:pointer;transition:all .2s;user-select:none}
-.stage-opt.sel{border-color:var(--g);background:var(--gp)}
-.stage-opt input[type=radio]{display:none}
-.stage-opt .so-title{font-size:14px;font-weight:600;color:var(--dk)}
-.stage-opt .so-desc{font-size:12px;color:var(--mu);margin-top:2px}
-.stage-opt.sel .so-title{color:var(--g)}
-@media(max-width:560px){.fr{grid-template-columns:1fr}.card{padding:20px}.tg{grid-template-columns:repeat(4,1fr)}.steps{display:none}}
+/* PROGRESS */
+.progress-wrap{display:none;margin-bottom:16px}
+.progress-bar{height:6px;background:#e5e7eb;border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:var(--g);border-radius:3px;transition:width .3s ease;width:0%}
+.progress-txt{font-size:12px;color:var(--mu);margin-top:6px;text-align:center}
+@media(max-width:560px){.fr{grid-template-columns:1fr}.card{padding:20px}.tg{grid-template-columns:repeat(4,1fr)}.fs-box-row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -121,12 +138,11 @@ textarea{resize:vertical;min-height:80px}
 </div>
 
 <div class="fw">
-
   <!-- SUCCESS -->
   <div class="succ" id="succScreen">
     <div class="si">🎉</div>
     <h2>নিবন্ধন সফল!</h2>
-    <p>আপনার নিবন্ধন সম্পন্ন হয়েছে। আপনার রেজিস্ট্রেশন আইডি:</p>
+    <p>আপনার নিবন্ধন সম্পন্ন হয়েছে। রেজিস্ট্রেশন আইডি:</p>
     <div class="rid" id="ridDisplay">---</div>
     <p>এই আইডি সংরক্ষণ করুন — অনুষ্ঠানের দিন প্রয়োজন হবে।</p>
     <br>
@@ -150,15 +166,42 @@ textarea{resize:vertical;min-height:80px}
       </div>
     </div>
 
-    <!-- ২. ব্যাচ তথ্য -->
+    <!-- ২. ছবি আপলোড -->
+    <div class="card">
+      <div class="ctitle">📷 ছবি আপলোড <span style="font-size:13px;font-weight:500;color:var(--mu);margin-left:4px">(ঐচ্ছিক)</span></div>
+      <div class="photo-wrap">
+        <div class="photo-preview-box" id="photoBox" onclick="document.getElementById('photoInput').click()">
+          <img id="photoPreview" alt="preview">
+          <div class="ph-icon">📷</div>
+          <div class="ph-txt">ক্লিক করে<br>ছবি দিন</div>
+        </div>
+        <div class="photo-info">
+          <div class="photo-info .info-item" style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;font-size:13px;color:var(--mu);line-height:1.6">
+            <span style="font-size:16px">📐</span><span>মাপ: <strong>৩০০×৪০০ পিক্সেল</strong> (পোর্ট্রেট)</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;font-size:13px;color:var(--mu);line-height:1.6">
+            <span style="font-size:16px">📦</span><span>সর্বোচ্চ সাইজ: <strong>২০০ KB</strong></span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:16px;font-size:13px;color:var(--mu);line-height:1.6">
+            <span style="font-size:16px">🖼️</span><span>ফরম্যাট: JPG বা PNG<br>সাদা ব্যাকগ্রাউন্ড পছন্দনীয়</span>
+          </div>
+          <input type="file" id="photoInput" accept="image/jpeg,image/png" onchange="handlePhoto(this)">
+          <label class="upload-btn" for="photoInput">📂 ছবি বেছে নিন</label>
+          <div class="photo-error" id="photoError"></div>
+          <div class="photo-ok" id="photoOk">✅ ছবি সফলভাবে যোগ হয়েছে</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ৩. ব্যাচ তথ্য -->
     <div class="card">
       <div class="ctitle">🎓 ব্যাচ ও পরিচয়</div>
       <div class="f">
         <label>নিবন্ধনকারীর ধরন <span class="req">*</span></label>
         <div class="rg" id="typeGrp">
-          <label class="ro" onclick="selType(this,'চাকরিজীবী প্রাক্তন')"><input type="radio" name="rt" value="চাকরিজীবী প্রাক্তন">👨‍💼 চাকরিজীবী প্রাক্তন</label>
-          <label class="ro" onclick="selType(this,'শিক্ষার্থী প্রাক্তন')"><input type="radio" name="rt" value="শিক্ষার্থী প্রাক্তন">🎓 শিক্ষার্থী প্রাক্তন</label>
-          <label class="ro" onclick="selType(this,'বর্তমান শিক্ষার্থী')"><input type="radio" name="rt" value="বর্তমান শিক্ষার্থী">📚 বর্তমান শিক্ষার্থী</label>
+          <label class="ro" onclick="selType(this,'চাকরিজীবী প্রাক্তন')"><input type="radio" name="rt">👨‍💼 চাকরিজীবী প্রাক্তন</label>
+          <label class="ro" onclick="selType(this,'শিক্ষার্থী প্রাক্তন')"><input type="radio" name="rt">🎓 শিক্ষার্থী প্রাক্তন</label>
+          <label class="ro" onclick="selType(this,'বর্তমান শিক্ষার্থী')"><input type="radio" name="rt">📚 বর্তমান শিক্ষার্থী</label>
         </div>
       </div>
       <div class="fr">
@@ -177,18 +220,18 @@ textarea{resize:vertical;min-height:80px}
       </div>
     </div>
 
-    <!-- ৩. পরিবার / অতিথি -->
+    <!-- ৪. পরিবার / অতিথি -->
     <div class="card">
       <div class="ctitle">👨‍👩‍👧 পরিবার / অতিথি</div>
-      <p style="font-size:13px;color:var(--mu);margin-bottom:12px">অতিরিক্ত সদস্য থাকলে যোগ করুন। গেস্ট ফী: ৫০০–১০০০ টাকা | ০–৫ বছর বিনামূল্যে (সর্বোচ্চ ২ জন)</p>
+      <p style="font-size:13px;color:var(--mu);margin-bottom:12px">অতিরিক্ত সদস্য থাকলে যোগ করুন। গেস্ট ফী: ৫০০ বা ১০০০ টাকা | ০–৫ বছর বিনামূল্যে (সর্বোচ্চ ২ জন)</p>
       <div id="mc"></div>
       <button type="button" class="madd" onclick="addMember()">+ সদস্য যোগ করুন</button>
     </div>
 
-    <!-- ৪. টি-শার্ট সাইজ -->
+    <!-- ৫. টি-শার্ট সাইজ -->
     <div class="card">
       <div class="ctitle">👕 টি-শার্ট সাইজ</div>
-      <p style="font-size:13px;color:var(--mu);margin-bottom:14px">পুনর্মিলনীর স্মারক টি-শার্টের জন্য আপনার সাইজ নির্বাচন করুন।</p>
+      <p style="font-size:13px;color:var(--mu);margin-bottom:14px">স্মারক টি-শার্টের জন্য আপনার সাইজ নির্বাচন করুন।</p>
       <div class="tg" id="tsGrp">
         <div class="ts" onclick="selTshirt(this,'XS')">XS</div>
         <div class="ts" onclick="selTshirt(this,'S')">S</div>
@@ -197,68 +240,76 @@ textarea{resize:vertical;min-height:80px}
         <div class="ts" onclick="selTshirt(this,'XL')">XL</div>
         <div class="ts" onclick="selTshirt(this,'XXL')">XXL</div>
       </div>
-      <p style="font-size:11px;color:var(--mu);margin-top:10px">* সাইজ না জানলে M নির্বাচন করুন। পরে পরিবর্তন করা যাবে।</p>
     </div>
 
-    <!-- ৫. স্টেজ পারফরম্যান্স -->
+    <!-- ৬. স্টেজ পারফরম্যান্স -->
     <div class="card">
       <div class="ctitle">🎭 স্টেজ পারফরম্যান্স</div>
-      <p style="font-size:13px;color:var(--mu);margin-bottom:14px">আপনি কি অনুষ্ঠানে স্টেজে পারফর্ম করতে চান?</p>
       <div class="stage-opts" id="stageGrp">
-        <label class="stage-opt" onclick="selStage(this,'না, শুধু উপস্থিত থাকব')">
-          <input type="radio" name="stage"><div class="so-title">না, শুধু উপস্থিত থাকব</div>
-        </label>
-        <label class="stage-opt" onclick="selStage(this,'গান')">
-          <input type="radio" name="stage"><div class="so-title">🎤 গান</div><div class="so-desc">একক বা দলীয়</div>
-        </label>
-        <label class="stage-opt" onclick="selStage(this,'আবৃত্তি')">
-          <input type="radio" name="stage"><div class="so-title">📜 আবৃত্তি / কবিতা</div>
-        </label>
-        <label class="stage-opt" onclick="selStage(this,'নৃত্য')">
-          <input type="radio" name="stage"><div class="so-title">💃 নৃত্য</div>
-        </label>
-        <label class="stage-opt" onclick="selStage(this,'নাটক / স্কিট')">
-          <input type="radio" name="stage"><div class="so-title">🎭 নাটক / স্কিট</div>
-        </label>
-        <label class="stage-opt" onclick="selStage(this,'অন্যান্য')">
-          <input type="radio" name="stage"><div class="so-title">✨ অন্যান্য</div>
-        </label>
+        <label class="stage-opt" onclick="selStage(this,'না, শুধু উপস্থিত থাকব')"><input type="radio" name="stage"><div class="so-title">না, শুধু উপস্থিত থাকব</div></label>
+        <label class="stage-opt" onclick="selStage(this,'গান')"><input type="radio" name="stage"><div class="so-title">🎤 গান</div><div class="so-desc">একক বা দলীয়</div></label>
+        <label class="stage-opt" onclick="selStage(this,'আবৃত্তি')"><input type="radio" name="stage"><div class="so-title">📜 আবৃত্তি / কবিতা</div></label>
+        <label class="stage-opt" onclick="selStage(this,'নৃত্য')"><input type="radio" name="stage"><div class="so-title">💃 নৃত্য</div></label>
+        <label class="stage-opt" onclick="selStage(this,'নাটক / স্কিট')"><input type="radio" name="stage"><div class="so-title">🎭 নাটক / স্কিট</div></label>
+        <label class="stage-opt" onclick="selStage(this,'অন্যান্য')"><input type="radio" name="stage"><div class="so-title">✨ অন্যান্য</div></label>
       </div>
       <div class="f" id="stageDetailF" style="display:none;margin-top:12px">
-        <label>বিস্তারিত জানান (গানের নাম / বিষয় ইত্যাদি)</label>
-        <textarea id="stageDetail" placeholder="যেমন: 'আমার সোনার বাংলা' গাইব, সময় লাগবে ৩ মিনিট…"></textarea>
+        <label>বিস্তারিত জানান</label>
+        <textarea id="stageDetail" placeholder="গানের নাম / বিষয় / সময় ইত্যাদি…"></textarea>
       </div>
     </div>
 
-    <!-- ৬. ডোনেশন -->
+    <!-- ৭. ডোনেশন -->
     <div class="dcard">
       <div class="dtitle">💙 অতিরিক্ত অনুদান (ঐচ্ছিক)</div>
-      <div class="ddesc">বিদ্যালয়ের উন্নয়নে অতিরিক্ত অবদান রাখতে পারেন। চাকরিজীবীদের জন্য ন্যূনতম ১০০০ টাকা সুপারিশকৃত।</div>
+      <div class="ddesc">নিবন্ধন ফীর বাইরে অতিরিক্ত অবদান রাখতে পারেন। চাকরিজীবীদের জন্য ন্যূনতম ১০০০৳ সুপারিশকৃত।</div>
       <div class="das">
-        <button type="button" class="dab" onclick="setDon(this,500)">৫০০ টাকা</button>
-        <button type="button" class="dab" onclick="setDon(this,1000)">১০০০ টাকা</button>
-        <button type="button" class="dab" onclick="setDon(this,2000)">২০০০ টাকা</button>
-        <button type="button" class="dab" onclick="setDon(this,5000)">৫০০০ টাকা</button>
+        <button type="button" class="dab" onclick="setDon(this,500)">৫০০ ৳</button>
+        <button type="button" class="dab" onclick="setDon(this,1000)">১০০০ ৳</button>
+        <button type="button" class="dab" onclick="setDon(this,2000)">২০০০ ৳</button>
+        <button type="button" class="dab" onclick="setDon(this,5000)">৫০০০ ৳</button>
       </div>
       <div class="f">
         <label>নিজে পরিমাণ লিখুন</label>
         <input type="number" id="donCustom" placeholder="টাকার পরিমাণ" min="0" oninput="clearDonBtns();calcFee()">
-        <span class="hint">ডোনেশন না দিতে চাইলে খালি রাখুন</span>
+        <span class="hint">ডোনেশন না দিলে খালি রাখুন</span>
       </div>
     </div>
 
-    <!-- ৭. ফী সারসংক্ষেপ -->
+    <!-- ৮. ফী সারসংক্ষেপ -->
     <div class="fsbox" id="feeBox">
       <h3>💰 ফী সারসংক্ষেপ</h3>
-      <div id="feeRows"><div class="srow"><span class="lv" style="opacity:.6">নিবন্ধনের ধরন নির্বাচন করুন</span><span></span></div></div>
-      <hr class="sdiv">
-      <div class="stotal">
-        <span class="lv">মোট প্রদেয়</span>
-        <span class="rv" id="grandTotal">০ টাকা</span>
+
+      <!-- ব্যক্তির বিবরণ -->
+      <div class="fs-section">
+        <div class="fs-sec-label">নিবন্ধনকারী ও সদস্যদের হিসাব</div>
+        <div id="memberFeeRows">
+          <div class="fs-row"><span class="lv" style="opacity:.5">নিবন্ধনের ধরন নির্বাচন করুন</span><span></span></div>
+        </div>
+      </div>
+
+      <hr class="fs-divider">
+
+      <!-- ২টি বাক্স: রেজিস্ট্রেশন ফী | অনুদান -->
+      <div class="fs-box-row">
+        <div class="fs-mini-box reg">
+          <div class="mb-label">নিবন্ধন ফী</div>
+          <div class="mb-val" id="regFeeDisplay">০ ৳</div>
+        </div>
+        <div class="fs-mini-box don">
+          <div class="mb-label">অনুদান</div>
+          <div class="mb-val" id="donFeeDisplay">০ ৳</div>
+        </div>
+      </div>
+
+      <!-- মোট আয় -->
+      <div class="fs-total-row">
+        <span class="lv">মোট প্রদেয় (ফী + অনুদান)</span>
+        <span class="rv" id="grandTotal">০ ৳</span>
       </div>
     </div>
 
-    <!-- ৮. পেমেন্ট -->
+    <!-- ৯. পেমেন্ট -->
     <div class="card">
       <div class="ctitle">💳 পেমেন্ট তথ্য</div>
       <div class="f">
@@ -285,7 +336,13 @@ textarea{resize:vertical;min-height:80px}
 
     <div class="f" style="margin-bottom:20px">
       <label>অতিরিক্ত মন্তব্য</label>
-      <textarea id="notes" placeholder="কোনো বিশেষ তথ্য বা অনুরোধ থাকলে লিখুন…"></textarea>
+      <textarea id="notes" placeholder="কোনো বিশেষ তথ্য বা অনুরোধ…"></textarea>
+    </div>
+
+    <!-- progress -->
+    <div class="progress-wrap" id="progressWrap">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="progress-txt" id="progressTxt">ছবি আপলোড হচ্ছে…</div>
     </div>
 
     <button class="subtn" id="subBtn" onclick="doSubmit()">
@@ -296,20 +353,63 @@ textarea{resize:vertical;min-height:80px}
 
 <script>
 // ============ CONFIG ============
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz4iy6VrNP8pjKmU-Syi63jVArZg_gCv8pz0bsqASPu07fhPF33BdiQi8ADmkp4Y6v8/exec';
-const FEE = { চাকরিজীবী: 1000, শিক্ষার্থীপ্রাক্তন: 500, বর্তমান: 500, গেস্ট: 500, গেস্টহাই: 1000 };
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyFBmWmyLocvO2uQt6gH8CHufGj2ZHkZqvKU2ltIaeOv8HZjnU0YmYkUXiMkvtg3esR/exec';
 // ================================
 
 let regType='', payMethod='', tshirt='', stageChoice='', donAmount=0;
 let members=[], mCnt=0, freeKids=0;
+let photoBase64='', photoOk=false;
 
+// ========== PHOTO HANDLING ==========
+function handlePhoto(input) {
+  const file = input.files[0];
+  const errEl = document.getElementById('photoError');
+  const okEl = document.getElementById('photoOk');
+  errEl.style.display='none'; okEl.style.display='none';
+  photoBase64=''; photoOk=false;
+
+  if (!file) return;
+
+  // size check
+  if (file.size > 200*1024) {
+    errEl.textContent = '❌ ছবির সাইজ ২০০ KB এর বেশি। ছোট ছবি দিন।';
+    errEl.style.display='block'; input.value=''; return;
+  }
+  // type check
+  if (!['image/jpeg','image/png'].includes(file.type)) {
+    errEl.textContent = '❌ শুধুমাত্র JPG বা PNG ফরম্যাট সাপোর্ট করে।';
+    errEl.style.display='block'; input.value=''; return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const img = new Image();
+    img.onload = function() {
+      // dimension check — allow some tolerance (±50px)
+      if (img.width < 250 || img.width > 350 || img.height < 350 || img.height > 450) {
+        errEl.textContent = `❌ ছবির মাপ ${img.width}×${img.height}px। সঠিক মাপ: ৩০০×৪০০ px (±৫০px)`;
+        errEl.style.display='block'; input.value=''; return;
+      }
+      // all good
+      photoBase64 = e.target.result;
+      photoOk = true;
+      const preview = document.getElementById('photoPreview');
+      preview.src = photoBase64;
+      const box = document.getElementById('photoBox');
+      box.classList.add('has-img');
+      okEl.style.display='block';
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+// ========== TYPE / PAY / TSHIRT / STAGE ==========
 function selType(el,val){
   document.querySelectorAll('#typeGrp .ro').forEach(o=>o.classList.remove('sel'));
   el.classList.add('sel'); regType=val;
-  const isPractan=val.includes('প্রাক্তন');
-  const isCurrent=val==='বর্তমান শিক্ষার্থী';
-  document.getElementById('byField').style.display=isPractan?'block':'none';
-  document.getElementById('clField').style.display=isCurrent?'block':'none';
+  document.getElementById('byField').style.display=val.includes('প্রাক্তন')?'block':'none';
+  document.getElementById('clField').style.display=val==='বর্তমান শিক্ষার্থী'?'block':'none';
   calcFee();
 }
 function selPay(el,val){
@@ -323,9 +423,10 @@ function selTshirt(el,val){
 function selStage(el,val){
   document.querySelectorAll('#stageGrp .stage-opt').forEach(o=>o.classList.remove('sel'));
   el.classList.add('sel'); stageChoice=val;
-  const showDetail = val!=='না, শুধু উপস্থিত থাকব';
-  document.getElementById('stageDetailF').style.display=showDetail?'block':'none';
+  document.getElementById('stageDetailF').style.display=val!=='না, শুধু উপস্থিত থাকব'?'block':'none';
 }
+
+// ========== DONATION ==========
 function setDon(btn,amt){
   clearDonBtns(); btn.classList.add('sel');
   document.getElementById('donCustom').value=''; donAmount=amt; calcFee();
@@ -335,6 +436,7 @@ function clearDonBtns(){
   donAmount=parseInt(document.getElementById('donCustom').value)||0;
 }
 
+// ========== MEMBERS ==========
 function addMember(){
   mCnt++;
   const id='m'+mCnt; members.push(id);
@@ -348,49 +450,82 @@ function addMember(){
       <option>স্ত্রী/স্বামী</option><option>সন্তান</option><option>বাবা/মা</option><option>ভাই/বোন</option><option>অন্যান্য</option></select></div>
     <div class="f"><label>বয়স</label><input type="number" id="${id}_a" placeholder="বয়স" min="0" max="100" oninput="calcFee()"></div>
   </div>
-  <div class="f" style="margin-top:8px">
-    <label>গেস্ট ফী</label>
+  <div class="f" style="margin-top:6px">
+    <label>গেস্ট ফী নির্বাচন করুন</label>
     <div class="rg" id="${id}_fg">
-      <label class="ro" onclick="selGuestFee(this,'${id}',500)"><input type="radio" name="${id}_gf">৫০০ টাকা</label>
-      <label class="ro" onclick="selGuestFee(this,'${id}',1000)"><input type="radio" name="${id}_gf">১০০০ টাকা</label>
+      <label class="ro" onclick="selGF(this,'${id}',500)"><input type="radio" name="${id}_gf">৫০০ টাকা</label>
+      <label class="ro" onclick="selGF(this,'${id}',1000)"><input type="radio" name="${id}_gf">১০০০ টাকা</label>
     </div>
   </div>`;
   document.getElementById('mc').appendChild(d);
   calcFee();
 }
-function selGuestFee(el,id,amt){
+function selGF(el,id,amt){
   document.querySelectorAll(`#${id}_fg .ro`).forEach(o=>o.classList.remove('sel'));
-  el.classList.add('sel');
-  el.dataset.fee=amt;
-  calcFee();
+  el.classList.add('sel'); el.dataset.fee=amt; calcFee();
 }
-function remMember(id){document.getElementById(id)?.remove();members=members.filter(m=>m!==id);calcFee();}
+function remMember(id){
+  document.getElementById(id)?.remove();
+  members=members.filter(m=>m!==id); calcFee();
+}
 
+// ========== FEE CALC — সঠিক হিসাব ==========
 function calcFee(){
   const don=parseInt(document.getElementById('donCustom').value)||0;
-  if(don>0&&document.querySelectorAll('.dab.sel').length===0)donAmount=don;
-  let base=0; const rows=[];
-  if(regType==='চাকরিজীবী প্রাক্তন'){base=1000;rows.push({l:'চাকরিজীবী প্রাক্তন',v:1000});}
-  else if(regType==='শিক্ষার্থী প্রাক্তন'){base=500;rows.push({l:'প্রাক্তন শিক্ষার্থী',v:500});}
-  else if(regType==='বর্তমান শিক্ষার্থী'){base=500;rows.push({l:'বর্তমান শিক্ষার্থী',v:500});}
-  freeKids=0;
+  if(don>0 && document.querySelectorAll('.dab.sel').length===0) donAmount=don;
+
+  // ১. নিবন্ধনকারীর ফী
+  let regFee=0;
+  const memberRows=[];
+
+  if(regType==='চাকরিজীবী প্রাক্তন'){ regFee=1000; memberRows.push({l:'চাকরিজীবী প্রাক্তন (আপনি)',v:1000}); }
+  else if(regType==='শিক্ষার্থী প্রাক্তন'){ regFee=500; memberRows.push({l:'প্রাক্তন শিক্ষার্থী (আপনি)',v:500}); }
+  else if(regType==='বর্তমান শিক্ষার্থী'){ regFee=500; memberRows.push({l:'বর্তমান শিক্ষার্থী (আপনি)',v:500}); }
+
+  // ২. অতিরিক্ত সদস্যের ফী
+  let guestFee=0; freeKids=0;
   members.forEach(id=>{
     const age=parseInt(document.getElementById(id+'_a')?.value||'99');
-    if(age<=5&&freeKids<2){freeKids++;rows.push({l:'শিশু (০–৫ বছর)',v:0,note:'বিনামূল্যে'});}
-    else{
-      const selFee=document.querySelector(`#${id}_fg .ro.sel`);
-      const gf=selFee?parseInt(selFee.dataset.fee||500):500;
-      base+=gf; rows.push({l:`গেস্ট (${document.getElementById(id+'_n')?.value||'সদস্য'})`,v:gf});
+    const nm=document.getElementById(id+'_n')?.value||'সদস্য';
+    if(age<=5 && freeKids<2){
+      freeKids++;
+      memberRows.push({l:`${nm} (শিশু ০–৫ বছর)`,v:0,note:'বিনামূল্যে'});
+    } else {
+      const sel=document.querySelector(`#${id}_fg .ro.sel`);
+      const gf=sel?parseInt(sel.dataset.fee||500):500;
+      guestFee+=gf;
+      memberRows.push({l:`${nm} (গেস্ট)`,v:gf});
     }
   });
-  if(donAmount>0)rows.push({l:'💙 অনুদান',v:donAmount});
-  const total=base+donAmount;
-  const container=document.getElementById('feeRows');
-  if(rows.length===0){container.innerHTML='<div class="srow"><span class="lv" style="opacity:.6">নিবন্ধনের ধরন নির্বাচন করুন</span><span></span></div>';}
-  else{container.innerHTML=rows.map(r=>`<div class="srow"><span class="lv">${r.l}</span><span class="rv ${r.note?'free':''}">${r.note||r.v+' ৳'}</span></div>`).join('');}
-  document.getElementById('grandTotal').textContent=total+' টাকা';
+
+  // ৩. মোট নিবন্ধন ফী = নিবন্ধনকারী + গেস্ট (শিশু বাদ)
+  const totalRegFee = regFee + guestFee;
+
+  // ৪. অনুদান আলাদা
+  const totalDon = donAmount;
+
+  // ৫. সর্বমোট = নিবন্ধন ফী + অনুদান
+  const grandTotal = totalRegFee + totalDon;
+
+  // --- UI আপডেট ---
+  const mfr=document.getElementById('memberFeeRows');
+  if(memberRows.length===0){
+    mfr.innerHTML='<div class="fs-row"><span class="lv" style="opacity:.5">নিবন্ধনের ধরন নির্বাচন করুন</span><span></span></div>';
+  } else {
+    mfr.innerHTML=memberRows.map(r=>
+      `<div class="fs-row"><span class="lv">${r.l}</span><span class="rv ${r.note?'free':''}">${r.note||r.v+' ৳'}</span></div>`
+    ).join('');
+  }
+
+  document.getElementById('regFeeDisplay').textContent = totalRegFee+' ৳';
+  document.getElementById('donFeeDisplay').textContent = totalDon+' ৳';
+  document.getElementById('grandTotal').textContent = grandTotal+' ৳';
+
+  // store for submit
+  window._calcResult = { regFee: totalRegFee, donAmount: totalDon, grandTotal };
 }
 
+// ========== VALIDATION & SUBMIT ==========
 function showErr(msg){const e=document.getElementById('alertEl');e.textContent=msg;e.style.display='block';e.scrollIntoView({behavior:'smooth',block:'center'});}
 function hideErr(){document.getElementById('alertEl').style.display='none';}
 function genId(){const d=new Date(),r=Math.random().toString(36).substr(2,5).toUpperCase();return 'KHS-'+d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0')+'-'+r;}
@@ -400,6 +535,7 @@ async function doSubmit(){
   const name=document.getElementById('name').value.trim();
   const phone=document.getElementById('phone').value.trim();
   const txn=document.getElementById('txnId').value.trim();
+
   if(!name){showErr('❌ নাম লিখুন।');return;}
   if(!phone||!/^01[3-9]\d{8}$/.test(phone)){showErr('❌ সঠিক মোবাইল নম্বর দিন।');return;}
   if(!regType){showErr('❌ নিবন্ধনের ধরন নির্বাচন করুন।');return;}
@@ -407,9 +543,16 @@ async function doSubmit(){
   if(regType==='বর্তমান শিক্ষার্থী'&&!document.getElementById('classV').value){showErr('❌ শ্রেণী নির্বাচন করুন।');return;}
   if(!payMethod){showErr('❌ পেমেন্ট পদ্ধতি নির্বাচন করুন।');return;}
   if(!txn){showErr('❌ ট্রানজেকশন আইডি দিন।');return;}
-  const btn=document.getElementById('subBtn'),txt=document.getElementById('subTxt');
+
+  const calc = window._calcResult || { regFee:0, donAmount:0, grandTotal:0 };
+  const btn=document.getElementById('subBtn'), txt=document.getElementById('subTxt');
   btn.disabled=true; txt.textContent='⏳ জমা হচ্ছে…';
-  const regId=genId();
+
+  if(photoBase64){
+    document.getElementById('progressWrap').style.display='block';
+    setProgress(30,'ছবি প্রস্তুত হচ্ছে…');
+  }
+
   const memberData=members.map(id=>{
     const n=document.getElementById(id+'_n')?.value||'';
     const r=document.getElementById(id+'_r')?.value||'';
@@ -418,38 +561,63 @@ async function doSubmit(){
     const gf=sf?sf.dataset.fee:'?';
     return `${n}(${r},বয়স:${a},ফী:${gf}৳)`;
   }).join('; ');
+
+  const regId=genId();
   const payload={
-    regId,timestamp:new Date().toLocaleString('bn-BD',{timeZone:'Asia/Dhaka'}),
-    name,phone,
-    profession:document.getElementById('profession').value.trim(),
-    location:document.getElementById('location').value.trim(),
+    regId,
+    timestamp: new Date().toLocaleString('bn-BD',{timeZone:'Asia/Dhaka'}),
+    name, phone,
+    profession: document.getElementById('profession').value.trim(),
+    location: document.getElementById('location').value.trim(),
     regType,
-    batchBatch:document.getElementById('batchYear').value||document.getElementById('classV').value||'',
-    memberCount:members.length,memberDetails:memberData,
-    tshirtSize:tshirt||'নির্বাচিত হয়নি',
-    stagePerformance:stageChoice||'না',
-    stageDetail:document.getElementById('stageDetail').value.trim(),
-    regFee:document.getElementById('grandTotal').textContent.replace(' টাকা',''),
-    donationAmount:donAmount,
-    totalFee:document.getElementById('grandTotal').textContent,
-    payMethod,txnId:txn,
-    payPhone:document.getElementById('payPhone').value.trim(),
-    notes:document.getElementById('notes').value.trim()
+    batchBatch: document.getElementById('batchYear').value || document.getElementById('classV').value || '',
+    memberCount: members.length,
+    memberDetails: memberData,
+    tshirtSize: tshirt||'নির্বাচিত হয়নি',
+    stagePerformance: stageChoice||'না',
+    stageDetail: document.getElementById('stageDetail').value.trim(),
+    // ✅ সঠিক হিসাব — আলাদা আলাদা
+    regFee: calc.regFee,
+    donationAmount: calc.donAmount,
+    totalFee: calc.grandTotal,
+    // পেমেন্ট
+    payMethod, txnId:txn,
+    payPhone: document.getElementById('payPhone').value.trim(),
+    notes: document.getElementById('notes').value.trim(),
+    // ছবি (Base64)
+    photo: photoBase64 || ''
   };
+
+  if(photoBase64) setProgress(70,'সার্ভারে পাঠানো হচ্ছে…');
+
   try{
     await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(payload)});
-    showSucc(regId);
-  }catch(err){
+    setProgress(100,'সফল!');
+    setTimeout(()=>showSucc(regId), 400);
+  } catch(err){
     if(SCRIPT_URL==='YOUR_APPS_SCRIPT_WEB_APP_URL_HERE'){showSucc(regId);}
-    else{showErr('❌ সংযোগে সমস্যা। আবার চেষ্টা করুন।');btn.disabled=false;txt.textContent='🎉 নিবন্ধন সম্পন্ন করুন';}
+    else{
+      showErr('❌ সংযোগে সমস্যা। আবার চেষ্টা করুন।');
+      btn.disabled=false; txt.textContent='🎉 নিবন্ধন সম্পন্ন করুন';
+      document.getElementById('progressWrap').style.display='none';
+    }
   }
 }
+
+function setProgress(pct, txt){
+  document.getElementById('progressFill').style.width=pct+'%';
+  document.getElementById('progressTxt').textContent=txt;
+}
+
 function showSucc(id){
   document.getElementById('mf').style.display='none';
   document.getElementById('ridDisplay').textContent=id;
   document.getElementById('succScreen').style.display='block';
   window.scrollTo({top:0,behavior:'smooth'});
 }
+
+// init
+calcFee();
 </script>
 </body>
 </html>
