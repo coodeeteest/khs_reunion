@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>অর্থিক বিবরণ - কুলানন্দপুর উচ্চ বিদ্যালয় পুনর্মিলনী ২০২৭</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Baloo+Da+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--g:#1a6b3c;--gl:#2d9b5a;--gp:#e8f5ee;--gold:#c9962a;--gdl:#f0c060;--cream:#fdf8ef;--dk:#1a1a1a;--tx:#2c2c2c;--mu:#6b7280;--err:#dc2626;--ok:#16a34a;--blue:#2563eb;--bp:#eff6ff;--red:#dc2626;--rp:#fef2f2}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Hind Siliguri',sans-serif;background:var(--cream);min-height:100vh}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,107,60,.97);backdrop-filter:blur(12px);height:64px;padding:0 4%;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 20px rgba(0,0,0,.2)}
+.nb{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nl{width:36px;height:36px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px}
+.nt{color:#fff;font-family:'Baloo Da 2',cursive;font-size:13px;font-weight:700;line-height:1.2}
+.nlinks{display:flex;gap:6px;align-items:center;list-style:none}
+.nlinks a{color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;padding:6px 10px;border-radius:8px;transition:all .2s}
+.nlinks a:hover,.nlinks a.active{background:rgba(255,255,255,.12);color:#fff}
+.nlinks .nbtn{background:var(--gold);color:var(--dk)!important;padding:7px 14px!important;border-radius:50px;font-weight:700!important}
+.hero2{background:linear-gradient(135deg,#0a3d1f,#1a6b3c);padding:90px 4% 44px;color:#fff}
+.hero2 h1{font-family:'Baloo Da 2',cursive;font-size:clamp(22px,4vw,40px);font-weight:800;margin-bottom:6px}
+.hero2 h1 span{color:var(--gdl)}
+.hero2 p{font-size:14px;opacity:.75;max-width:500px}
+.pw{max-width:1100px;margin:0 auto;padding:36px 4% 80px}
+/* SUMMARY CARDS */
+.sumcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:32px}
+.sc{background:#fff;border-radius:14px;padding:20px;box-shadow:0 4px 18px rgba(0,0,0,.07);border-left:4px solid transparent;transition:transform .2s}
+.sc:hover{transform:translateY(-2px)}
+.sc.income{border-color:var(--g)}
+.sc.expense{border-color:var(--red)}
+.sc.donation{border-color:#2563eb}
+.sc.balance.pos{border-color:var(--g);background:var(--gp)}
+.sc.balance.neg{border-color:var(--red);background:var(--rp)}
+.sc-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--mu);margin-bottom:8px}
+.sc-val{font-family:'Baloo Da 2',cursive;font-size:28px;font-weight:800;line-height:1}
+.sc.income .sc-val{color:var(--g)}
+.sc.expense .sc-val{color:var(--red)}
+.sc.donation .sc-val{color:#2563eb}
+.sc.balance.pos .sc-val{color:var(--g)}
+.sc.balance.neg .sc-val{color:var(--red)}
+.sc-sub{font-size:12px;color:var(--mu);margin-top:4px}
+/* GRID LAYOUT */
+.mainGrid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+/* CARDS */
+.card{background:#fff;border-radius:16px;box-shadow:0 4px 18px rgba(0,0,0,.07);padding:26px;margin-bottom:20px}
+.ctitle{font-family:'Baloo Da 2',cursive;font-size:18px;font-weight:700;color:var(--dk);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--gp);display:flex;align-items:center;justify-content:space-between}
+.ctitle .sub{font-size:13px;font-weight:500;color:var(--mu);font-family:'Hind Siliguri',sans-serif}
+/* INCOME TABLE */
+.itbl{width:100%;border-collapse:collapse;font-size:13px}
+.itbl th{background:var(--gp);color:var(--g);font-weight:700;font-size:12px;padding:10px 12px;text-align:left;white-space:nowrap}
+.itbl td{padding:10px 12px;border-bottom:1px solid #f3f4f6;color:var(--tx)}
+.itbl tr:last-child td{border-bottom:none}
+.itbl tr:hover td{background:#fafafa}
+.badge{display:inline-block;padding:3px 10px;border-radius:50px;font-size:11px;font-weight:700}
+.badge.g{background:var(--gp);color:var(--g)}
+.badge.b{background:#eff6ff;color:#2563eb}
+/* EXPENSE FORM */
+.ef{display:flex;flex-direction:column;gap:10px}
+.erow{display:grid;grid-template-columns:1fr auto auto auto;gap:8px;align-items:center;padding:10px 12px;background:#f9fafb;border-radius:10px;border:1px solid #e5e7eb}
+.erow input,.erow select{padding:8px 10px;border:1.5px solid #e5e7eb;border-radius:8px;font-family:'Hind Siliguri',sans-serif;font-size:13px;outline:none;background:#fff;transition:border .2s}
+.erow input:focus,.erow select:focus{border-color:var(--g)}
+.erow .amt{width:100px;text-align:right}
+.erow .rmv{background:none;border:none;cursor:pointer;color:var(--mu);font-size:18px;line-height:1;padding:4px;transition:color .2s}
+.erow .rmv:hover{color:var(--red)}
+.add-exp-btn{display:flex;align-items:center;gap:7px;background:none;border:2px dashed #b2dfcc;color:var(--g);border-radius:10px;padding:10px 16px;font-size:13px;font-weight:600;cursor:pointer;width:100%;justify-content:center;transition:all .2s;font-family:'Hind Siliguri',sans-serif;margin-top:6px}
+.add-exp-btn:hover{background:var(--gp)}
+/* BAR CHART */
+.bar-list{display:flex;flex-direction:column;gap:10px;margin-top:4px}
+.bitem{display:flex;align-items:center;gap:10px;font-size:13px}
+.bitem .blbl{min-width:120px;color:var(--tx);flex-shrink:0;font-size:12px}
+.bitem .btrack{flex:1;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden}
+.bitem .bfill{height:100%;border-radius:5px;transition:width .6s ease}
+.bitem .bval{min-width:70px;text-align:right;font-weight:600;font-size:12px}
+/* LEDGER */
+.ledger{width:100%;border-collapse:collapse;font-size:13px}
+.ledger th{background:var(--gp);color:var(--g);font-weight:700;font-size:12px;padding:10px 12px;text-align:left}
+.ledger td{padding:10px 12px;border-bottom:1px solid #f3f4f6;color:var(--tx)}
+.ledger tr:last-child td{border-bottom:none}
+.ledger .inc{color:var(--g);font-weight:600}
+.ledger .exp{color:var(--red);font-weight:600}
+/* SAVE BTN */
+.save-btn{background:var(--g);color:#fff;border:none;border-radius:10px;padding:11px 24px;font-family:'Baloo Da 2',cursive;font-size:15px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:7px;transition:all .2s}
+.save-btn:hover{background:var(--gl);transform:translateY(-1px)}
+/* NOTE */
+.note-box{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:14px 16px;font-size:13px;color:#92400e;line-height:1.7;margin-bottom:24px}
+@media(max-width:800px){.mainGrid{grid-template-columns:1fr}.nlinks{display:none}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nb" href="index.html">
+    <div class="nl">🏫</div>
+    <div class="nt">কুলানন্দপুর উচ্চ বিদ্যালয়<br><span style="font-size:10px;opacity:.8;font-weight:400">পুনর্মিলনী ২০২৭</span></div>
+  </a>
+  <ul class="nlinks">
+    <li><a href="index.html">হোম</a></li>
+    <li><a href="registrations.html">নিবন্ধন তালিকা</a></li>
+    <li><a href="finance.html" class="active">অর্থিক বিবরণ</a></li>
+    <li><a href="form.html" class="nbtn">নিবন্ধন করুন</a></li>
+  </ul>
+</nav>
+
+<div class="hero2">
+  <h1>📊 অর্থিক <span>বিবরণ</span></h1>
+  <p>আয়-ব্যয়ের সম্পূর্ণ হিসাব — শুধুমাত্র আয়োজকদের জন্য</p>
+</div>
+
+<div class="pw">
+  <div class="note-box">⚠️ এই পেজটি আয়োজক কমিটির জন্য। ব্যয়ের তথ্য এখানে আপডেট করুন। তথ্য Google Sheet থেকে আয় টানা হবে এবং ব্যয় এখানে ইনপুট করুন।</div>
+
+  <!-- SUMMARY CARDS -->
+  <div class="sumcards">
+    <div class="sc income"><div class="sc-label">মোট আয়</div><div class="sc-val" id="totalIncome">০ ৳</div><div class="sc-sub" id="totalReg">০ জন নিবন্ধিত</div></div>
+    <div class="sc donation"><div class="sc-label">মোট অনুদান</div><div class="sc-val" id="totalDonation">০ ৳</div><div class="sc-sub">নিবন্ধন ফীর বাইরে</div></div>
+    <div class="sc expense"><div class="sc-label">মোট ব্যয়</div><div class="sc-val" id="totalExpense">০ ৳</div><div class="sc-sub" id="expCount">০টি খাত</div></div>
+    <div class="sc balance pos" id="balCard"><div class="sc-label">বর্তমান ব্যালেন্স</div><div class="sc-val" id="balance">০ ৳</div><div class="sc-sub" id="balNote">আয় − ব্যয়</div></div>
+  </div>
+
+  <div class="mainGrid">
+    <!-- LEFT: INCOME + LEDGER -->
+    <div>
+      <!-- আয়ের বিবরণ -->
+      <div class="card">
+        <div class="ctitle">💰 আয়ের বিবরণ <span class="sub" id="incomeDate">শেষ আপডেট: —</span></div>
+        <table class="itbl">
+          <thead><tr><th>ক্যাটাগরি</th><th>জন</th><th>পরিমাণ</th></tr></thead>
+          <tbody id="incomeTbody">
+            <tr><td colspan="3" style="text-align:center;color:var(--mu);padding:20px">Google Sheet থেকে ডাটা লোড হচ্ছে…</td></tr>
+          </tbody>
+          <tfoot><tr style="background:var(--gp);font-weight:700"><td>মোট</td><td id="totalRegFt">—</td><td id="totalIncomeFt" style="color:var(--g)">— ৳</td></tr></tfoot>
+        </table>
+        <div style="margin-top:12px;font-size:12px;color:var(--mu)">📌 তথ্য Google Spreadsheet থেকে স্বয়ংক্রিয়ভাবে আসে। ম্যানুয়াল আয় নিচে যোগ করুন।</div>
+      </div>
+
+      <!-- অতিরিক্ত আয় -->
+      <div class="card">
+        <div class="ctitle">➕ অতিরিক্ত আয় (ম্যানুয়াল)</div>
+        <div class="ef" id="extraIncomeList"></div>
+        <button class="add-exp-btn" onclick="addExtraIncome()">+ অতিরিক্ত আয় যোগ করুন</button>
+      </div>
+
+      <!-- লেজার -->
+      <div class="card">
+        <div class="ctitle">📒 সম্পূর্ণ লেজার</div>
+        <table class="ledger">
+          <thead><tr><th>বিবরণ</th><th>ধরন</th><th>পরিমাণ</th></tr></thead>
+          <tbody id="ledgerTbody"><tr><td colspan="3" style="text-align:center;color:var(--mu);padding:16px">ব্যয়ের খাত যোগ করুন</td></tr></tbody>
+          <tfoot><tr style="background:#f9fafb;font-weight:700"><td colspan="2">ব্যালেন্স (আয় − ব্যয়)</td><td id="ledgerBal" style="color:var(--g)">০ ৳</td></tr></tfoot>
+        </table>
+      </div>
+    </div>
+
+    <!-- RIGHT: EXPENSE INPUT + CHART -->
+    <div>
+      <!-- ব্যয়ের খাত -->
+      <div class="card">
+        <div class="ctitle">📤 ব্যয়ের খাত <button class="save-btn" onclick="saveExpenses()" style="font-size:13px;padding:8px 16px">💾 সংরক্ষণ করুন</button></div>
+        <div class="ef" id="expenseList"></div>
+        <button class="add-exp-btn" onclick="addExpenseRow()">+ নতুন ব্যয়ের খাত যোগ করুন</button>
+      </div>
+
+      <!-- চার্ট -->
+      <div class="card">
+        <div class="ctitle">📊 ব্যয়ের বিশ্লেষণ</div>
+        <div class="bar-list" id="barChart"><div style="color:var(--mu);font-size:13px">ব্যয় যোগ করলে চার্ট দেখাবে</div></div>
+      </div>
+
+      <!-- ক্যাশ স্ট্যাটাস -->
+      <div class="card">
+        <div class="ctitle">💵 ক্যাশ স্ট্যাটাস</div>
+        <div id="cashStatus">
+          <div style="text-align:center;padding:20px">
+            <div style="font-family:'Baloo Da 2',cursive;font-size:48px;font-weight:800;color:var(--g)" id="bigBalance">০ ৳</div>
+            <div style="font-size:14px;color:var(--mu);margin-top:6px">হাতে আছে</div>
+            <div style="margin-top:16px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap" id="cashBreak"></div>
+          </div>
+          <div style="background:#f9fafb;border-radius:10px;padding:14px;margin-top:12px;font-size:13px">
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px"><span>মোট আয়</span><span style="color:var(--g);font-weight:700" id="cs-income">০ ৳</span></div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px"><span>মোট ব্যয়</span><span style="color:var(--red);font-weight:700" id="cs-expense">০ ৳</span></div>
+            <div style="display:flex;justify-content:space-between;border-top:1px solid #e5e7eb;padding-top:8px"><span style="font-weight:700">নিট ব্যালেন্স</span><span id="cs-bal" style="font-weight:800;font-size:16px">০ ৳</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============ CONFIG ============
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz4iy6VrNP8pjKmU-Syi63jVArZg_gCv8pz0bsqASPu07fhPF33BdiQi8ADmkp4Y6v8/exec';
+// ================================
+
+// ডেমো আয় ডাটা (Sheet থেকে আসার আগ পর্যন্ত)
+let incomeData = {
+  চাকরিজীবী: { count: 0, total: 0 },
+  শিক্ষার্থী: { count: 0, total: 0 },
+  বর্তমান: { count: 0, total: 0 },
+  গেস্ট: { count: 0, total: 0 },
+  অনুদান: { count: 0, total: 0 },
+};
+let expenses = [];
+let extraIncome = [];
+let expIdCnt = 0;
+let extraIdCnt = 0;
+
+// ডিফল্ট ব্যয়ের খাত
+const DEFAULT_EXPENSES = [
+  { name: 'খাবার / মধ্যাহ্নভোজ', amount: 0 },
+  { name: 'সাংস্কৃতিক অনুষ্ঠান', amount: 0 },
+  { name: 'স্মারক / গিফট', amount: 0 },
+  { name: 'ডেকোরেশন / সাজসজ্জা', amount: 0 },
+  { name: 'প্রিন্টিং / ব্যানার', amount: 0 },
+  { name: 'অন্যান্য', amount: 0 },
+];
+
+// COLORS for chart
+const COLORS = ['#1a6b3c','#2d9b5a','#c9962a','#2563eb','#7c3aed','#dc2626','#0891b2'];
+
+function addExpenseRow(name='', amount=0) {
+  expIdCnt++;
+  const id = 'exp_' + expIdCnt;
+  expenses.push({ id, name, amount });
+  const div = document.createElement('div');
+  div.className = 'erow'; div.id = id;
+  div.innerHTML = `
+    <input type="text" placeholder="ব্যয়ের খাত" value="${name}" onchange="updateExp('${id}','name',this.value)">
+    <input type="number" class="amt" placeholder="০" value="${amount||''}" min="0" onchange="updateExp('${id}','amount',this.value);recalc()">
+    <button class="rmv" onclick="removeExp('${id}')">✕</button>`;
+  document.getElementById('expenseList').appendChild(div);
+  recalc();
+}
+
+function addExtraIncome(name='', amount=0) {
+  extraIdCnt++;
+  const id = 'ei_' + extraIdCnt;
+  extraIncome.push({ id, name, amount });
+  const div = document.createElement('div');
+  div.className = 'erow'; div.id = id;
+  div.innerHTML = `
+    <input type="text" placeholder="আয়ের বিবরণ" value="${name}" onchange="updateEI('${id}','name',this.value)">
+    <input type="number" class="amt" placeholder="০" value="${amount||''}" min="0" onchange="updateEI('${id}','amount',this.value);recalc()">
+    <button class="rmv" onclick="removeEI('${id}')">✕</button>`;
+  document.getElementById('extraIncomeList').appendChild(div);
+  recalc();
+}
+
+function updateExp(id, key, val) {
+  const e = expenses.find(x => x.id === id);
+  if (e) { e[key] = key === 'amount' ? (parseFloat(val) || 0) : val; }
+}
+function removeExp(id) {
+  document.getElementById(id)?.remove();
+  expenses = expenses.filter(x => x.id !== id);
+  recalc();
+}
+function updateEI(id, key, val) {
+  const e = extraIncome.find(x => x.id === id);
+  if (e) { e[key] = key === 'amount' ? (parseFloat(val) || 0) : val; }
+}
+function removeEI(id) {
+  document.getElementById(id)?.remove();
+  extraIncome = extraIncome.filter(x => x.id !== id);
+  recalc();
+}
+
+function recalc() {
+  // Income
+  const regIncome = Object.values(incomeData).reduce((s, x) => s + x.total, 0);
+  const eiTotal = extraIncome.reduce((s, x) => s + x.amount, 0);
+  const donTotal = incomeData.অনুদান?.total || 0;
+  const totalInc = regIncome + eiTotal;
+  const totalReg = Object.entries(incomeData).filter(([k]) => k !== 'অনুদান').reduce((s, [, v]) => s + v.count, 0);
+
+  // Expense
+  const totalExp = expenses.reduce((s, x) => s + x.amount, 0);
+  const bal = totalInc - totalExp;
+
+  // Summary cards
+  document.getElementById('totalIncome').textContent = totalInc.toLocaleString('bn-BD') + ' ৳';
+  document.getElementById('totalReg').textContent = totalReg + ' জন নিবন্ধিত';
+  document.getElementById('totalDonation').textContent = donTotal.toLocaleString('bn-BD') + ' ৳';
+  document.getElementById('totalExpense').textContent = totalExp.toLocaleString('bn-BD') + ' ৳';
+  document.getElementById('expCount').textContent = expenses.filter(x => x.amount > 0).length + 'টি খাত';
+
+  // Balance
+  const balEl = document.getElementById('balance');
+  const balCard = document.getElementById('balCard');
+  balEl.textContent = bal.toLocaleString('bn-BD') + ' ৳';
+  balCard.className = 'sc balance ' + (bal >= 0 ? 'pos' : 'neg');
+  document.getElementById('balNote').textContent = bal >= 0 ? '✅ উদ্বৃত্ত' : '⚠️ ঘাটতি';
+
+  // Big balance
+  const bb = document.getElementById('bigBalance');
+  bb.textContent = Math.abs(bal).toLocaleString('bn-BD') + ' ৳';
+  bb.style.color = bal >= 0 ? 'var(--g)' : 'var(--red)';
+
+  // Cash status
+  document.getElementById('cs-income').textContent = totalInc.toLocaleString('bn-BD') + ' ৳';
+  document.getElementById('cs-expense').textContent = totalExp.toLocaleString('bn-BD') + ' ৳';
+  const csb = document.getElementById('cs-bal');
+  csb.textContent = bal.toLocaleString('bn-BD') + ' ৳';
+  csb.style.color = bal >= 0 ? 'var(--g)' : 'var(--red)';
+
+  // Ledger
+  const rows = [];
+  Object.entries(incomeData).forEach(([k, v]) => {
+    if (v.total > 0) rows.push({ desc: k + ' (' + v.count + ' জন)', type: 'আয়', amt: v.total, cls: 'inc' });
+  });
+  extraIncome.forEach(x => { if (x.amount > 0) rows.push({ desc: x.name, type: 'আয়', amt: x.amount, cls: 'inc' }); });
+  expenses.forEach(x => { if (x.amount > 0) rows.push({ desc: x.name, type: 'ব্যয়', amt: x.amount, cls: 'exp' }); });
+  const lb = document.getElementById('ledgerTbody');
+  lb.innerHTML = rows.length === 0
+    ? '<tr><td colspan="3" style="text-align:center;color:var(--mu);padding:16px">কোনো তথ্য নেই</td></tr>'
+    : rows.map(r => `<tr><td>${r.desc}</td><td><span class="badge ${r.cls==='inc'?'g':'b'}">${r.type}</span></td><td class="${r.cls}">${r.cls==='inc'?'+':'-'}${r.amt.toLocaleString('bn-BD')} ৳</td></tr>`).join('');
+  document.getElementById('ledgerBal').textContent = bal.toLocaleString('bn-BD') + ' ৳';
+  document.getElementById('ledgerBal').style.color = bal >= 0 ? 'var(--g)' : 'var(--red)';
+
+  // Bar chart
+  const bc = document.getElementById('barChart');
+  const exps = expenses.filter(x => x.amount > 0 && x.name);
+  if (exps.length === 0) { bc.innerHTML = '<div style="color:var(--mu);font-size:13px">ব্যয় যোগ করলে চার্ট দেখাবে</div>'; return; }
+  const maxAmt = Math.max(...exps.map(x => x.amount));
+  bc.innerHTML = exps.map((x, i) =>
+    `<div class="bitem">
+      <span class="blbl">${x.name}</span>
+      <div class="btrack"><div class="bfill" style="width:${Math.round(x.amount/maxAmt*100)}%;background:${COLORS[i%COLORS.length]}"></div></div>
+      <span class="bval" style="color:${COLORS[i%COLORS.length]}">${x.amount.toLocaleString('bn-BD')} ৳</span>
+    </div>`
+  ).join('');
+}
+
+// Income table render
+function renderIncomeTable() {
+  const rows = [
+    { l: 'চাকরিজীবী প্রাক্তন', d: incomeData.চাকরিজীবী },
+    { l: 'শিক্ষার্থী প্রাক্তন', d: incomeData.শিক্ষার্থী },
+    { l: 'বর্তমান শিক্ষার্থী', d: incomeData.বর্তমান },
+    { l: 'গেস্ট', d: incomeData.গেস্ট },
+    { l: 'অনুদান', d: incomeData.অনুদান },
+  ];
+  document.getElementById('incomeTbody').innerHTML = rows.map(r =>
+    `<tr><td>${r.l}</td><td>${r.d.count}</td><td style="font-weight:600;color:var(--g)">${r.d.total.toLocaleString('bn-BD')} ৳</td></tr>`
+  ).join('');
+  const totReg = rows.slice(0,4).reduce((s,r)=>s+r.d.count,0);
+  const totInc = rows.reduce((s,r)=>s+r.d.total,0);
+  document.getElementById('totalRegFt').textContent = totReg + ' জন';
+  document.getElementById('totalIncomeFt').textContent = totInc.toLocaleString('bn-BD') + ' ৳';
+  document.getElementById('incomeDate').textContent = 'শেষ আপডেট: ' + new Date().toLocaleDateString('bn-BD');
+}
+
+// Load from Google Apps Script
+async function loadFromSheet() {
+  if (SCRIPT_URL === 'YOUR_APPS_SCRIPT_WEB_APP_URL_HERE') {
+    // Demo data
+    incomeData = {
+      চাকরিজীবী: { count: 12, total: 12000 },
+      শিক্ষার্থী: { count: 28, total: 14000 },
+      বর্তমান: { count: 15, total: 7500 },
+      গেস্ট: { count: 8, total: 6000 },
+      অনুদান: { count: 5, total: 8500 },
+    };
+    renderIncomeTable(); recalc();
+    return;
+  }
+  try {
+    const res = await fetch(SCRIPT_URL + '?action=getSummary');
+    const data = await res.json();
+    if (data.incomeData) { incomeData = data.incomeData; renderIncomeTable(); recalc(); }
+  } catch (e) { console.log('Sheet load failed:', e); renderIncomeTable(); recalc(); }
+}
+
+function saveExpenses() {
+  // Local save as JSON (can extend to save to Sheet via Apps Script)
+  const payload = { expenses, extraIncome, savedAt: new Date().toISOString() };
+  localStorage.setItem('khs_expenses', JSON.stringify(payload));
+  alert('✅ ব্যয়ের তথ্য সংরক্ষিত হয়েছে।');
+}
+
+function loadSavedExpenses() {
+  const saved = localStorage.getItem('khs_expenses');
+  if (!saved) return;
+  try {
+    const d = JSON.parse(saved);
+    (d.expenses || []).forEach(x => addExpenseRow(x.name, x.amount));
+    (d.extraIncome || []).forEach(x => addExtraIncome(x.name, x.amount));
+  } catch(e) {}
+}
+
+// Init
+DEFAULT_EXPENSES.forEach(x => addExpenseRow(x.name, x.amount));
+loadSavedExpenses();
+loadFromSheet();
+</script>
+</body>
+</html>

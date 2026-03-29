@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>নিবন্ধন তালিকা - কুলানন্দপুর উচ্চ বিদ্যালয় পুনর্মিলনী ২০২৭</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Baloo+Da+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--g:#1a6b3c;--gl:#2d9b5a;--gp:#e8f5ee;--gold:#c9962a;--gdl:#f0c060;--cream:#fdf8ef;--dk:#1a1a1a;--tx:#2c2c2c;--mu:#6b7280;--err:#dc2626}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Hind Siliguri',sans-serif;background:var(--cream);min-height:100vh}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,107,60,.97);backdrop-filter:blur(12px);height:64px;padding:0 4%;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 20px rgba(0,0,0,.2)}
+.nb{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nl{width:36px;height:36px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px}
+.nt{color:#fff;font-family:'Baloo Da 2',cursive;font-size:13px;font-weight:700;line-height:1.2}
+.nlinks{display:flex;gap:6px;align-items:center;list-style:none}
+.nlinks a{color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;padding:6px 10px;border-radius:8px;transition:all .2s}
+.nlinks a:hover,.nlinks a.active{background:rgba(255,255,255,.12);color:#fff}
+.nlinks .nbtn{background:var(--gold);color:var(--dk)!important;padding:7px 14px!important;border-radius:50px;font-weight:700!important}
+.hero2{background:linear-gradient(135deg,#0a3d1f,#1a6b3c);padding:90px 4% 44px;color:#fff}
+.hero2 h1{font-family:'Baloo Da 2',cursive;font-size:clamp(22px,4vw,40px);font-weight:800;margin-bottom:6px}
+.hero2 h1 span{color:var(--gdl)}
+.hero2 p{font-size:14px;opacity:.75}
+.pw{max-width:1200px;margin:0 auto;padding:32px 4% 80px}
+/* STAT CARDS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:28px}
+.sc{background:#fff;border-radius:12px;padding:18px;box-shadow:0 3px 14px rgba(0,0,0,.07);text-align:center}
+.sc .n{font-family:'Baloo Da 2',cursive;font-size:30px;font-weight:800;color:var(--g)}
+.sc .l{font-size:12px;color:var(--mu);margin-top:3px}
+/* TABS */
+.tabs{display:flex;gap:8px;margin-bottom:24px;border-bottom:2px solid #e5e7eb;padding-bottom:0;flex-wrap:wrap}
+.tab{padding:10px 18px;font-size:14px;font-weight:600;color:var(--mu);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s;user-select:none}
+.tab:hover{color:var(--g)}
+.tab.active{color:var(--g);border-color:var(--g)}
+.tabpanel{display:none}
+.tabpanel.active{display:block}
+/* FILTER BAR */
+.filterbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px;align-items:center}
+.filterbar input,.filterbar select{padding:8px 12px;border:1.5px solid #e5e7eb;border-radius:8px;font-family:'Hind Siliguri',sans-serif;font-size:13px;outline:none;transition:border .2s}
+.filterbar input:focus,.filterbar select:focus{border-color:var(--g)}
+.filterbar input{min-width:200px;flex:1}
+/* TABLE */
+.tbl-wrap{overflow-x:auto;border-radius:12px;box-shadow:0 3px 14px rgba(0,0,0,.07)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13px}
+th{background:var(--gp);color:var(--g);font-weight:700;font-size:12px;padding:12px 14px;text-align:left;white-space:nowrap;position:sticky;top:0}
+td{padding:11px 14px;border-bottom:1px solid #f3f4f6;color:var(--tx);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#fafffe}
+.badge{display:inline-block;padding:3px 10px;border-radius:50px;font-size:11px;font-weight:700}
+.b-g{background:var(--gp);color:var(--g)}
+.b-b{background:#eff6ff;color:#2563eb}
+.b-o{background:#fff7ed;color:#c2410c}
+.b-p{background:#faf5ff;color:#7c3aed}
+.b-r{background:#fef2f2;color:var(--err)}
+/* SUMMARY TABLE */
+.stbl{width:100%;border-collapse:collapse;background:#fff;font-size:13px;border-radius:12px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,.07)}
+.stbl th{background:linear-gradient(135deg,var(--g),#1d5c34);color:#fff;font-size:12px;font-weight:700;padding:12px 14px;text-align:left}
+.stbl td{padding:11px 14px;border-bottom:1px solid #f3f4f6;color:var(--tx)}
+.stbl tr:last-child td{border-bottom:none;font-weight:700;background:var(--gp);color:var(--g)}
+.stbl tr:hover td{background:#fafffe}
+/* TSHIRT GRID */
+.tsGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:14px;margin-bottom:24px}
+.tsBox{background:#fff;border-radius:12px;padding:18px;text-align:center;box-shadow:0 3px 14px rgba(0,0,0,.07);border-top:4px solid var(--g)}
+.tsBox .sz{font-family:'Baloo Da 2',cursive;font-size:26px;font-weight:800;color:var(--g)}
+.tsBox .cnt{font-size:22px;font-weight:700;color:var(--dk);margin:4px 0}
+.tsBox .lbl{font-size:11px;color:var(--mu)}
+/* EMPTY */
+.empty{text-align:center;padding:40px;color:var(--mu);font-size:14px}
+/* PAGINATION */
+.pag{display:flex;gap:6px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+.pag button{padding:7px 14px;border:1.5px solid #e5e7eb;border-radius:8px;background:#fff;font-size:13px;cursor:pointer;transition:all .2s;font-family:'Hind Siliguri',sans-serif}
+.pag button:hover,.pag button.active{background:var(--g);color:#fff;border-color:var(--g)}
+@media(max-width:800px){.nlinks{display:none}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nb" href="index.html">
+    <div class="nl">🏫</div>
+    <div class="nt">কুলানন্দপুর উচ্চ বিদ্যালয়<br><span style="font-size:10px;opacity:.8;font-weight:400">পুনর্মিলনী ২০২৭</span></div>
+  </a>
+  <ul class="nlinks">
+    <li><a href="index.html">হোম</a></li>
+    <li><a href="registrations.html" class="active">নিবন্ধন তালিকা</a></li>
+    <li><a href="finance.html">অর্থিক বিবরণ</a></li>
+    <li><a href="form.html" class="nbtn">নিবন্ধন করুন</a></li>
+  </ul>
+</nav>
+
+<div class="hero2">
+  <h1>📋 নিবন্ধন <span>তালিকা</span></h1>
+  <p>সম্মিলিত পুনর্মিলনী ২০২৭ — সকল নিবন্ধিত অংশগ্রহণকারী</p>
+</div>
+
+<div class="pw">
+  <!-- STAT CARDS -->
+  <div class="stats">
+    <div class="sc"><div class="n" id="totalCount">0</div><div class="l">মোট নিবন্ধিত</div></div>
+    <div class="sc"><div class="n" id="chCount">0</div><div class="l">চাকরিজীবী</div></div>
+    <div class="sc"><div class="n" id="stCount">0</div><div class="l">শিক্ষার্থী</div></div>
+    <div class="sc"><div class="n" id="guCount">0</div><div class="l">গেস্ট</div></div>
+    <div class="sc"><div class="n" id="stageCount">0</div><div class="l">স্টেজ পারফর্মার</div></div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('list')">📋 নিবন্ধন তালিকা</div>
+    <div class="tab" onclick="showTab('batch')">📊 ব্যাচ সারসংক্ষেপ</div>
+    <div class="tab" onclick="showTab('tshirt')">👕 টি-শার্ট সাইজ</div>
+    <div class="tab" onclick="showTab('stage')">🎭 স্টেজ পারফর্মার</div>
+  </div>
+
+  <!-- TAB: LIST -->
+  <div class="tabpanel active" id="tab-list">
+    <div class="filterbar">
+      <input type="text" id="searchQ" placeholder="🔍 নাম বা ফোন দিয়ে খুঁজুন…" oninput="filterList()">
+      <select id="filterType" onchange="filterList()">
+        <option value="">সব ধরন</option>
+        <option>চাকরিজীবী প্রাক্তন</option>
+        <option>শিক্ষার্থী প্রাক্তন</option>
+        <option>বর্তমান শিক্ষার্থী</option>
+      </select>
+      <select id="filterPay" onchange="filterList()">
+        <option value="">সব স্ট্যাটাস</option>
+        <option value="নতুন">নতুন</option>
+        <option value="নিশ্চিত">নিশ্চিত</option>
+      </select>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr>
+          <th>#</th><th>নাম</th><th>মোবাইল</th><th>ধরন</th><th>ব্যাচ</th>
+          <th>সদস্য</th><th>টি-শার্ট</th><th>মোট ফী</th><th>অনুদান</th><th>পেমেন্ট</th><th>স্ট্যাটাস</th>
+        </tr></thead>
+        <tbody id="listTbody"></tbody>
+      </table>
+    </div>
+    <div class="pag" id="pagination"></div>
+  </div>
+
+  <!-- TAB: BATCH SUMMARY -->
+  <div class="tabpanel" id="tab-batch">
+    <table class="stbl" id="batchTbl">
+      <thead><tr><th>ব্যাচ / পাসের সাল</th><th>ধরন</th><th>নিবন্ধিত</th><th>মোট ফী</th><th>মোট অনুদান</th><th>মোট আয়</th></tr></thead>
+      <tbody id="batchTbody"></tbody>
+    </table>
+  </div>
+
+  <!-- TAB: TSHIRT -->
+  <div class="tabpanel" id="tab-tshirt">
+    <div class="tsGrid" id="tsGrid"></div>
+    <table class="stbl">
+      <thead><tr><th>সাইজ</th><th>সংখ্যা</th><th>শতাংশ</th></tr></thead>
+      <tbody id="tshirtTbody"></tbody>
+    </table>
+  </div>
+
+  <!-- TAB: STAGE -->
+  <div class="tabpanel" id="tab-stage">
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>#</th><th>নাম</th><th>মোবাইল</th><th>পারফরম্যান্সের ধরন</th><th>বিস্তারিত</th></tr></thead>
+        <tbody id="stageTbody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz4iy6VrNP8pjKmU-Syi63jVArZg_gCv8pz0bsqASPu07fhPF33BdiQi8ADmkp4Y6v8/exec';
+const PAGE_SIZE = 20;
+let allData = [];
+let filtered = [];
+let currentPage = 1;
+
+// Demo data
+const DEMO = [
+  {regId:'KHS-20270101-A1',name:'মোঃ রহিম উদ্দিন',phone:'01711000001',regType:'চাকরিজীবী প্রাক্তন',batchBatch:'২০০৫',memberCount:2,memberDetails:'স্ত্রী,গেস্ট',tshirtSize:'L',stagePerformance:'গান',stageDetail:'আমার সোনার বাংলা',regFee:'1000',donationAmount:500,totalFee:'২৫০০ টাকা',payMethod:'বিকাশ',txnId:'TXN001',status:'নিশ্চিত'},
+  {regId:'KHS-20270101-A2',name:'নাসরিন বেগম',phone:'01722000002',regType:'শিক্ষার্থী প্রাক্তন',batchBatch:'২০১০',memberCount:0,memberDetails:'',tshirtSize:'S',stagePerformance:'না, শুধু উপস্থিত থাকব',stageDetail:'',regFee:'500',donationAmount:0,totalFee:'৫০০ টাকা',payMethod:'নগদ',txnId:'TXN002',status:'নতুন'},
+  {regId:'KHS-20270101-A3',name:'করিম হোসেন',phone:'01733000003',regType:'চাকরিজীবী প্রাক্তন',batchBatch:'২০০২',memberCount:1,memberDetails:'স্ত্রী',tshirtSize:'XL',stagePerformance:'আবৃত্তি',stageDetail:'রবীন্দ্রনাথের কবিতা',regFee:'1000',donationAmount:2000,totalFee:'৪০০০ টাকা',payMethod:'বিকাশ',txnId:'TXN003',status:'নিশ্চিত'},
+  {regId:'KHS-20270101-A4',name:'সাবিনা আক্তার',phone:'01744000004',regType:'বর্তমান শিক্ষার্থী',batchBatch:'১০ম শ্রেণী',memberCount:0,memberDetails:'',tshirtSize:'M',stagePerformance:'না, শুধু উপস্থিত থাকব',stageDetail:'',regFee:'500',donationAmount:0,totalFee:'৫০০ টাকা',payMethod:'ক্যাশ',txnId:'CASH',status:'নতুন'},
+  {regId:'KHS-20270101-A5',name:'আবুল হাসান',phone:'01755000005',regType:'চাকরিজীবী প্রাক্তন',batchBatch:'১৯৯৮',memberCount:3,memberDetails:'স্ত্রী,ছেলে,মেয়ে',tshirtSize:'XXL',stagePerformance:'না, শুধু উপস্থিত থাকব',stageDetail:'',regFee:'1000',donationAmount:5000,totalFee:'৮৫০০ টাকা',payMethod:'বিকাশ',txnId:'TXN005',status:'নিশ্চিত'},
+  {regId:'KHS-20270101-A6',name:'মরিয়ম বেগম',phone:'01766000006',regType:'শিক্ষার্থী প্রাক্তন',batchBatch:'২০১৫',memberCount:0,memberDetails:'',tshirtSize:'XS',stagePerformance:'নৃত্য',stageDetail:'লোকগীতি নৃত্য',regFee:'500',donationAmount:0,totalFee:'৫০০ টাকা',payMethod:'রকেট',txnId:'TXN006',status:'নতুন'},
+];
+
+function typeBadge(t) {
+  if(t.includes('চাকরিজীবী')) return '<span class="badge b-g">চাকরিজীবী</span>';
+  if(t.includes('শিক্ষার্থী প্রাক্তন')) return '<span class="badge b-b">শিক্ষার্থী প্রাক্তন</span>';
+  if(t.includes('বর্তমান')) return '<span class="badge b-o">বর্তমান</span>';
+  return '<span class="badge b-p">অন্যান্য</span>';
+}
+function statusBadge(s) {
+  return s==='নিশ্চিত'?'<span class="badge b-g">✓ নিশ্চিত</span>':'<span class="badge b-r">নতুন</span>';
+}
+
+function filterList() {
+  const q = document.getElementById('searchQ').value.toLowerCase();
+  const type = document.getElementById('filterType').value;
+  const pay = document.getElementById('filterPay').value;
+  filtered = allData.filter(d =>
+    (!q || d.name.toLowerCase().includes(q) || d.phone.includes(q)) &&
+    (!type || d.regType === type) &&
+    (!pay || (d.status||'নতুন') === pay)
+  );
+  currentPage = 1;
+  renderList();
+}
+
+function renderList() {
+  const start = (currentPage-1)*PAGE_SIZE;
+  const page = filtered.slice(start, start+PAGE_SIZE);
+  const tbody = document.getElementById('listTbody');
+  if (!page.length) { tbody.innerHTML = '<tr><td colspan="11" class="empty">কোনো ডাটা পাওয়া যায়নি</td></tr>'; renderPag(); return; }
+  tbody.innerHTML = page.map((d, i) => `<tr>
+    <td style="color:var(--mu)">${start+i+1}</td>
+    <td><div style="font-weight:600">${d.name}</div><div style="font-size:11px;color:var(--mu)">${d.regId}</div></td>
+    <td>${d.phone}</td>
+    <td>${typeBadge(d.regType)}</td>
+    <td>${d.batchBatch||'—'}</td>
+    <td style="text-align:center">${d.memberCount||0}</td>
+    <td><span style="font-weight:700;color:var(--g)">${d.tshirtSize||'—'}</span></td>
+    <td style="font-weight:600;color:var(--g)">${d.totalFee||'—'}</td>
+    <td>${d.donationAmount>0?'<span style="color:#2563eb;font-weight:600">'+d.donationAmount+' ৳</span>':'—'}</td>
+    <td>${d.payMethod||'—'}</td>
+    <td>${statusBadge(d.status||'নতুন')}</td>
+  </tr>`).join('');
+  renderPag();
+}
+
+function renderPag() {
+  const total = Math.ceil(filtered.length / PAGE_SIZE);
+  const pag = document.getElementById('pagination');
+  if (total <= 1) { pag.innerHTML = ''; return; }
+  let html = '';
+  for (let i = 1; i <= total; i++) {
+    html += `<button class="${i===currentPage?'active':''}" onclick="goPage(${i})">${i}</button>`;
+  }
+  pag.innerHTML = html;
+}
+function goPage(n) { currentPage = n; renderList(); }
+
+function renderBatchSummary() {
+  const batchMap = {};
+  allData.forEach(d => {
+    const key = d.batchBatch || 'অজানা';
+    if (!batchMap[key]) batchMap[key] = { type: d.regType, count: 0, fee: 0, don: 0 };
+    batchMap[key].count++;
+    batchMap[key].fee += parseFloat(d.regFee) || 0;
+    batchMap[key].don += parseFloat(d.donationAmount) || 0;
+  });
+  const rows = Object.entries(batchMap).sort((a,b) => b[1].count - a[1].count);
+  const tbody = document.getElementById('batchTbody');
+  if (!rows.length) { tbody.innerHTML = '<tr><td colspan="6" class="empty">ডাটা নেই</td></tr>'; return; }
+  let totC=0,totF=0,totD=0;
+  tbody.innerHTML = rows.map(([k,v]) => {
+    totC+=v.count; totF+=v.fee; totD+=v.don;
+    return `<tr><td>${k}</td><td>${typeBadge(v.type)}</td><td style="font-weight:700">${v.count} জন</td><td>${v.fee.toLocaleString('bn-BD')} ৳</td><td>${v.don.toLocaleString('bn-BD')} ৳</td><td style="color:var(--g);font-weight:700">${(v.fee+v.don).toLocaleString('bn-BD')} ৳</td></tr>`;
+  }).join('');
+  tbody.innerHTML += `<tr><td>মোট</td><td>—</td><td>${totC} জন</td><td>${totF.toLocaleString('bn-BD')} ৳</td><td>${totD.toLocaleString('bn-BD')} ৳</td><td>${(totF+totD).toLocaleString('bn-BD')} ৳</td></tr>`;
+}
+
+function renderTshirt() {
+  const SIZES = ['XS','S','M','L','XL','XXL'];
+  const counts = {};
+  SIZES.forEach(s => counts[s] = 0);
+  allData.forEach(d => { const s = d.tshirtSize; if(counts[s]!==undefined) counts[s]++; });
+  const total = Object.values(counts).reduce((a,b)=>a+b,0);
+  const COLORS = ['#7c3aed','#2563eb','#1a6b3c','#c9962a','#dc2626','#0891b2'];
+  document.getElementById('tsGrid').innerHTML = SIZES.map((s,i) =>
+    `<div class="tsBox" style="border-color:${COLORS[i]}">
+      <div class="sz" style="color:${COLORS[i]}">${s}</div>
+      <div class="cnt">${counts[s]}</div>
+      <div class="lbl">জন</div>
+    </div>`
+  ).join('');
+  document.getElementById('tshirtTbody').innerHTML = SIZES.map((s,i) =>
+    `<tr><td><span style="font-weight:700;color:${COLORS[i]}">${s}</span></td><td>${counts[s]} জন</td><td>${total?Math.round(counts[s]/total*100):0}%</td></tr>`
+  ).join('') + `<tr><td style="font-weight:700">মোট</td><td style="font-weight:700">${total} জন</td><td>১০০%</td></tr>`;
+}
+
+function renderStage() {
+  const performers = allData.filter(d => d.stagePerformance && d.stagePerformance !== 'না, শুধু উপস্থিত থাকব');
+  const tbody = document.getElementById('stageTbody');
+  if (!performers.length) { tbody.innerHTML = '<tr><td colspan="5" class="empty">কোনো স্টেজ পারফর্মার নেই</td></tr>'; return; }
+  tbody.innerHTML = performers.map((d,i) => `<tr>
+    <td>${i+1}</td>
+    <td style="font-weight:600">${d.name}</td>
+    <td>${d.phone}</td>
+    <td><span class="badge b-p">${d.stagePerformance}</span></td>
+    <td style="font-size:12px;color:var(--mu)">${d.stageDetail||'—'}</td>
+  </tr>`).join('');
+}
+
+function updateStats() {
+  document.getElementById('totalCount').textContent = allData.length;
+  document.getElementById('chCount').textContent = allData.filter(d=>d.regType==='চাকরিজীবী প্রাক্তন').length;
+  document.getElementById('stCount').textContent = allData.filter(d=>d.regType.includes('শিক্ষার্থী')).length;
+  document.getElementById('guCount').textContent = allData.reduce((s,d)=>s+(parseInt(d.memberCount)||0),0);
+  document.getElementById('stageCount').textContent = allData.filter(d=>d.stagePerformance&&d.stagePerformance!=='না, শুধু উপস্থিত থাকব').length;
+}
+
+function showTab(name) {
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tabpanel').forEach(p=>p.classList.remove('active'));
+  document.querySelector(`[onclick="showTab('${name}')"]`).classList.add('active');
+  document.getElementById('tab-'+name).classList.add('active');
+}
+
+async function loadData() {
+  if (SCRIPT_URL === 'YOUR_APPS_SCRIPT_WEB_APP_URL_HERE') {
+    allData = DEMO;
+  } else {
+    try {
+      const res = await fetch(SCRIPT_URL + '?action=getAll');
+      const d = await res.json();
+      allData = d.data || DEMO;
+    } catch(e) { allData = DEMO; }
+  }
+  filtered = [...allData];
+  updateStats();
+  renderList();
+  renderBatchSummary();
+  renderTshirt();
+  renderStage();
+}
+
+loadData();
+</script>
+</body>
+</html>
