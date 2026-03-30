@@ -6,14 +6,14 @@
 <title>নিবন্ধন তালিকা - কুলানন্দপুর উচ্চ বিদ্যালয় পুনর্মিলনী ২০২৭</title>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Baloo+Da+2:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--g:#1a6b3c;--gl:#2d9b5a;--gp:#e8f5ee;--gold:#c9962a;--gdl:#f0c060;--cream:#fdf8ef;--dk:#1a1a1a;--tx:#2c2c2c;--mu:#6b7280;--err:#dc2626;--blue:#2563eb}
+:root{--g:#1a6b3c;--gl:#2d9b5a;--gp:#e8f5ee;--gold:#c9962a;--gdl:#f0c060;--cream:#fdf8ef;--dk:#1a1a1a;--tx:#2c2c2c;--mu:#6b7280;--err:#dc2626;--blue:#2563eb;--bp:#eff6ff}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{font-family:'Hind Siliguri',sans-serif;background:var(--cream);min-height:100vh}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,107,60,.97);backdrop-filter:blur(12px);height:64px;padding:0 4%;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 20px rgba(0,0,0,.2)}
 .nb{display:flex;align-items:center;gap:10px;text-decoration:none}
 .nl{width:36px;height:36px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px}
 .nt{color:#fff;font-family:'Baloo Da 2',cursive;font-size:13px;font-weight:700;line-height:1.2}
-.nlinks{display:flex;gap:6px;align-items:center;list-style:none}
+.nlinks{display:flex;gap:4px;align-items:center;list-style:none}
 .nlinks a{color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;padding:6px 10px;border-radius:8px;transition:all .2s}
 .nlinks a:hover,.nlinks a.active{background:rgba(255,255,255,.12);color:#fff}
 .nlinks .nbtn{background:var(--gold);color:var(--dk)!important;padding:7px 14px!important;border-radius:50px;font-weight:700!important}
@@ -21,85 +21,73 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,107,60,.9
 .hero2 h1{font-family:'Baloo Da 2',cursive;font-size:clamp(22px,4vw,40px);font-weight:800;margin-bottom:6px}
 .hero2 h1 span{color:var(--gdl)}
 .hero2 p{font-size:14px;opacity:.75}
-.pw{max-width:1200px;margin:0 auto;padding:32px 4% 80px}
-/* STAT */
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-bottom:28px}
-.sc{background:#fff;border-radius:12px;padding:16px;box-shadow:0 3px 14px rgba(0,0,0,.07);text-align:center}
-.sc .n{font-family:'Baloo Da 2',cursive;font-size:28px;font-weight:800;color:var(--g)}
-.sc .n.blue{color:var(--blue)}
-.sc .n.gold{color:var(--gold)}
-.sc .l{font-size:11px;color:var(--mu);margin-top:3px}
-/* TABS */
-.tabs{display:flex;gap:0;margin-bottom:24px;border-bottom:2px solid #e5e7eb;flex-wrap:wrap}
-.tab{padding:10px 18px;font-size:14px;font-weight:600;color:var(--mu);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;user-select:none}
+.pw{max-width:1200px;margin:0 auto;padding:28px 4% 80px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-bottom:24px}
+.sc{background:#fff;border-radius:12px;padding:14px 10px;box-shadow:0 3px 14px rgba(0,0,0,.07);text-align:center;border-top:3px solid var(--g)}
+.sc.blue{border-color:var(--blue)}.sc.gold{border-color:var(--gold)}.sc.purple{border-color:#7c3aed}
+.sc .n{font-family:'Baloo Da 2',cursive;font-size:24px;font-weight:800;color:var(--g)}
+.sc.blue .n{color:var(--blue)}.sc.gold .n{color:var(--gold)}.sc.purple .n{color:#7c3aed}
+.sc .l{font-size:10px;color:var(--mu);margin-top:2px}
+.tabs{display:flex;gap:0;margin-bottom:18px;border-bottom:2px solid #e5e7eb;flex-wrap:wrap}
+.tab{padding:9px 14px;font-size:13px;font-weight:600;color:var(--mu);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;user-select:none;white-space:nowrap}
 .tab:hover{color:var(--g)}
-.tab.active{color:var(--g);border-color:var(--g)}
-.tabpanel{display:none}
-.tabpanel.active{display:block}
-/* FILTER BAR */
-.filterbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px;align-items:center}
-.fb-group{display:flex;flex-direction:column;gap:4px;flex:1;min-width:160px}
-.fb-group label{font-size:11px;font-weight:600;color:var(--mu);text-transform:uppercase;letter-spacing:1px}
-.filterbar input,.filterbar select{padding:9px 13px;border:2px solid #e5e7eb;border-radius:9px;font-family:'Hind Siliguri',sans-serif;font-size:13px;outline:none;transition:border .2s;width:100%}
-.filterbar input:focus,.filterbar select:focus{border-color:var(--g)}
-.clear-btn{padding:9px 16px;background:var(--gp);color:var(--g);border:2px solid #b2dfcc;border-radius:9px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Hind Siliguri',sans-serif;white-space:nowrap;transition:all .2s}
-.clear-btn:hover{background:#d4ede0}
-.search-tag{display:inline-flex;align-items:center;gap:6px;background:var(--gp);border:1px solid #b2dfcc;color:var(--g);padding:4px 12px;border-radius:50px;font-size:12px;font-weight:600}
-.result-count{font-size:13px;color:var(--mu);margin-bottom:12px}
-.result-count span{color:var(--g);font-weight:700}
-/* TABLE */
+.tab.active{color:var(--g);border-color:var(--g);background:rgba(26,107,60,.04)}
+.tabpanel{display:none}.tabpanel.active{display:block}
+.sbar{background:#fff;border-radius:14px;padding:16px;box-shadow:0 3px 14px rgba(0,0,0,.07);margin-bottom:14px}
+.srow{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end}
+.sf{display:flex;flex-direction:column;gap:4px;flex:2;min-width:160px}
+.sf label{font-size:11px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:1px}
+.sf input,.sf select{padding:9px 13px;border:2px solid #e5e7eb;border-radius:9px;font-family:'Hind Siliguri',sans-serif;font-size:14px;outline:none;transition:border .2s;width:100%}
+.sf input:focus,.sf select:focus{border-color:var(--g);box-shadow:0 0 0 3px rgba(26,107,60,.08)}
+.clr{padding:9px 16px;background:var(--gp);color:var(--g);border:2px solid #b2dfcc;border-radius:9px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Hind Siliguri',sans-serif;white-space:nowrap;transition:all .2s;align-self:flex-end}
+.clr:hover{background:#d4ede0}
+.rinfo{font-size:13px;color:var(--mu);margin-top:8px}
+.rinfo strong{color:var(--g)}
 .tbl-wrap{overflow-x:auto;border-radius:12px;box-shadow:0 3px 14px rgba(0,0,0,.07)}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:13px}
-th{background:var(--gp);color:var(--g);font-weight:700;font-size:11px;padding:11px 13px;text-align:left;white-space:nowrap;position:sticky;top:0;z-index:1;text-transform:uppercase;letter-spacing:.5px}
-td{padding:10px 13px;border-bottom:1px solid #f3f4f6;color:var(--tx);vertical-align:middle}
+th{background:var(--gp);color:var(--g);font-weight:700;font-size:11px;padding:10px 11px;text-align:left;white-space:nowrap;position:sticky;top:0;z-index:1;text-transform:uppercase;letter-spacing:.4px}
+td{padding:9px 11px;border-bottom:1px solid #f3f4f6;color:var(--tx);vertical-align:middle}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:#f8fffe}
-.badge{display:inline-block;padding:3px 9px;border-radius:50px;font-size:11px;font-weight:700}
-.b-g{background:var(--gp);color:var(--g)}
-.b-b{background:#eff6ff;color:var(--blue)}
-.b-o{background:#fff7ed;color:#c2410c}
-.b-r{background:#fef2f2;color:var(--err)}
-/* fee split display */
-.fee-split{display:flex;flex-direction:column;gap:2px}
-.fee-split .reg-fee{font-weight:700;color:var(--g);font-size:13px}
-.fee-split .don-fee{font-size:11px;color:var(--blue)}
-.fee-split .total-fee{font-size:12px;color:var(--mu);border-top:1px solid #e5e7eb;padding-top:2px;margin-top:2px}
-/* photo thumbnail */
-.photo-thumb{width:36px;height:48px;border-radius:6px;object-fit:cover;border:1px solid #e5e7eb;cursor:pointer}
-.no-photo{width:36px;height:48px;border-radius:6px;background:#f3f4f6;display:flex;align-items:center;justify-content:center;font-size:16px;color:#d1d5db}
-/* photo modal */
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:1000;align-items:center;justify-content:center}
+.badge{display:inline-block;padding:3px 8px;border-radius:50px;font-size:11px;font-weight:700}
+.bg{background:var(--gp);color:var(--g)}.bb{background:var(--bp);color:var(--blue)}
+.bo{background:#fff7ed;color:#c2410c}.br{background:#fef2f2;color:var(--err)}.bpu{background:#faf5ff;color:#7c3aed}
+mark.hl{background:#fef08a;border-radius:2px;padding:0 1px}
+/* photo */
+.ptb{width:32px;height:43px;border-radius:5px;object-fit:cover;border:1px solid #e5e7eb;cursor:pointer;display:block}
+.noph{width:32px;height:43px;border-radius:5px;background:#f3f4f6;display:inline-flex;align-items:center;justify-content:center;font-size:14px;color:#d1d5db}
+/* modal */
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:1000;align-items:center;justify-content:center}
 .modal.open{display:flex}
-.modal-img{max-width:320px;max-height:90vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
-.modal-close{position:absolute;top:20px;right:24px;color:#fff;font-size:28px;cursor:pointer;background:none;border:none;line-height:1}
-/* SUMMARY TABLE */
+.mimg{max-width:300px;max-height:90vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.mcls{position:absolute;top:16px;right:20px;color:#fff;font-size:26px;cursor:pointer;background:none;border:none;line-height:1;z-index:2}
+/* fee */
+.fc{display:flex;flex-direction:column;gap:1px}
+.fr2{font-weight:700;color:var(--g);font-size:12px}.fd2{font-size:11px;color:var(--blue)}.ft2{font-size:11px;color:var(--mu)}
+/* summary table */
 .stbl{width:100%;border-collapse:collapse;background:#fff;font-size:13px;border-radius:12px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,.07)}
-.stbl th{background:linear-gradient(135deg,var(--g),#1d5c34);color:#fff;font-size:11px;font-weight:700;padding:11px 13px;text-align:left;text-transform:uppercase;letter-spacing:.5px}
-.stbl td{padding:10px 13px;border-bottom:1px solid #f3f4f6;color:var(--tx)}
+.stbl th{background:linear-gradient(135deg,var(--g),#1d5c34);color:#fff;font-size:11px;font-weight:700;padding:11px 12px;text-align:left;text-transform:uppercase;letter-spacing:.4px}
+.stbl td{padding:10px 12px;border-bottom:1px solid #f3f4f6;color:var(--tx)}
 .stbl tr:last-child td{border-bottom:none;font-weight:700;background:var(--gp);color:var(--g)}
 .stbl tr:hover:not(:last-child) td{background:#f8fffe}
-/* TSHIRT */
-.tsGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:14px;margin-bottom:24px}
-.tsBox{background:#fff;border-radius:12px;padding:16px;text-align:center;box-shadow:0 3px 14px rgba(0,0,0,.07);border-top:4px solid var(--g)}
-.tsBox .sz{font-family:'Baloo Da 2',cursive;font-size:24px;font-weight:800;color:var(--g)}
-.tsBox .cnt{font-size:20px;font-weight:700;color:var(--dk);margin:3px 0}
-.tsBox .lbl{font-size:11px;color:var(--mu)}
-/* PAGINATION */
-.pag{display:flex;gap:6px;justify-content:center;margin-top:16px;flex-wrap:wrap;align-items:center}
-.pag button{padding:6px 13px;border:1.5px solid #e5e7eb;border-radius:8px;background:#fff;font-size:13px;cursor:pointer;transition:all .2s;font-family:'Hind Siliguri',sans-serif}
+/* tshirt */
+.tsg{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:10px;margin-bottom:18px}
+.tsb{background:#fff;border-radius:10px;padding:12px;text-align:center;box-shadow:0 3px 12px rgba(0,0,0,.07);border-top:3px solid var(--g)}
+.tsb .sz{font-family:'Baloo Da 2',cursive;font-size:20px;font-weight:800}.tsb .cnt{font-size:17px;font-weight:700;margin:2px 0}.tsb .lb{font-size:10px;color:var(--mu)}
+/* pag */
+.pag{display:flex;gap:6px;justify-content:center;margin-top:12px;flex-wrap:wrap;align-items:center}
+.pag button{padding:5px 11px;border:1.5px solid #e5e7eb;border-radius:7px;background:#fff;font-size:12px;cursor:pointer;transition:all .2s;font-family:'Hind Siliguri',sans-serif}
 .pag button:hover,.pag button.active{background:var(--g);color:#fff;border-color:var(--g)}
-.pag .info{font-size:12px;color:var(--mu)}
-.empty{text-align:center;padding:36px;color:var(--mu);font-size:14px}
-.hl{background:#fef9c3}
-@media(max-width:800px){.nlinks{display:none}.filterbar{flex-direction:column}.fb-group{min-width:100%}}
+.pag .pi{font-size:11px;color:var(--mu)}
+.empty{text-align:center;padding:28px;color:var(--mu);font-size:13px}
+@media(max-width:800px){.nlinks{display:none}.srow{flex-direction:column}.sf{min-width:100%}}
 </style>
 </head>
 <body>
 
-<!-- PHOTO MODAL -->
 <div class="modal" id="photoModal" onclick="closeModal()">
-  <button class="modal-close" onclick="closeModal()">✕</button>
-  <img class="modal-img" id="modalImg" src="" alt="ছবি">
+  <button class="mcls" onclick="closeModal()">✕</button>
+  <img class="mimg" id="modalImg" src="" alt="ছবি">
 </div>
 
 <nav>
@@ -121,323 +109,337 @@ tr:hover td{background:#f8fffe}
 </div>
 
 <div class="pw">
-  <!-- STAT CARDS -->
   <div class="stats">
-    <div class="sc"><div class="n" id="totalCount">0</div><div class="l">মোট নিবন্ধিত</div></div>
-    <div class="sc"><div class="n" id="chCount">0</div><div class="l">চাকরিজীবী</div></div>
-    <div class="sc"><div class="n" id="stCount">0</div><div class="l">শিক্ষার্থী</div></div>
-    <div class="sc"><div class="n" id="guCount">0</div><div class="l">গেস্ট</div></div>
-    <div class="sc"><div class="n blue" id="totalRegFeeDisp">০৳</div><div class="l">মোট নিবন্ধন ফী</div></div>
-    <div class="sc"><div class="n gold" id="totalDonDisp">০৳</div><div class="l">মোট অনুদান</div></div>
-    <div class="sc"><div class="n" id="stageCount">0</div><div class="l">স্টেজ পারফর্মার</div></div>
+    <div class="sc"><div class="n" id="s-total">0</div><div class="l">মোট (গেস্ট সহ)</div></div>
+    <div class="sc"><div class="n" id="s-reg">0</div><div class="l">মূল নিবন্ধিত</div></div>
+    <div class="sc"><div class="n" id="s-guest">0</div><div class="l">গেস্ট</div></div>
+    <div class="sc blue"><div class="n" id="s-ch">0</div><div class="l">চাকরিজীবী</div></div>
+    <div class="sc gold"><div class="n" id="s-st">0</div><div class="l">শিক্ষার্থী</div></div>
+    <div class="sc purple"><div class="n" id="s-stage">0</div><div class="l">স্টেজ পারফর্মার</div></div>
   </div>
 
-  <!-- TABS -->
   <div class="tabs">
     <div class="tab active" onclick="showTab('list')">📋 নিবন্ধন তালিকা</div>
+    <div class="tab" onclick="showTab('guest')">👨‍👩‍👧 গেস্ট তালিকা</div>
     <div class="tab" onclick="showTab('batch')">📊 ব্যাচ সারসংক্ষেপ</div>
     <div class="tab" onclick="showTab('tshirt')">👕 টি-শার্ট সাইজ</div>
+    <div class="tab" onclick="showTab('btshirt')">📐 ব্যাচ × সাইজ</div>
     <div class="tab" onclick="showTab('stage')">🎭 স্টেজ পারফর্মার</div>
   </div>
 
-  <!-- TAB: LIST -->
+  <!-- LIST TAB -->
   <div class="tabpanel active" id="tab-list">
-    <!-- FILTER BAR -->
-    <div class="filterbar">
-      <div class="fb-group" style="flex:2;min-width:200px">
-        <label>🔍 নাম / ফোন / ব্যাচ দিয়ে খুঁজুন</label>
-        <input type="text" id="searchQ" placeholder="নাম, 01XXXXXXXX বা ব্যাচ/সাল লিখুন…" oninput="filterList()">
+    <div class="sbar">
+      <div class="srow">
+        <div class="sf" style="flex:3">
+          <label>🔍 লাইভ সার্চ — নাম / ফোন / ব্যাচ</label>
+          <input type="text" id="sq" placeholder="টাইপ করুন, সাথে সাথে ফলাফল দেখাবে…" oninput="ls()">
+        </div>
+        <div class="sf">
+          <label>ধরন</label>
+          <select id="ft" onchange="ls()">
+            <option value="">সব ধরন</option>
+            <option>চাকরিজীবী প্রাক্তন</option>
+            <option>শিক্ষার্থী প্রাক্তন</option>
+            <option>বর্তমান শিক্ষার্থী</option>
+          </select>
+        </div>
+        <div class="sf">
+          <label>পেমেন্ট</label>
+          <select id="fp" onchange="ls()">
+            <option value="">সব</option>
+            <option>বিকাশ</option><option>নগদ</option><option>রকেট</option><option>ক্যাশ</option>
+          </select>
+        </div>
+        <button class="clr" onclick="clr()">✕ ক্লিয়ার</button>
       </div>
-      <div class="fb-group">
-        <label>ধরন</label>
-        <select id="filterType" onchange="filterList()">
-          <option value="">সব ধরন</option>
-          <option>চাকরিজীবী প্রাক্তন</option>
-          <option>শিক্ষার্থী প্রাক্তন</option>
-          <option>বর্তমান শিক্ষার্থী</option>
-        </select>
-      </div>
-      <div class="fb-group">
-        <label>পেমেন্ট</label>
-        <select id="filterPay" onchange="filterList()">
-          <option value="">সব পেমেন্ট</option>
-          <option>বিকাশ</option><option>নগদ</option><option>রকেট</option><option>ক্যাশ</option>
-        </select>
-      </div>
-      <div class="fb-group">
-        <label>স্ট্যাটাস</label>
-        <select id="filterStatus" onchange="filterList()">
-          <option value="">সব স্ট্যাটাস</option>
-          <option>নতুন</option><option>নিশ্চিত</option>
-        </select>
-      </div>
-      <button class="clear-btn" onclick="clearFilters()">✕ ক্লিয়ার</button>
+      <div class="rinfo" id="ri">লোড হচ্ছে…</div>
     </div>
-    <div class="result-count" id="resultCount">সব দেখাচ্ছে — <span id="resultNum">0</span> জন</div>
     <div class="tbl-wrap">
       <table>
         <thead><tr>
-          <th>#</th>
-          <th>ছবি</th>
-          <th>নাম ও আইডি</th>
-          <th>মোবাইল</th>
-          <th>ধরন</th>
-          <th>ব্যাচ / শ্রেণী</th>
-          <th>সদস্য</th>
-          <th>👕 সাইজ</th>
-          <th>নিবন্ধন ফী</th>
-          <th>অনুদান</th>
-          <th>মোট</th>
-          <th>পেমেন্ট</th>
-          <th>স্ট্যাটাস</th>
+          <th>#</th><th>ছবি</th><th>নাম ও আইডি</th><th>মোবাইল</th>
+          <th>ধরন</th><th>ব্যাচ</th><th>গেস্ট</th>
+          <th>👕 সাইজ</th><th>নিবন্ধন ফী</th><th>অনুদান</th><th>মোট</th>
+          <th>পেমেন্ট</th><th>স্ট্যাটাস</th>
         </tr></thead>
-        <tbody id="listTbody"></tbody>
+        <tbody id="lb"></tbody>
       </table>
     </div>
-    <div class="pag" id="pagination"></div>
+    <div class="pag" id="pg"></div>
   </div>
 
-  <!-- TAB: BATCH SUMMARY -->
+  <!-- GUEST TAB -->
+  <div class="tabpanel" id="tab-guest">
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr>
+          <th>#</th><th>গেস্টের নাম</th><th>সম্পর্ক</th><th>বয়স</th>
+          <th>👕 সাইজ</th><th>ফী</th>
+          <th>হোস্টের নাম</th><th>হোস্টের ফোন</th><th>ব্যাচ</th>
+        </tr></thead>
+        <tbody id="gb"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- BATCH TAB -->
   <div class="tabpanel" id="tab-batch">
     <table class="stbl">
       <thead><tr>
-        <th>ব্যাচ / পাসের সাল</th>
-        <th>ধরন</th>
-        <th>নিবন্ধিত</th>
-        <th>নিবন্ধন ফী</th>
-        <th>অনুদান</th>
-        <th>মোট আয়</th>
+        <th>ব্যাচ / শ্রেণী</th><th>ধরন</th><th>নিবন্ধিত</th>
+        <th>নিবন্ধন ফী</th><th>অনুদান</th><th>মোট আয়</th>
       </tr></thead>
-      <tbody id="batchTbody"></tbody>
+      <tbody id="bb"></tbody>
     </table>
   </div>
 
-  <!-- TAB: TSHIRT -->
+  <!-- TSHIRT TAB -->
   <div class="tabpanel" id="tab-tshirt">
-    <div class="tsGrid" id="tsGrid"></div>
+    <p style="font-size:13px;color:var(--mu);margin-bottom:14px">নিবন্ধনকারী + সকল গেস্টের টি-শার্ট একত্র</p>
+    <div class="tsg" id="tsg"></div>
     <table class="stbl">
-      <thead><tr><th>সাইজ</th><th>সংখ্যা</th><th>শতাংশ</th></tr></thead>
-      <tbody id="tshirtTbody"></tbody>
+      <thead><tr><th>সাইজ</th><th>নিবন্ধনকারী</th><th>গেস্ট</th><th>মোট</th><th>%</th></tr></thead>
+      <tbody id="tsb2"></tbody>
     </table>
   </div>
 
-  <!-- TAB: STAGE -->
+  <!-- BATCH×TSHIRT TAB -->
+  <div class="tabpanel" id="tab-btshirt">
+    <p style="font-size:13px;color:var(--mu);margin-bottom:14px">প্রতিটি ব্যাচে কোন সাইজে কতটি লাগবে (নিবন্ধনকারী + গেস্ট)</p>
+    <div style="overflow-x:auto;border-radius:12px;box-shadow:0 3px 14px rgba(0,0,0,.07)">
+      <table class="stbl" id="btt"></table>
+    </div>
+  </div>
+
+  <!-- STAGE TAB -->
   <div class="tabpanel" id="tab-stage">
     <div class="tbl-wrap">
       <table>
-        <thead><tr><th>#</th><th>নাম</th><th>মোবাইল</th><th>ব্যাচ</th><th>পারফরম্যান্সের ধরন</th><th>বিস্তারিত</th></tr></thead>
-        <tbody id="stageTbody"></tbody>
+        <thead><tr>
+          <th>#</th><th>নাম</th><th>মোবাইল</th><th>ব্যাচ</th>
+          <th>পারফরম্যান্সের ধরন</th><th>বিস্তারিত</th>
+        </tr></thead>
+        <tbody id="stb"></tbody>
       </table>
     </div>
   </div>
 </div>
 
 <script>
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxGYFWMo-6u6dLLRlpAS7WQq9r16aDQXN9XCORYpOrvqNC5RqtQ_873ywnyAGBWvMfP/exec';
-const PAGE_SIZE = 20;
-let allData = [], filtered = [], currentPage = 1;
+const SCRIPT_URL='YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+const PG=20;
+const SIZES=['XS','S','M','L','XL','XXL'];
+const SCLR=['#7c3aed','#2563eb'https://script.google.com/macros/s/AKfycbxyR5oJvCM8Ji_zb21ohgZazBMPVayLZCbJTaTvYWefKmGjbv3d4MsZHDtGdXhXg3cM/exec,'#1a6b3c','#c9962a','#dc2626','#0891b2'];
 
-// Demo ডাটা — সঠিক ফী হিসাব
-const DEMO = [
-  {regId:'KHS-20270301-A1',name:'মোঃ রহিম উদ্দিন',phone:'01711000001',regType:'চাকরিজীবী প্রাক্তন',batchBatch:'২০০৫',memberCount:1,tshirtSize:'L',stagePerformance:'গান',stageDetail:'আমার সোনার বাংলা',regFee:1500,donationAmount:2000,totalFee:3500,payMethod:'বিকাশ',txnId:'TXN001',status:'নিশ্চিত',photo:''},
-  {regId:'KHS-20270301-A2',name:'নাসরিন বেগম',phone:'01722000002',regType:'শিক্ষার্থী প্রাক্তন',batchBatch:'২০১০',memberCount:0,tshirtSize:'S',stagePerformance:'না, শুধু উপস্থিত থাকব',stageDetail:'',regFee:500,donationAmount:0,totalFee:500,payMethod:'নগদ',txnId:'TXN002',status:'নতুন',photo:''},
-  {regId:'KHS-20270301-A3',name:'করিম হোসেন',phone:'01733000003',regType:'চাকরিজীবী প্রাক্তন',batchBatch:'২০০২',memberCount:1,tshirtSize:'XL',stagePerformance:'আবৃত্তি',stageDetail:'রবীন্দ্রনাথের কবিতা',regFee:2000,donationAmount:5000,totalFee:7000,payMethod:'বিকাশ',txnId:'TXN003',status:'নিশ্চিত',photo:''},
-  {regId:'KHS-20270301-A4',name:'সাবিনা আক্তার',phone:'01744000004',regType:'বর্তমান শিক্ষার্থী',batchBatch:'১০ম শ্রেণী',memberCount:0,tshirtSize:'M',stagePerformance:'না, শুধু উপস্থিত থাকব',stageDetail:'',regFee:500,donationAmount:0,totalFee:500,payMethod:'ক্যাশ',txnId:'CASH',status:'নতুন',photo:''},
-  {regId:'KHS-20270301-A5',name:'আবুল হাসান',phone:'01755000005',regType:'চাকরিজীবী প্রাক্তন',batchBatch:'১৯৯৮',memberCount:2,tshirtSize:'XXL',stagePerformance:'না, শুধু উপস্থিত থাকব',stageDetail:'',regFee:3000,donationAmount:10000,totalFee:13000,payMethod:'বিকাশ',txnId:'TXN005',status:'নিশ্চিত',photo:''},
-  {regId:'KHS-20270301-A6',name:'মরিয়ম বেগম',phone:'01766000006',regType:'শিক্ষার্থী প্রাক্তন',batchBatch:'২০১৫',memberCount:0,tshirtSize:'XS',stagePerformance:'নৃত্য',stageDetail:'লোকগীতি নৃত্য',regFee:500,donationAmount:200,totalFee:700,payMethod:'রকেট',txnId:'TXN006',status:'নতুন',photo:''},
+let allData=[], flt=[], pg=1;
+
+// ── DEMO DATA ──
+const DEMO=[
+  {regId:'KHS-20270301-A1',name:'মোঃ রহিম উদ্দিন',phone:'01711000001',regType:'চাকরিজীবী প্রাক্তন',batchBatch:'২০০৫',memberCount:2,guestDetails:'[{"name":"ফাতেমা","relation":"স্ত্রী/স্বামী","age":"28","fee":"1000","tshirt":"L"},{"name":"রাহেল","relation":"সন্তান","age":"8","fee":"500","tshirt":"S"}]',tshirtSize:'XL',stagePerformance:'গান',stageDetail:'আমার সোনার বাংলা',regFee:2500,donationAmount:2000,totalFee:4500,payMethod:'বিকাশ',txnId:'TXN001',status:'নিশ্চিত',photo:'https://placehold.co/300x400/1a6b3c/white?text=ছবি'},
+  {regId:'KHS-20270301-A2',name:'নাসরিন বেগম',phone:'01722000002',regType:'শিক্ষার্থী প্রাক্তন',batchBatch:'২০১০',memberCount:0,guestDetails:'[]',tshirtSize:'S',stagePerformance:'না',stageDetail:'',regFee:500,donationAmount:0,totalFee:500,payMethod:'নগদ',txnId:'TXN002',status:'নতুন',photo:''},
+  {regId:'KHS-20270301-A3',name:'করিম হোসেন',phone:'01733000003',regType:'চাকরিজীবী প্রাক্তন',batchBatch:'২০০২',memberCount:1,guestDetails:'[{"name":"সুমাইয়া","relation":"স্ত্রী/স্বামী","age":"32","fee":"1000","tshirt":"M"}]',tshirtSize:'XXL',stagePerformance:'আবৃত্তি',stageDetail:'রবীন্দ্রনাথের কবিতা',regFee:2000,donationAmount:5000,totalFee:7000,payMethod:'বিকাশ',txnId:'TXN003',status:'নিশ্চিত',photo:'https://placehold.co/300x400/2563eb/white?text=K'},
+  {regId:'KHS-20270301-A4',name:'সাবিনা আক্তার',phone:'01744000004',regType:'বর্তমান শিক্ষার্থী',batchBatch:'১০ম শ্রেণী',memberCount:0,guestDetails:'[]',tshirtSize:'M',stagePerformance:'না',stageDetail:'',regFee:500,donationAmount:0,totalFee:500,payMethod:'ক্যাশ',txnId:'CASH',status:'নতুন',photo:''},
+  {regId:'KHS-20270301-A5',name:'আবুল হাসান',phone:'01755000005',regType:'চাকরিজীবী প্রাক্তন',batchBatch:'১৯৯৮',memberCount:3,guestDetails:'[{"name":"রেহানা","relation":"স্ত্রী/স্বামী","age":"38","fee":"1000","tshirt":"L"},{"name":"আরিফ","relation":"সন্তান","age":"12","fee":"500","tshirt":"S"},{"name":"মিম","relation":"সন্তান","age":"4","fee":"0","tshirt":"XS"}]',tshirtSize:'XXL',stagePerformance:'না',stageDetail:'',regFee:2500,donationAmount:10000,totalFee:12500,payMethod:'বিকাশ',txnId:'TXN005',status:'নিশ্চিত',photo:''},
+  {regId:'KHS-20270301-A6',name:'মরিয়ম বেগম',phone:'01766000006',regType:'শিক্ষার্থী প্রাক্তন',batchBatch:'২০১৫',memberCount:0,guestDetails:'[]',tshirtSize:'XS',stagePerformance:'নৃত্য',stageDetail:'লোকগীতি নৃত্য',regFee:500,donationAmount:200,totalFee:700,payMethod:'রকেট',txnId:'TXN006',status:'নতুন',photo:''},
 ];
 
-function typeBadge(t){
-  if(t==='চাকরিজীবী প্রাক্তন') return '<span class="badge b-g">চাকরিজীবী</span>';
-  if(t==='শিক্ষার্থী প্রাক্তন') return '<span class="badge b-b">প্রাক্তন শিক্ষার্থী</span>';
-  if(t==='বর্তমান শিক্ষার্থী') return '<span class="badge b-o">বর্তমান</span>';
-  return '<span class="badge b-r">অন্যান্য</span>';
+// ── HELPERS ──
+const N=n=>n?Number(n).toLocaleString():'0';
+function tb(t){
+  if(t==='চাকরিজীবী প্রাক্তন')return'<span class="badge bg">চাকরিজীবী</span>';
+  if(t==='শিক্ষার্থী প্রাক্তন')return'<span class="badge bb">প্রাক্তন</span>';
+  if(t==='বর্তমান শিক্ষার্থী')return'<span class="badge bo">বর্তমান</span>';
+  return'<span class="badge br">অন্যান্য</span>';
 }
-function statusBadge(s){return s==='নিশ্চিত'?'<span class="badge b-g">✓ নিশ্চিত</span>':'<span class="badge b-r">নতুন</span>';}
-
-// highlight search match
-function hl(text, q){
-  if(!q||!text) return text||'';
-  const re=new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
-  return String(text).replace(re,'<mark class="hl">$1</mark>');
+function sb(s){return s==='নিশ্চিত'?'<span class="badge bg">✓ নিশ্চিত</span>':'<span class="badge br">নতুন</span>';}
+function hl(txt,q){
+  if(!q||!txt)return String(txt||'');
+  return String(txt).replace(new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi'),'<mark class="hl">$1</mark>');
+}
+function pg2(d){
+  if(!d||!d.guestDetails)return[];
+  try{return JSON.parse(d.guestDetails);}catch(e){return[];}
+}
+function phCell(url){
+  if(url&&url.length>10){
+    return `<img class="ptb" src="${url}" loading="lazy" onerror="this.outerHTML='<span class=noph>👤</span>'" onclick="openM('${url.replace(/'/g,"\\'")}')" alt="ছবি">`;
+  }
+  return '<span class="noph">👤</span>';
 }
 
-function filterList(){
-  const q=document.getElementById('searchQ').value.trim().toLowerCase();
-  const type=document.getElementById('filterType').value;
-  const pay=document.getElementById('filterPay').value;
-  const status=document.getElementById('filterStatus').value;
-
-  filtered=allData.filter(d=>{
-    const matchQ=!q||(
-      d.name.toLowerCase().includes(q)||
-      d.phone.includes(q)||
-      String(d.batchBatch).toLowerCase().includes(q)  // ✅ ব্যাচ দিয়ে সার্চ
-    );
-    const matchType=!type||d.regType===type;
-    const matchPay=!pay||d.payMethod===pay;
-    const matchStatus=!status||(d.status||'নতুন')===status;
-    return matchQ&&matchType&&matchPay&&matchStatus;
+// ── LIVE SEARCH ──
+function ls(){
+  const q=(document.getElementById('sq').value||'').trim().toLowerCase();
+  const ft=document.getElementById('ft').value;
+  const fp=document.getElementById('fp').value;
+  flt=allData.filter(d=>{
+    const mq=!q||(d.name||'').toLowerCase().includes(q)||(d.phone||'').includes(q)||String(d.batchBatch||'').toLowerCase().includes(q)||(d.regId||'').toLowerCase().includes(q);
+    return mq&&(!ft||d.regType===ft)&&(!fp||d.payMethod===fp);
   });
-  currentPage=1;
-  document.getElementById('resultNum').textContent=filtered.length;
-  document.getElementById('resultCount').innerHTML=
-    q?`"<strong>${q}</strong>" — <span id="resultNum">${filtered.length}</span> জন পাওয়া গেছে`:
-    `সব দেখাচ্ছে — <span id="resultNum">${filtered.length}</span> জন`;
+  pg=1;
+  document.getElementById('ri').innerHTML=q
+    ?`"<strong>${q}</strong>" — <strong style="color:var(--g)">${flt.length}</strong> জন পাওয়া গেছে`
+    :`মোট <strong style="color:var(--g)">${flt.length}</strong> জন দেখাচ্ছে`;
   renderList();
 }
-
-function clearFilters(){
-  document.getElementById('searchQ').value='';
-  document.getElementById('filterType').value='';
-  document.getElementById('filterPay').value='';
-  document.getElementById('filterStatus').value='';
-  filterList();
+function clr(){
+  document.getElementById('sq').value='';
+  document.getElementById('ft').value='';
+  document.getElementById('fp').value='';
+  ls();
 }
 
+// ── RENDER LIST ──
 function renderList(){
-  const q=document.getElementById('searchQ').value.trim();
-  const start=(currentPage-1)*PAGE_SIZE;
-  const page=filtered.slice(start,start+PAGE_SIZE);
-  const tbody=document.getElementById('listTbody');
-  if(!page.length){tbody.innerHTML='<tr><td colspan="13" class="empty">কোনো ডাটা পাওয়া যায়নি</td></tr>';renderPag();return;}
-  tbody.innerHTML=page.map((d,i)=>{
-    const regF=parseFloat(d.regFee)||0;
-    const don=parseFloat(d.donationAmount)||0;
-    const total=parseFloat(d.totalFee)||regF+don;
-    const photoCell=d.photo
-      ?`<img class="photo-thumb" src="${d.photo}" alt="ছবি" onclick="openModal('${d.photo}')">`
-      :`<div class="no-photo">👤</div>`;
-    return `<tr>
-      <td style="color:var(--mu);font-size:12px">${start+i+1}</td>
-      <td>${photoCell}</td>
-      <td>
-        <div style="font-weight:600">${hl(d.name,q)}</div>
-        <div style="font-size:10px;color:var(--mu)">${d.regId}</div>
-      </td>
+  const q=(document.getElementById('sq').value||'').trim();
+  const start=(pg-1)*PG;
+  const slice=flt.slice(start,start+PG);
+  const tbody=document.getElementById('lb');
+  if(!slice.length){tbody.innerHTML='<tr><td colspan="13" class="empty">কোনো ডাটা পাওয়া যায়নি</td></tr>';renderPg();return;}
+  tbody.innerHTML=slice.map((d,i)=>{
+    const rf=parseFloat(d.regFee)||0,don=parseFloat(d.donationAmount)||0,tot=parseFloat(d.totalFee)||(rf+don);
+    return`<tr>
+      <td style="color:var(--mu);font-size:11px">${start+i+1}</td>
+      <td>${phCell(d.photo)}</td>
+      <td><div style="font-weight:600;font-size:13px">${hl(d.name,q)}</div><div style="font-size:10px;color:var(--mu)">${d.regId}</div></td>
       <td>${hl(d.phone,q)}</td>
-      <td>${typeBadge(d.regType)}</td>
+      <td>${tb(d.regType)}</td>
       <td><strong>${hl(String(d.batchBatch||'—'),q)}</strong></td>
-      <td style="text-align:center">${d.memberCount||0}</td>
-      <td><span style="font-weight:700;color:var(--g)">${d.tshirtSize||'—'}</span></td>
-      <td style="font-weight:700;color:var(--g)">${regF>0?regF.toLocaleString()+'৳':'—'}</td>
-      <td style="font-weight:700;color:var(--blue)">${don>0?don.toLocaleString()+'৳':'—'}</td>
-      <td style="font-weight:800;color:var(--dk)">${total.toLocaleString()}৳</td>
+      <td style="text-align:center;font-weight:700">${d.memberCount||0}</td>
+      <td><span style="font-weight:800;color:var(--g)">${d.tshirtSize||'—'}</span></td>
+      <td><span style="font-weight:700;color:var(--g);font-size:12px">${N(rf)}৳</span></td>
+      <td><span style="font-weight:600;color:var(--blue);font-size:12px">${don>0?N(don)+'৳':'—'}</span></td>
+      <td><strong>${N(tot)}৳</strong></td>
       <td>${d.payMethod||'—'}</td>
-      <td>${statusBadge(d.status||'নতুন')}</td>
+      <td>${sb(d.status||'নতুন')}</td>
     </tr>`;
   }).join('');
-  renderPag();
+  renderPg();
+}
+function renderPg(){
+  const tot=Math.ceil(flt.length/PG),el=document.getElementById('pg');
+  if(tot<=1){el.innerHTML='';return;}
+  let h=`<span class="pi">${flt.length} জনের মধ্যে ${(pg-1)*PG+1}–${Math.min(pg*PG,flt.length)}</span>`;
+  for(let i=1;i<=tot;i++)h+=`<button class="${i===pg?'active':''}" onclick="gp(${i})">${i}</button>`;
+  el.innerHTML=h;
+}
+function gp(n){pg=n;renderList();window.scrollTo({top:300,behavior:'smooth'});}
+
+// ── GUEST TAB ──
+function renderGuests(){
+  let rows=[],cnt=0;
+  allData.forEach(d=>{
+    pg2(d).forEach(g=>{
+      cnt++;
+      rows.push(`<tr>
+        <td style="color:var(--mu)">${cnt}</td>
+        <td style="font-weight:600">${g.name||'—'}</td>
+        <td><span class="badge bb">${g.relation||'—'}</span></td>
+        <td>${g.age||'—'} বছর</td>
+        <td><span style="font-weight:800;color:var(--g)">${g.tshirt||'—'}</span></td>
+        <td style="color:var(--blue);font-weight:600">${parseFloat(g.fee)>0?N(g.fee)+'৳':'বিনামূল্যে'}</td>
+        <td style="font-weight:600">${d.name}</td>
+        <td style="color:var(--mu)">${d.phone}</td>
+        <td>${d.batchBatch||'—'}</td>
+      </tr>`);
+    });
+  });
+  document.getElementById('gb').innerHTML=rows.length?rows.join(''):'<tr><td colspan="9" class="empty">কোনো গেস্ট নেই</td></tr>';
 }
 
-function renderPag(){
-  const total=Math.ceil(filtered.length/PAGE_SIZE);
-  const pag=document.getElementById('pagination');
-  if(total<=1){pag.innerHTML='';return;}
-  let html=`<span class="info">${filtered.length} জনের মধ্যে ${(currentPage-1)*PAGE_SIZE+1}–${Math.min(currentPage*PAGE_SIZE,filtered.length)} দেখাচ্ছে</span>`;
-  for(let i=1;i<=total;i++) html+=`<button class="${i===currentPage?'active':''}" onclick="goPage(${i})">${i}</button>`;
-  pag.innerHTML=html;
-}
-function goPage(n){currentPage=n;renderList();window.scrollTo({top:400,behavior:'smooth'});}
-
+// ── BATCH TAB ──
 function renderBatch(){
-  const map={};
+  const m={};
   allData.forEach(d=>{
     const k=d.batchBatch||'অজানা';
-    if(!map[k])map[k]={batch:k,type:d.regType,count:0,regFee:0,don:0};
-    map[k].count++;
-    map[k].regFee+=parseFloat(d.regFee)||0;
-    map[k].don+=parseFloat(d.donationAmount)||0;
+    if(!m[k])m[k]={t:d.regType,c:0,f:0,dn:0};
+    m[k].c++;m[k].f+=parseFloat(d.regFee)||0;m[k].dn+=parseFloat(d.donationAmount)||0;
   });
-  const rows=Object.values(map).sort((a,b)=>b.count-a.count);
-  const tbody=document.getElementById('batchTbody');
-  if(!rows.length){tbody.innerHTML='<tr><td colspan="6" class="empty">ডাটা নেই</td></tr>';return;}
-  let tC=0,tR=0,tD=0;
-  tbody.innerHTML=rows.map(r=>{
-    tC+=r.count;tR+=r.regFee;tD+=r.don;
-    return `<tr>
-      <td><strong>${r.batch}</strong></td>
-      <td>${typeBadge(r.type)}</td>
-      <td style="font-weight:700">${r.count} জন</td>
-      <td style="color:var(--g);font-weight:600">${r.regFee.toLocaleString()} ৳</td>
-      <td style="color:var(--blue);font-weight:600">${r.don.toLocaleString()} ৳</td>
-      <td style="font-weight:800;color:var(--dk)">${(r.regFee+r.don).toLocaleString()} ৳</td>
-    </tr>`;
-  }).join('');
-  tbody.innerHTML+=`<tr><td>মোট</td><td>—</td><td>${tC} জন</td><td>${tR.toLocaleString()} ৳</td><td>${tD.toLocaleString()} ৳</td><td>${(tR+tD).toLocaleString()} ৳</td></tr>`;
+  const rows=Object.entries(m).sort((a,b)=>b[1].c-a[1].c);
+  let tC=0,tF=0,tD=0;
+  document.getElementById('bb').innerHTML=rows.length?rows.map(([k,v])=>{
+    tC+=v.c;tF+=v.f;tD+=v.dn;
+    return`<tr><td><strong>${k}</strong></td><td>${tb(v.t)}</td><td style="font-weight:700">${v.c} জন</td><td style="color:var(--g);font-weight:600">${N(v.f)}৳</td><td style="color:var(--blue);font-weight:600">${N(v.dn)}৳</td><td style="font-weight:800">${N(v.f+v.dn)}৳</td></tr>`;
+  }).join('')+`<tr><td>মোট</td><td>—</td><td>${tC} জন</td><td>${N(tF)}৳</td><td>${N(tD)}৳</td><td>${N(tF+tD)}৳</td></tr>`
+  :'<tr><td colspan="6" class="empty">ডাটা নেই</td></tr>';
 }
 
+// ── TSHIRT TAB ──
 function renderTshirt(){
-  const SIZES=['XS','S','M','L','XL','XXL'];
-  const CLR=['#7c3aed','#2563eb','#1a6b3c','#c9962a','#dc2626','#0891b2'];
-  const counts={};SIZES.forEach(s=>counts[s]=0);
-  allData.forEach(d=>{if(counts[d.tshirtSize]!==undefined)counts[d.tshirtSize]++;});
-  const total=Object.values(counts).reduce((a,b)=>a+b,0);
-  document.getElementById('tsGrid').innerHTML=SIZES.map((s,i)=>
-    `<div class="tsBox" style="border-color:${CLR[i]}">
-      <div class="sz" style="color:${CLR[i]}">${s}</div>
-      <div class="cnt">${counts[s]}</div><div class="lbl">জন</div>
-    </div>`).join('');
-  document.getElementById('tshirtTbody').innerHTML=SIZES.map((s,i)=>
-    `<tr><td><span style="font-weight:700;color:${CLR[i]}">${s}</span></td><td>${counts[s]} জন</td><td>${total?Math.round(counts[s]/total*100):0}%</td></tr>`
-  ).join('')+`<tr><td>মোট</td><td>${total} জন</td><td>১০০%</td></tr>`;
+  const rc={},gc={};
+  SIZES.forEach(s=>{rc[s]=0;gc[s]=0;});
+  allData.forEach(d=>{
+    if(rc[d.tshirtSize]!==undefined)rc[d.tshirtSize]++;
+    pg2(d).forEach(g=>{if(gc[g.tshirt]!==undefined)gc[g.tshirt]++;});
+  });
+  const tot=SIZES.reduce((a,s)=>a+rc[s]+gc[s],0);
+  document.getElementById('tsg').innerHTML=SIZES.map((s,i)=>
+    `<div class="tsb" style="border-color:${SCLR[i]}"><div class="sz" style="color:${SCLR[i]}">${s}</div><div class="cnt">${rc[s]+gc[s]}</div><div class="lb">টি</div></div>`).join('');
+  document.getElementById('tsb2').innerHTML=SIZES.map((s,i)=>`
+    <tr><td><span style="font-weight:800;color:${SCLR[i]}">${s}</span></td><td>${rc[s]}</td><td>${gc[s]}</td><td style="font-weight:700">${rc[s]+gc[s]}</td><td>${tot?Math.round((rc[s]+gc[s])/tot*100):0}%</td></tr>`).join('')+
+    `<tr><td>মোট</td><td>${SIZES.reduce((a,s)=>a+rc[s],0)}</td><td>${SIZES.reduce((a,s)=>a+gc[s],0)}</td><td style="font-weight:800">${tot}</td><td>100%</td></tr>`;
 }
 
+// ── BATCH × TSHIRT ──
+function renderBatchTshirt(){
+  const bm={};
+  allData.forEach(d=>{
+    const b=d.batchBatch||'অজানা';
+    if(!bm[b]){bm[b]={};SIZES.forEach(s=>bm[b][s]=0);}
+    if(bm[b][d.tshirtSize]!==undefined)bm[b][d.tshirtSize]++;
+    pg2(d).forEach(g=>{if(bm[b][g.tshirt]!==undefined)bm[b][g.tshirt]++;});
+  });
+  const batches=Object.entries(bm).sort((a,b)=>Object.values(b[1]).reduce((x,y)=>x+y,0)-Object.values(a[1]).reduce((x,y)=>x+y,0));
+  const totals={};SIZES.forEach(s=>totals[s]=0);
+  let h=`<thead><tr><th>ব্যাচ</th>${SIZES.map((s,i)=>`<th style="color:${SCLR[i]};text-align:center">${s}</th>`).join('')}<th>মোট</th></tr></thead><tbody>`;
+  batches.forEach(([b,cnt])=>{
+    const rt=SIZES.reduce((a,s)=>a+cnt[s],0);
+    h+=`<tr><td><strong>${b}</strong></td>${SIZES.map(s=>{totals[s]+=cnt[s];return`<td style="text-align:center">${cnt[s]>0?`<strong>${cnt[s]}</strong>`:'—'}</td>`;}).join('')}<td style="font-weight:800;text-align:center">${rt}</td></tr>`;
+  });
+  const gt=Object.values(totals).reduce((a,b)=>a+b,0);
+  h+=`</tbody><tfoot><tr><td style="font-weight:700;color:var(--g)">মোট</td>${SIZES.map(s=>`<td style="font-weight:800;text-align:center;color:var(--g)">${totals[s]}</td>`).join('')}<td style="font-weight:800;text-align:center;color:var(--g)">${gt}</td></tr></tfoot>`;
+  document.getElementById('btt').innerHTML=h;
+}
+
+// ── STAGE ──
 function renderStage(){
   const p=allData.filter(d=>d.stagePerformance&&d.stagePerformance!=='না'&&d.stagePerformance!=='না, শুধু উপস্থিত থাকব');
-  const tbody=document.getElementById('stageTbody');
-  if(!p.length){tbody.innerHTML='<tr><td colspan="6" class="empty">কোনো স্টেজ পারফর্মার নেই</td></tr>';return;}
-  tbody.innerHTML=p.map((d,i)=>`<tr>
-    <td>${i+1}</td>
-    <td style="font-weight:600">${d.name}</td>
-    <td>${d.phone}</td>
-    <td>${d.batchBatch||'—'}</td>
-    <td><span class="badge b-b">${d.stagePerformance}</span></td>
-    <td style="font-size:12px;color:var(--mu)">${d.stageDetail||'—'}</td>
-  </tr>`).join('');
+  document.getElementById('stb').innerHTML=p.length?p.map((d,i)=>`<tr><td>${i+1}</td><td style="font-weight:600">${d.name}</td><td>${d.phone}</td><td>${d.batchBatch||'—'}</td><td><span class="badge bpu">${d.stagePerformance}</span></td><td style="font-size:12px;color:var(--mu)">${d.stageDetail||'—'}</td></tr>`).join(''):'<tr><td colspan="6" class="empty">কোনো স্টেজ পারফর্মার নেই</td></tr>';
 }
 
+// ── STATS ──
 function updateStats(){
-  document.getElementById('totalCount').textContent=allData.length;
-  document.getElementById('chCount').textContent=allData.filter(d=>d.regType==='চাকরিজীবী প্রাক্তন').length;
-  document.getElementById('stCount').textContent=allData.filter(d=>d.regType.includes('শিক্ষার্থী')).length;
-  document.getElementById('guCount').textContent=allData.reduce((s,d)=>s+(parseInt(d.memberCount)||0),0);
-  document.getElementById('stageCount').textContent=allData.filter(d=>d.stagePerformance&&d.stagePerformance!=='না'&&d.stagePerformance!=='না, শুধু উপস্থিত থাকব').length;
-  // ✅ সঠিক ফী + অনুদান আলাদা
-  const totalRegFee=allData.reduce((s,d)=>s+(parseFloat(d.regFee)||0),0);
-  const totalDon=allData.reduce((s,d)=>s+(parseFloat(d.donationAmount)||0),0);
-  document.getElementById('totalRegFeeDisp').textContent=totalRegFee.toLocaleString()+'৳';
-  document.getElementById('totalDonDisp').textContent=totalDon.toLocaleString()+'৳';
+  const tg=allData.reduce((s,d)=>s+(parseInt(d.memberCount)||0),0);
+  document.getElementById('s-total').textContent=allData.length+tg;
+  document.getElementById('s-reg').textContent=allData.length;
+  document.getElementById('s-guest').textContent=tg;
+  document.getElementById('s-ch').textContent=allData.filter(d=>d.regType==='চাকরিজীবী প্রাক্তন').length;
+  document.getElementById('s-st').textContent=allData.filter(d=>d.regType.includes('শিক্ষার্থী')).length;
+  document.getElementById('s-stage').textContent=allData.filter(d=>d.stagePerformance&&d.stagePerformance!=='না'&&d.stagePerformance!=='না, শুধু উপস্থিত থাকব').length;
 }
 
-function showTab(name){
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.tabpanel').forEach(p=>p.classList.remove('active'));
-  document.querySelector(`[onclick="showTab('${name}')"]`).classList.add('active');
-  document.getElementById('tab-'+name).classList.add('active');
-}
-
-function openModal(src){
-  document.getElementById('modalImg').src=src;
-  document.getElementById('photoModal').classList.add('open');
-}
+// ── MODAL ──
+function openM(src){document.getElementById('modalImg').src=src;document.getElementById('photoModal').classList.add('open');}
 function closeModal(){document.getElementById('photoModal').classList.remove('open');}
 
-async function loadData(){
-  if(SCRIPT_URL==='YOUR_APPS_SCRIPT_WEB_APP_URL_HERE'){allData=DEMO;}
-  else{
-    try{
-      const res=await fetch(SCRIPT_URL+'?action=getAll');
-      const d=await res.json();
-      allData=d.data||DEMO;
-    }catch(e){allData=DEMO;}
-  }
-  filtered=[...allData];
-  document.getElementById('resultNum').textContent=allData.length;
-  updateStats();renderList();renderBatch();renderTshirt();renderStage();
+// ── TAB ──
+function showTab(n){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tabpanel').forEach(p=>p.classList.remove('active'));
+  document.querySelector(`[onclick="showTab('${n}')"]`).classList.add('active');
+  document.getElementById('tab-'+n).classList.add('active');
 }
 
-loadData();
+// ── LOAD ──
+async function load(){
+  document.getElementById('ri').textContent='ডাটা লোড হচ্ছে…';
+  if(SCRIPT_URL==='YOUR_APPS_SCRIPT_WEB_APP_URL_HERE'){allData=DEMO;}
+  else{try{const r=await fetch(SCRIPT_URL+'?action=getAll');const d=await r.json();allData=d.data||DEMO;}catch(e){allData=DEMO;}}
+  flt=[...allData];
+  updateStats();ls();renderGuests();renderBatch();renderTshirt();renderBatchTshirt();renderStage();
+}
+load();
 </script>
 </body>
 </html>
