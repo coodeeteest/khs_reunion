@@ -353,7 +353,7 @@ input[type=file]{display:none}
 
 <script>
 // ============ CONFIG ============
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxGYFWMo-6u6dLLRlpAS7WQq9r16aDQXN9XCORYpOrvqNC5RqtQ_873ywnyAGBWvMfP/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxyR5oJvCM8Ji_zb21ohgZazBMPVayLZCbJTaTvYWefKmGjbv3d4MsZHDtGdXhXg3cM/exechttps://script.google.com/macros/s/AKfycbxyR5oJvCM8Ji_zb21ohgZazBMPVayLZCbJTaTvYWefKmGjbv3d4MsZHDtGdXhXg3cM/exec';
 // ================================
 
 let regType='', payMethod='', tshirt='', stageChoice='', donAmount=0;
@@ -450,15 +450,32 @@ function addMember(){
       <option>স্ত্রী/স্বামী</option><option>সন্তান</option><option>বাবা/মা</option><option>ভাই/বোন</option><option>অন্যান্য</option></select></div>
     <div class="f"><label>বয়স</label><input type="number" id="${id}_a" placeholder="বয়স" min="0" max="100" oninput="calcFee()"></div>
   </div>
-  <div class="f" style="margin-top:6px">
-    <label>গেস্ট ফী নির্বাচন করুন</label>
-    <div class="rg" id="${id}_fg">
-      <label class="ro" onclick="selGF(this,'${id}',500)"><input type="radio" name="${id}_gf">৫০০ টাকা</label>
-      <label class="ro" onclick="selGF(this,'${id}',1000)"><input type="radio" name="${id}_gf">১০০০ টাকা</label>
+  <div class="fr" style="margin-top:6px">
+    <div class="f">
+      <label>👕 টি-শার্ট সাইজ</label>
+      <div class="tg" id="${id}_tsg" style="grid-template-columns:repeat(6,1fr)">
+        <div class="ts" onclick="selMTS(this,'${id}','XS')">XS</div>
+        <div class="ts" onclick="selMTS(this,'${id}','S')">S</div>
+        <div class="ts" onclick="selMTS(this,'${id}','M')">M</div>
+        <div class="ts" onclick="selMTS(this,'${id}','L')">L</div>
+        <div class="ts" onclick="selMTS(this,'${id}','XL')">XL</div>
+        <div class="ts" onclick="selMTS(this,'${id}','XXL')">XXL</div>
+      </div>
+    </div>
+    <div class="f">
+      <label>গেস্ট ফী</label>
+      <div class="rg" id="${id}_fg">
+        <label class="ro" onclick="selGF(this,'${id}',500)"><input type="radio" name="${id}_gf">৫০০৳</label>
+        <label class="ro" onclick="selGF(this,'${id}',1000)"><input type="radio" name="${id}_gf">১০০০৳</label>
+      </div>
     </div>
   </div>`;
   document.getElementById('mc').appendChild(d);
   calcFee();
+}
+function selMTS(el,id,val){
+  document.querySelectorAll(`#${id}_tsg .ts`).forEach(o=>o.classList.remove('sel'));
+  el.classList.add('sel'); el.dataset.ts=val;
 }
 function selGF(el,id,amt){
   document.querySelectorAll(`#${id}_fg .ro`).forEach(o=>o.classList.remove('sel'));
@@ -553,14 +570,19 @@ async function doSubmit(){
     setProgress(30,'ছবি প্রস্তুত হচ্ছে…');
   }
 
-  const memberData=members.map(id=>{
+  const memberDataArr=members.map(id=>{
     const n=document.getElementById(id+'_n')?.value||'';
     const r=document.getElementById(id+'_r')?.value||'';
     const a=document.getElementById(id+'_a')?.value||'?';
     const sf=document.querySelector(`#${id}_fg .ro.sel`);
     const gf=sf?sf.dataset.fee:'?';
-    return `${n}(${r},বয়স:${a},ফী:${gf}৳)`;
-  }).join('; ');
+    const tsel=document.querySelector(`#${id}_tsg .ts.sel`);
+    const ts=tsel?tsel.dataset.ts||tsel.textContent.trim():'নির্বাচিত হয়নি';
+    return {name:n,relation:r,age:a,fee:gf,tshirt:ts};
+  });
+  const memberData=memberDataArr.map(m=>`${m.name}(${m.relation},বয়স:${m.age},ফী:${m.fee}৳,👕${m.tshirt})`).join('; ');
+  // structured JSON for guest list tab
+  const guestDetailsJson=JSON.stringify(memberDataArr);
 
   const regId=genId();
   const payload={
@@ -573,6 +595,7 @@ async function doSubmit(){
     batchBatch: document.getElementById('batchYear').value || document.getElementById('classV').value || '',
     memberCount: members.length,
     memberDetails: memberData,
+    guestDetails: guestDetailsJson,
     tshirtSize: tshirt||'নির্বাচিত হয়নি',
     stagePerformance: stageChoice||'না',
     stageDetail: document.getElementById('stageDetail').value.trim(),
