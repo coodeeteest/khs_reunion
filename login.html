@@ -4,148 +4,173 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>লগইন - কুলানন্দপুর উচ্চ বিদ্যালয় পুনর্মিলনী ২০২৭</title>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Baloo+Da+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Baloo+Da+2:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--g:#1a6b3c;--gl:#2d9b5a;--gp:#e8f5ee;--gold:#c9962a;--cream:#fdf8ef;--dk:#1a1a1a;--tx:#2c2c2c;--mu:#6b7280;--err:#dc2626}
+:root{--g:#1a6b3c;--gl:#2d9b5a;--gp:#e8f5ee;--gold:#c9962a;--gdl:#f0c060;--dk:#1a1a1a;--tx:#2c2c2c;--mu:#6b7280;--err:#dc2626;--blue:#2563eb}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Hind Siliguri',sans-serif;background:linear-gradient(160deg,#0a3d1f 0%,#1a6b3c 50%,#1d5c34 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+body{font-family:'Hind Siliguri',sans-serif;min-height:100vh;background:linear-gradient(160deg,#0a3d1f 0%,#1a6b3c 55%,#1d5c34 100%);display:flex;align-items:center;justify-content:center;padding:20px}
 .wrap{width:100%;max-width:440px}
-.logo-wrap{text-align:center;margin-bottom:32px}
-.logo{width:72px;height:72px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 14px}
-.logo-title{font-family:'Baloo Da 2',cursive;font-size:20px;font-weight:800;color:#fff;margin-bottom:4px}
-.logo-sub{font-size:13px;color:rgba(255,255,255,.7)}
+/* BACK BUTTON */
+.back-btn{display:inline-flex;align-items:center;gap:7px;color:rgba(255,255,255,.8);text-decoration:none;font-size:14px;font-weight:500;margin-bottom:20px;padding:8px 16px;background:rgba(255,255,255,.1);border-radius:50px;transition:all .2s;border:1px solid rgba(255,255,255,.2)}
+.back-btn:hover{background:rgba(255,255,255,.18);color:#fff}
+/* LOGO */
+.logo-w{text-align:center;margin-bottom:24px}
+.logo{width:68px;height:68px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;margin:0 auto 12px}
+.logo-t{font-family:'Baloo Da 2',cursive;font-size:19px;font-weight:800;color:#fff;margin-bottom:4px}
+.logo-s{font-size:13px;color:rgba(255,255,255,.7)}
 /* TABS */
-.ltabs{display:flex;background:rgba(255,255,255,.08);border-radius:12px;padding:4px;margin-bottom:24px}
-.ltab{flex:1;text-align:center;padding:10px;border-radius:9px;cursor:pointer;font-size:13px;font-weight:600;color:rgba(255,255,255,.65);transition:all .25s;user-select:none}
-.ltab.active{background:#fff;color:var(--dk);box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.tabs{display:flex;background:rgba(255,255,255,.1);border-radius:12px;padding:4px;margin-bottom:20px;gap:4px}
+.tab{flex:1;text-align:center;padding:10px 8px;border-radius:9px;cursor:pointer;font-size:13px;font-weight:600;color:rgba(255,255,255,.65);transition:all .25s;user-select:none}
+.tab.on{background:#fff;color:var(--dk);box-shadow:0 2px 8px rgba(0,0,0,.14)}
 /* CARD */
-.card{background:#fff;border-radius:20px;padding:32px;box-shadow:0 20px 60px rgba(0,0,0,.2)}
-.card-title{font-family:'Baloo Da 2',cursive;font-size:22px;font-weight:800;color:var(--dk);margin-bottom:6px}
-.card-sub{font-size:14px;color:var(--mu);margin-bottom:24px;line-height:1.6}
-/* FIELDS */
-.f{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+.card{background:#fff;border-radius:20px;padding:30px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.c-title{font-family:'Baloo Da 2',cursive;font-size:22px;font-weight:800;color:var(--dk);margin-bottom:5px}
+.c-sub{font-size:14px;color:var(--mu);margin-bottom:22px;line-height:1.6}
+/* FIELD */
+.f{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
 .f label{font-size:13px;font-weight:600;color:var(--dk)}
-.f input{padding:12px 16px;border:2px solid #e5e7eb;border-radius:10px;font-family:'Hind Siliguri',sans-serif;font-size:15px;color:var(--tx);outline:none;transition:border .2s}
-.f input:focus{border-color:var(--g);box-shadow:0 0 0 3px rgba(26,107,60,.08)}
+.f input{padding:12px 15px;border:2px solid #e5e7eb;border-radius:10px;font-family:'Hind Siliguri',sans-serif;font-size:15px;color:var(--tx);outline:none;transition:border .2s,box-shadow .2s;width:100%}
+.f input:focus{border-color:var(--g);box-shadow:0 0 0 3px rgba(26,107,60,.09)}
 .f input::placeholder{color:#b0b8c4}
 /* BUTTON */
-.loginbtn{width:100%;padding:14px;background:var(--g);color:#fff;border:none;border-radius:12px;font-family:'Baloo Da 2',cursive;font-size:18px;font-weight:700;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:9px;margin-top:4px}
-.loginbtn:hover:not(:disabled){background:var(--gl);transform:translateY(-2px);box-shadow:0 8px 20px rgba(26,107,60,.3)}
-.loginbtn:disabled{opacity:.65;cursor:not-allowed;transform:none}
+.btn{width:100%;padding:14px;background:var(--g);color:#fff;border:none;border-radius:12px;font-family:'Baloo Da 2',cursive;font-size:18px;font-weight:700;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn:hover:not(:disabled){background:var(--gl);transform:translateY(-2px);box-shadow:0 8px 20px rgba(26,107,60,.3)}
+.btn:disabled{opacity:.65;cursor:not-allowed;transform:none}
 /* ALERT */
-.alert{border-radius:10px;padding:12px 16px;font-size:13px;font-weight:500;display:none;margin-bottom:16px}
-.alert.err{background:#fef2f2;border:1px solid #fca5a5;color:var(--err)}
-.alert.ok{background:var(--gp);border:1px solid #b2dfcc;color:var(--g)}
+.err{background:#fef2f2;border:1px solid #fca5a5;color:var(--err);border-radius:10px;padding:11px 14px;font-size:13px;font-weight:500;display:none;margin-bottom:14px;line-height:1.5}
 /* INFO */
-.info-box{background:#f8fafc;border:1px solid #e5e7eb;border-radius:10px;padding:14px 16px;font-size:13px;color:var(--mu);line-height:1.7;margin-top:16px}
-.info-box strong{color:var(--dk)}
-/* PROFILE CARD */
+.info{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:13px 15px;font-size:13px;color:var(--mu);line-height:1.7;margin-top:14px}
+.info strong{color:var(--dk)}
+/* PROFILE */
 .profile{display:none}
-.profile-header{text-align:center;padding:20px 0;border-bottom:1px solid #f3f4f6;margin-bottom:20px}
-.profile-photo{width:80px;height:106px;border-radius:10px;object-fit:cover;margin:0 auto 12px;display:block;border:3px solid var(--g)}
-.profile-no-photo{width:80px;height:80px;border-radius:50%;background:var(--gp);display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 12px}
-.profile-name{font-family:'Baloo Da 2',cursive;font-size:22px;font-weight:800;color:var(--dk)}
-.profile-id{font-size:12px;color:var(--mu);margin-top:3px}
-.profile-badge{display:inline-block;padding:4px 14px;border-radius:50px;font-size:12px;font-weight:700;background:var(--gp);color:var(--g);margin-top:8px}
-.prow{display:flex;justify-content:space-between;align-items:flex-start;padding:10px 0;border-bottom:1px solid #f3f4f6;font-size:14px}
+.ph{text-align:center;padding-bottom:18px;border-bottom:1px solid #f3f4f6;margin-bottom:18px}
+.ph-img{width:80px;height:107px;border-radius:10px;object-fit:cover;border:3px solid var(--g);display:block;margin:0 auto 12px}
+.ph-icon{width:72px;height:72px;border-radius:50%;background:var(--gp);display:flex;align-items:center;justify-content:center;font-size:30px;margin:0 auto 12px}
+.ph-name{font-family:'Baloo Da 2',cursive;font-size:22px;font-weight:800;color:var(--dk)}
+.ph-id{font-size:12px;color:var(--mu);margin-top:3px}
+.ph-badge{display:inline-block;padding:4px 14px;border-radius:50px;font-size:12px;font-weight:700;margin-top:8px}
+.prow{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 0;border-bottom:1px solid #f3f4f6;font-size:13px}
 .prow:last-child{border-bottom:none}
-.prow .pk{color:var(--mu);flex-shrink:0;width:130px;font-size:13px}
-.prow .pv{font-weight:600;color:var(--dk);text-align:right;flex:1}
-.prow .pv.green{color:var(--g)}.prow .pv.blue{color:#2563eb}
-.logout-btn{width:100%;padding:11px;background:var(--gp);color:var(--g);border:2px solid #b2dfcc;border-radius:10px;font-family:'Hind Siliguri',sans-serif;font-size:14px;font-weight:700;cursor:pointer;margin-top:20px;transition:all .2s}
-.logout-btn:hover{background:#d4ede0}
-.fee-breakdown{background:#f8fafc;border-radius:10px;padding:12px;margin-top:4px}
-.fb-row{display:flex;justify-content:space-between;font-size:13px;padding:4px 0}
-.fb-row.total{border-top:1px solid #e5e7eb;margin-top:4px;padding-top:8px;font-weight:700}
+.pk{color:var(--mu);flex-shrink:0;width:130px}
+.pv{font-weight:600;color:var(--dk);text-align:right;flex:1}
+.pv.g{color:var(--g)}.pv.b{color:var(--blue)}
+/* FEE BOX */
+.fee-box{background:#f8fafc;border-radius:10px;padding:12px 14px;margin-top:14px}
+.fb{display:flex;justify-content:space-between;font-size:13px;padding:4px 0}
+.fb.tot{border-top:1px solid #e5e7eb;margin-top:4px;padding-top:8px;font-weight:700}
+/* LINKS */
+.out-btn{width:100%;padding:10px;background:var(--gp);color:var(--g);border:2px solid #b2dfcc;border-radius:10px;font-family:'Hind Siliguri',sans-serif;font-size:14px;font-weight:700;cursor:pointer;margin-top:18px;transition:all .2s}
+.out-btn:hover{background:#d4ede0}
+.links{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.links a{flex:1;text-align:center;padding:9px;background:var(--gp);color:var(--g);border-radius:9px;text-decoration:none;font-size:13px;font-weight:600;transition:all .2s;white-space:nowrap}
+.links a:hover{background:#d4ede0}
+.links a.blue{background:#eff6ff;color:var(--blue)}
+.links a.blue:hover{background:#dbeafe}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="logo-wrap">
+  <!-- BACK TO HOME -->
+  <a href="index.html" class="back-btn">← হোমে ফিরুন</a>
+
+  <div class="logo-w">
     <div class="logo">🏫</div>
-    <div class="logo-title">কুলানন্দপুর উচ্চ বিদ্যালয়</div>
-    <div class="logo-sub">সম্মিলিত পুনর্মিলনী ২০২৭</div>
+    <div class="logo-t">কুলানন্দপুর উচ্চ বিদ্যালয়</div>
+    <div class="logo-s">সম্মিলিত পুনর্মিলনী ২০২৭</div>
   </div>
 
-  <!-- TAB SELECTOR -->
-  <div class="ltabs" id="ltabs">
-    <div class="ltab active" onclick="switchTab('user')">👤 নিবন্ধনকারী</div>
-    <div class="ltab" onclick="switchTab('admin')">🔐 আয়োজক</div>
+  <!-- TABS -->
+  <div class="tabs">
+    <div class="tab on" onclick="switchTab('user')">👤 নিবন্ধনকারী</div>
+    <div class="tab" onclick="switchTab('admin')">🔐 আয়োজক</div>
   </div>
 
-  <!-- USER LOGIN -->
+  <!-- USER CARD -->
   <div class="card" id="userCard">
-    <div class="alert err" id="userErr"></div>
+    <div class="err" id="uErr"></div>
+
+    <!-- LOGIN FORM -->
     <div id="loginForm">
-      <div class="card-title">স্বাগতম! 🎉</div>
-      <div class="card-sub">আপনার নিবন্ধনের তথ্য দেখতে ফোন নম্বর বা রেজিস্ট্রেশন আইডি দিয়ে প্রবেশ করুন।</div>
+      <div class="c-title">স্বাগতম! 🎉</div>
+      <div class="c-sub">ফোন নম্বর বা রেজিস্ট্রেশন আইডি দিয়ে প্রবেশ করুন।</div>
       <div class="f">
         <label>ফোন নম্বর বা রেজিস্ট্রেশন আইডি</label>
-        <input type="text" id="credential" placeholder="01XXXXXXXXX বা KHS-XXXXXXXX" onkeyup="if(event.key==='Enter')doLogin()">
+        <input type="text" id="cred" placeholder="01XXXXXXXXX বা KHS-XXXXXXXX-XXXXX" autocomplete="off"
+          onkeyup="if(event.key==='Enter')doLogin()">
       </div>
-      <button class="loginbtn" id="loginBtn" onclick="doLogin()">
+      <button class="btn" id="loginBtn" onclick="doLogin()">
         <span id="loginTxt">🔓 প্রবেশ করুন</span>
       </button>
-      <div class="info-box">
-        <strong>ℹ️ তথ্য:</strong> নিবন্ধনের সময় যে ফোন নম্বর দিয়েছেন, অথবা নিবন্ধনের পর পাওয়া <strong>রেজিস্ট্রেশন আইডি</strong> (যেমন: KHS-20270314-AB12C) দিয়ে লগইন করুন।
+      <div class="info">
+        <strong>ℹ️ নির্দেশনা:</strong><br>
+        নিবন্ধনের সময় দেওয়া <strong>ফোন নম্বর</strong> (01XXXXXXXXX) অথবা নিবন্ধনের পর পাওয়া <strong>রেজিস্ট্রেশন আইডি</strong> দিন।<br>
+        <span style="color:var(--g)">উদাহরণ: KHS-20270314-AB12C</span>
       </div>
     </div>
 
     <!-- PROFILE VIEW -->
     <div class="profile" id="profileView">
-      <div class="profile-header">
-        <img id="pPhoto" class="profile-photo" src="" alt="" style="display:none">
-        <div id="pNoPhoto" class="profile-no-photo">👤</div>
-        <div class="profile-name" id="pName">—</div>
-        <div class="profile-id" id="pId">—</div>
-        <div class="profile-badge" id="pStatus">নতুন</div>
+      <div class="ph">
+        <img id="pImg" class="ph-img" src="" alt="ছবি" style="display:none" referrerpolicy="no-referrer" onerror="this.style.display='none';document.getElementById('pIcon').style.display='flex'">
+        <div class="ph-icon" id="pIcon">👤</div>
+        <div class="ph-name" id="pName">—</div>
+        <div class="ph-id" id="pId">—</div>
+        <div class="ph-badge" id="pBadge">নিবন্ধিত</div>
       </div>
+
       <div id="pRows"></div>
-      <div class="fee-breakdown">
-        <div class="fb-row"><span>নিবন্ধন ফী</span><span id="fb-reg" style="color:var(--g);font-weight:600">—</span></div>
-        <div class="fb-row"><span>অনুদান</span><span id="fb-don" style="color:#2563eb;font-weight:600">—</span></div>
-        <div class="fb-row total"><span>মোট পরিশোধিত</span><span id="fb-tot" style="color:var(--g)">—</span></div>
+
+      <div class="fee-box">
+        <div class="fb"><span>নিবন্ধন ফী</span><span id="fb-r" style="color:var(--g);font-weight:600">—</span></div>
+        <div class="fb"><span>অনুদান</span><span id="fb-d" style="color:var(--blue);font-weight:600">—</span></div>
+        <div class="fb tot"><span>মোট পরিশোধিত</span><span id="fb-t" style="color:var(--g)">—</span></div>
       </div>
-      <button class="logout-btn" onclick="doLogout()">← লগআউট করুন</button>
+
+      <div class="links">
+        <a href="registrations.html">📋 নিবন্ধন তালিকা</a>
+        <a href="finance.html" class="blue">📊 অর্থিক বিবরণ</a>
+      </div>
+
+      <button class="out-btn" onclick="doLogout()">← লগআউট করুন</button>
     </div>
   </div>
 
-  <!-- ADMIN LOGIN -->
+  <!-- ADMIN CARD -->
   <div class="card" id="adminCard" style="display:none">
-    <div class="alert err" id="adminErr"></div>
-    <div class="card-title">আয়োজক প্রবেশ 🔐</div>
-    <div class="card-sub">আয়োজক কমিটির পিন দিয়ে প্রবেশ করুন।</div>
+    <div class="err" id="aErr"></div>
+    <div class="c-title">আয়োজক প্রবেশ 🔐</div>
+    <div class="c-sub">আয়োজক কমিটির পিন দিয়ে প্রবেশ করুন।</div>
     <div class="f">
       <label>আয়োজক পিন</label>
-      <input type="password" id="adminPin" placeholder="••••" onkeyup="if(event.key==='Enter')doAdminLogin()">
+      <input type="password" id="pin" placeholder="••••" onkeyup="if(event.key==='Enter')doAdminLogin()">
     </div>
-    <button class="loginbtn" id="adminBtn" onclick="doAdminLogin()">
+    <button class="btn" id="adminBtn" onclick="doAdminLogin()">
       <span>🔐 প্রবেশ করুন</span>
     </button>
   </div>
 </div>
 
 <script>
-// ============ CONFIG ============
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxm2u_klkNHx-z8NMI2wYpsqrGtkU9xrWNBygwVXYbLLQp4h3Z8thH3FGKmYyiOszHS/exec';
-const ADMIN_PIN  = '1234'; // ⚠️ পরিবর্তন করুন
-// ================================
+// ─── CONFIG ───────────────────────────────────────────
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzyqlcqA8SxaNMZmtO4IWmb2cSYvixIv1nO5zloxQz5ITLz9EGojuA-wZWEI0ntiR8/exec';
+const ADMIN_PIN  = '1234'; // Code.gs এ ADMIN_PIN এর সাথে মিলিয়ে দিন
+// ─────────────────────────────────────────────────────
 
 const N = n => n ? Number(n).toLocaleString('bn-BD') : '০';
 
-function switchTab(tab) {
-  document.querySelectorAll('.ltab').forEach((t,i) => t.classList.toggle('active', (tab==='user'&&i===0)||(tab==='admin'&&i===1)));
-  document.getElementById('userCard').style.display  = tab==='user'  ? 'block' : 'none';
-  document.getElementById('adminCard').style.display = tab==='admin' ? 'block' : 'none';
+// ── TAB ──────────────────────────────────────────────
+function switchTab(t) {
+  document.querySelectorAll('.tab').forEach((el,i) => el.classList.toggle('on', (t==='user'&&i===0)||(t==='admin'&&i===1)));
+  document.getElementById('userCard').style.display  = t==='user'  ? 'block':'none';
+  document.getElementById('adminCard').style.display = t==='admin' ? 'block':'none';
 }
 
-// ── USER LOGIN ──
-// ✅ GET request ব্যবহার — Apps Script doGet CORS support করে, response পড়া যায়
+// ── USER LOGIN ────────────────────────────────────────
 async function doLogin() {
-  const cred = document.getElementById('credential').value.trim();
-  const errEl = document.getElementById('userErr');
+  const cred = (document.getElementById('cred').value||'').trim();
+  const errEl = document.getElementById('uErr');
   errEl.style.display = 'none';
-  if (!cred) { showErr(errEl, 'ফোন নম্বর বা রেজিস্ট্রেশন আইডি দিন।'); return; }
+  if (!cred) { errEl.textContent='ফোন নম্বর বা আইডি লিখুন।'; errEl.style.display='block'; return; }
 
   const btn = document.getElementById('loginBtn');
   const txt = document.getElementById('loginTxt');
@@ -155,116 +180,151 @@ async function doLogin() {
     let profile = null;
 
     if (SCRIPT_URL === 'YOUR_APPS_SCRIPT_WEB_APP_URL_HERE') {
-      // ── DEMO MODE — শুধু পরীক্ষার জন্য ──
-      const DEMO_DB = {
-        '01711000001': { regId:'KHS-20270301-A1', name:'মোঃ রহিম উদ্দিন', phone:'01711000001', profession:'শিক্ষক', location:'দিনাজপুর', regType:'চাকরিজীবী প্রাক্তন', batchBatch:'২০০৫', memberCount:2, tshirtSize:'XL', stagePerformance:'গান', stageDetail:'আমার সোনার বাংলা', regFee:2500, donationAmount:2000, totalFee:4500, payMethod:'বিকাশ', txnId:'TXN001', status:'নিশ্চিত', photo:'' },
-        'khs-20270301-a1': { regId:'KHS-20270301-A1', name:'মোঃ রহিম উদ্দিন', phone:'01711000001', profession:'শিক্ষক', location:'দিনাজপুর', regType:'চাকরিজীবী প্রাক্তন', batchBatch:'২০০৫', memberCount:2, tshirtSize:'XL', stagePerformance:'গান', stageDetail:'আমার সোনার বাংলা', regFee:2500, donationAmount:2000, totalFee:4500, payMethod:'বিকাশ', txnId:'TXN001', status:'নিশ্চিত', photo:'' },
-        '01722000002': { regId:'KHS-20270301-A2', name:'নাসরিন বেগম', phone:'01722000002', profession:'ছাত্রী', location:'রংপুর', regType:'শিক্ষার্থী প্রাক্তন', batchBatch:'২০১০', memberCount:0, tshirtSize:'S', stagePerformance:'না', stageDetail:'', regFee:500, donationAmount:0, totalFee:500, payMethod:'নগদ', txnId:'TXN002', status:'নতুন', photo:'' },
+      // ── DEMO MODE ──
+      const DB = {
+        '01711000001': makeDemo('KHS-20270301-A1','মোঃ রহিম উদ্দিন','01711000001','চাকরিজীবী প্রাক্তন','২০০৫',2,'XL','গান',2500,2000,'বিকাশ','নিশ্চিত'),
+        'khs-20270301-a1': makeDemo('KHS-20270301-A1','মোঃ রহিম উদ্দিন','01711000001','চাকরিজীবী প্রাক্তন','২০০৫',2,'XL','গান',2500,2000,'বিকাশ','নিশ্চিত'),
+        '01722000002': makeDemo('KHS-20270301-A2','নাসরিন বেগম','01722000002','শিক্ষার্থী প্রাক্তন','২০১০',0,'S','না',500,0,'নগদ','নতুন'),
+        '01733000003': makeDemo('KHS-20270301-A3','করিম হোসেন','01733000003','চাকরিজীবী প্রাক্তন','২০০২',1,'XXL','আবৃত্তি',2000,5000,'বিকাশ','নিশ্চিত'),
       };
-      profile = DEMO_DB[cred.toLowerCase()];
+      profile = DB[cred.toLowerCase()];
       if (!profile) {
-        showErr(errEl, '❌ তথ্য পাওয়া যায়নি।
-
-Demo তে চেষ্টা করুন:
-• 01711000001
-• 01722000002
-• KHS-20270301-A1');
+        errEl.innerHTML = '❌ তথ্য পাওয়া যায়নি।<br><small>Demo: 01711000001 / 01722000002 / 01733000003</small>';
+        errEl.style.display='block';
         btn.disabled=false; txt.textContent='🔓 প্রবেশ করুন'; return;
       }
     } else {
       // ── REAL MODE — Apps Script GET ──
-      // GET request করি — Apps Script doGet থেকে সরাসরি ডাটা আসে
+      // doGet এ action=login handle করা আছে
       const url = SCRIPT_URL + '?action=login&credential=' + encodeURIComponent(cred);
-      const res = await fetch(url);
+      const res = await fetch(url, { method: 'GET' });
       if (!res.ok) throw new Error('HTTP ' + res.status);
       const d = await res.json();
       if (!d.success) {
-        showErr(errEl, d.error || '❌ তথ্য পাওয়া যায়নি। সঠিক ফোন নম্বর বা রেজিস্ট্রেশন আইডি দিন।');
+        errEl.textContent = d.error || '❌ তথ্য পাওয়া যায়নি। সঠিক ফোন বা আইডি দিন।';
+        errEl.style.display='block';
         btn.disabled=false; txt.textContent='🔓 প্রবেশ করুন'; return;
       }
       profile = d.profile;
     }
 
-    // ✅ Session এ সেভ করা — page reload এ থাকবে
     sessionStorage.setItem('khs_user', JSON.stringify(profile));
     showProfile(profile);
-  } catch (err) {
-    showErr(errEl, '❌ সংযোগ ত্রুটি। ইন্টারনেট চেক করুন।');
-    console.error('Login error:', err);
+  } catch(err) {
+    errEl.textContent = '❌ সংযোগ ত্রুটি। ইন্টারনেট বা Apps Script URL চেক করুন।';
+    errEl.style.display = 'block';
+    console.error('Login:', err);
   }
   btn.disabled=false; txt.textContent='🔓 প্রবেশ করুন';
 }
 
+function makeDemo(regId,name,phone,regType,batch,mc,ts,stage,regFee,don,pm,status){
+  return {regId,name,phone,profession:'',location:'',regType,batchBatch:batch,memberCount:mc,
+    tshirtSize:ts,stagePerformance:stage,stageDetail:'',regFee,donationAmount:don,
+    totalFee:regFee+don,payMethod:pm,txnId:'TXN-DEMO',status,photo:'',memberDetails:'',guestDetails:'[]'};
+}
+
+// ── SHOW PROFILE ──────────────────────────────────────
 function showProfile(p) {
   document.getElementById('loginForm').style.display = 'none';
   document.getElementById('profileView').style.display = 'block';
 
-  // Photo — Drive thumbnail URL সঠিকভাবে দেখানো
+  // ছবি
   if (p.photo && p.photo.length > 10) {
     let src = p.photo;
-    const driveIdMatch = p.photo.match(/[?&]id=([a-zA-Z0-9_-]+)/);
-    if (driveIdMatch) src = 'https://lh3.googleusercontent.com/d/' + driveIdMatch[1] + '=s400';
-    const imgEl = document.getElementById('pPhoto');
-    imgEl.src = src;
-    imgEl.referrerPolicy = 'no-referrer';
-    imgEl.style.display = 'block';
-    document.getElementById('pNoPhoto').style.display = 'none';
-    imgEl.onerror = function() { this.style.display='none'; document.getElementById('pNoPhoto').style.display='flex'; };
+    // পুরনো URL convert করি
+    const m = p.photo.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+    if (m) src = 'https://lh3.googleusercontent.com/d/'+m[1]+'=s400';
+    const img = document.getElementById('pImg');
+    img.src = src; img.referrerPolicy='no-referrer';
+    img.style.display='block';
+    document.getElementById('pIcon').style.display='none';
   }
+
   document.getElementById('pName').textContent = p.name || '—';
-  document.getElementById('pId').textContent = p.regId || '—';
-  document.getElementById('pStatus').textContent = p.status==='নিশ্চিত' ? '✓ নিশ্চিত' : 'নিবন্ধিত';
-  document.getElementById('pStatus').style.background = p.status==='নিশ্চিত' ? 'var(--gp)' : '#fff7ed';
+  document.getElementById('pId').textContent   = p.regId || '—';
 
-  // Fee breakdown
-  document.getElementById('fb-reg').textContent = N(p.regFee) + ' ৳';
-  document.getElementById('fb-don').textContent = (p.donationAmount>0) ? N(p.donationAmount)+' ৳' : '—';
-  document.getElementById('fb-tot').textContent = N(p.totalFee) + ' ৳';
+  const badge = document.getElementById('pBadge');
+  badge.textContent = p.status==='নিশ্চিত' ? '✓ নিশ্চিত' : 'নিবন্ধিত';
+  badge.style.cssText = p.status==='নিশ্চিত'
+    ? 'background:#e8f5ee;color:#1a6b3c'
+    : 'background:#fff7ed;color:#c2410c';
 
-  // Detail rows
+  document.getElementById('fb-r').textContent = N(p.regFee)        + ' ৳';
+  document.getElementById('fb-d').textContent = p.donationAmount>0 ? N(p.donationAmount)+' ৳' : '—';
+  document.getElementById('fb-t').textContent = N(p.totalFee)      + ' ৳';
+
   const rows = [
-    { k:'নিবন্ধনের ধরন', v:p.regType },
-    { k:'ব্যাচ / শ্রেণী', v:p.batchBatch },
-    { k:'পেশা', v:p.profession },
-    { k:'বাসস্থান', v:p.location },
-    { k:'মোবাইল', v:p.phone },
-    { k:'অতিরিক্ত সদস্য', v:(p.memberCount||0)+' জন' },
-    { k:'টি-শার্ট সাইজ', v:p.tshirtSize, cls:'green' },
-    { k:'স্টেজ পারফরম্যান্স', v:p.stagePerformance },
-    { k:'পেমেন্ট পদ্ধতি', v:p.payMethod },
-    { k:'ট্রানজেকশন আইডি', v:p.txnId },
+    {k:'নিবন্ধনের ধরন',  v:p.regType,         cls:''},
+    {k:'ব্যাচ / শ্রেণী', v:p.batchBatch,       cls:''},
+    {k:'পেশা',           v:p.profession,       cls:''},
+    {k:'বাসস্থান',        v:p.location,         cls:''},
+    {k:'মোবাইল',         v:p.phone,            cls:''},
+    {k:'অতিরিক্ত সদস্য', v:(p.memberCount||0)+' জন', cls:''},
+    {k:'টি-শার্ট সাইজ',  v:p.tshirtSize,       cls:'g'},
+    {k:'স্টেজ পারফর্ম',  v:p.stagePerformance, cls:''},
+    {k:'পেমেন্ট পদ্ধতি', v:p.payMethod,        cls:''},
+    {k:'ট্রানজেকশন আইডি',v:p.txnId,            cls:'b'},
   ];
-  document.getElementById('pRows').innerHTML = rows.map(r=>
-    `<div class="prow"><span class="pk">${r.k}</span><span class="pv ${r.cls||''}">${r.v||'—'}</span></div>`
+  document.getElementById('pRows').innerHTML = rows.map(r =>
+    `<div class="prow"><span class="pk">${r.k}</span><span class="pv ${r.cls}">${r.v||'—'}</span></div>`
   ).join('');
 }
 
+// ── LOGOUT ────────────────────────────────────────────
 function doLogout() {
   sessionStorage.removeItem('khs_user');
-  document.getElementById('loginForm').style.display = 'block';
   document.getElementById('profileView').style.display = 'none';
-  document.getElementById('credential').value = '';
+  document.getElementById('loginForm').style.display   = 'block';
+  document.getElementById('cred').value = '';
+  document.getElementById('uErr').style.display = 'none';
 }
 
-// ── ADMIN LOGIN ──
-function doAdminLogin() {
-  const pin = document.getElementById('adminPin').value;
-  const errEl = document.getElementById('adminErr');
-  if (pin !== ADMIN_PIN) { showErr(errEl, 'ভুল পিন।'); return; }
-  sessionStorage.setItem('khs_admin', '1');
-  // Admin: নিবন্ধন তালিকায় যাও
-  window.location.href = 'registrations.html';
+// ── ADMIN LOGIN ───────────────────────────────────────
+async function doAdminLogin() {
+  const pin = document.getElementById('pin').value;
+  const errEl = document.getElementById('aErr');
+  errEl.style.display = 'none';
+
+  const btn = document.getElementById('adminBtn');
+  btn.disabled = true;
+
+  let ok = false;
+
+  if (SCRIPT_URL === 'YOUR_APPS_SCRIPT_WEB_APP_URL_HERE') {
+    // Demo: client-side check
+    ok = (pin === ADMIN_PIN);
+  } else {
+    try {
+      const url = SCRIPT_URL + '?action=adminLogin&pin=' + encodeURIComponent(pin);
+      const res = await fetch(url);
+      const d   = await res.json();
+      ok = d.success;
+    } catch(e) {
+      // Fallback: client-side check
+      ok = (pin === ADMIN_PIN);
+    }
+  }
+
+  if (ok) {
+    sessionStorage.setItem('khs_admin', '1');
+    // Admin: registrations page এ যাও
+    window.location.href = 'registrations.html';
+  } else {
+    errEl.textContent = '❌ ভুল পিন। আবার চেষ্টা করুন।';
+    errEl.style.display = 'block';
+    btn.disabled = false;
+  }
 }
 
-function showErr(el, msg) { el.textContent = msg; el.style.display = 'block'; }
-
-// Auto-restore session
-window.onload = function() {
+// ── AUTO-RESTORE ──────────────────────────────────────
+(function init() {
+  // ইতিমধ্যে লগইন থাকলে profile দেখাও
   const saved = sessionStorage.getItem('khs_user');
   if (saved) {
     try { showProfile(JSON.parse(saved)); } catch(e) {}
   }
-};
+})();
 </script>
 </body>
 </html>
