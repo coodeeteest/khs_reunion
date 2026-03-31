@@ -9,6 +9,14 @@
 :root{--g:#1a6b3c;--gl:#2d9b5a;--gp:#e8f5ee;--gold:#c9962a;--gdl:#f0c060;--cream:#fdf8ef;--dk:#1a1a1a;--tx:#2c2c2c;--mu:#6b7280;--err:#dc2626;--blue:#2563eb;--bp:#eff6ff}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{font-family:'Hind Siliguri',sans-serif;background:var(--cream);min-height:100vh}
+/* AUTH BANNER */
+.auth-banner{background:linear-gradient(90deg,#1a6b3c,#2d9b5a);color:#fff;text-align:center;padding:10px 16px;font-size:13px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:64px}
+.auth-banner a{color:var(--gdl);font-weight:700;text-decoration:none;border:1px solid rgba(240,192,96,.5);padding:4px 12px;border-radius:50px;transition:all .2s}
+.auth-banner a:hover{background:rgba(240,192,96,.15)}
+.auth-banner.admin-view{background:linear-gradient(90deg,#2563eb,#1d4ed8)}
+/* LOCK OVERLAY on restricted cells */
+.locked{filter:blur(5px);user-select:none;pointer-events:none}
+.lock-icon{display:inline-block;font-size:14px;color:var(--mu)}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,107,60,.97);backdrop-filter:blur(12px);height:64px;padding:0 4%;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 20px rgba(0,0,0,.2)}
 .nb{display:flex;align-items:center;gap:10px;text-decoration:none}
 .nl{width:36px;height:36px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px}
@@ -102,6 +110,13 @@ mark.hl{background:#fef08a;border-radius:2px;padding:0 1px}
     <li><a href="form.html" class="nbtn">নিবন্ধন করুন</a></li>
   </ul>
 </nav>
+
+<div class="auth-banner" id="authBanner">
+  <span>🔒 সম্পূর্ণ তথ্য দেখতে লগইন করুন</span>
+  <a href="login.html">লগইন করুন</a>
+  <span style="opacity:.6">|</span>
+  <a href="login.html#admin">আয়োজক প্রবেশ</a>
+</div>
 
 <div class="hero2">
   <h1>📋 নিবন্ধন <span>তালিকা</span></h1>
@@ -227,10 +242,10 @@ mark.hl{background:#fef08a;border-radius:2px;padding:0 1px}
 </div>
 
 <script>
-const SCRIPT_URL='YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbym474tYLW4ZnP1nCRN4cHT9zNJgJwGDwcYTF-8rArCLQRyPNst2GsjbjxLkXzQR7Zq/exec';
 const PG=20;
 const SIZES=['XS','S','M','L','XL','XXL'];
-const SCLR=['#7c3aed','#2563eb'https://script.google.com/macros/s/AKfycbxyR5oJvCM8Ji_zb21ohgZazBMPVayLZCbJTaTvYWefKmGjbv3d4MsZHDtGdXhXg3cM/exec,'#1a6b3c','#c9962a','#dc2626','#0891b2'];
+const SCLR=['#7c3aed','#2563eb','#1a6b3c','#c9962a','#dc2626','#0891b2'];
 
 let allData=[], flt=[], pg=1;
 
@@ -296,22 +311,25 @@ function renderList(){
   const start=(pg-1)*PG;
   const slice=flt.slice(start,start+PG);
   const tbody=document.getElementById('lb');
+  const canSeeAll = isAdmin || isUser;
   if(!slice.length){tbody.innerHTML='<tr><td colspan="13" class="empty">কোনো ডাটা পাওয়া যায়নি</td></tr>';renderPg();return;}
   tbody.innerHTML=slice.map((d,i)=>{
     const rf=parseFloat(d.regFee)||0,don=parseFloat(d.donationAmount)||0,tot=parseFloat(d.totalFee)||(rf+don);
+    // সেনসিটিভ ডাটা — লগইন ছাড়া blur
+    const phone = canSeeAll ? hl(d.phone,q) : `<span class="locked">${d.phone}</span><span class="lock-icon"> 🔒</span>`;
+    const fees  = canSeeAll
+      ? `<td><span style="font-weight:700;color:var(--g);font-size:12px">${N(rf)}৳</span></td><td><span style="font-weight:600;color:var(--blue);font-size:12px">${don>0?N(don)+'৳':'—'}</span></td><td><strong>${N(tot)}৳</strong></td><td>${d.payMethod||'—'}</td>`
+      : `<td><span class="lock-icon">🔒</span></td><td><span class="lock-icon">🔒</span></td><td><span class="lock-icon">🔒</span></td><td><span class="lock-icon">🔒</span></td>`;
     return`<tr>
       <td style="color:var(--mu);font-size:11px">${start+i+1}</td>
       <td>${phCell(d.photo)}</td>
-      <td><div style="font-weight:600;font-size:13px">${hl(d.name,q)}</div><div style="font-size:10px;color:var(--mu)">${d.regId}</div></td>
-      <td>${hl(d.phone,q)}</td>
+      <td><div style="font-weight:600;font-size:13px">${hl(d.name,q)}</div><div style="font-size:10px;color:var(--mu)">${canSeeAll?d.regId:'🔒 লগইন করুন'}</div></td>
+      <td>${phone}</td>
       <td>${tb(d.regType)}</td>
       <td><strong>${hl(String(d.batchBatch||'—'),q)}</strong></td>
       <td style="text-align:center;font-weight:700">${d.memberCount||0}</td>
       <td><span style="font-weight:800;color:var(--g)">${d.tshirtSize||'—'}</span></td>
-      <td><span style="font-weight:700;color:var(--g);font-size:12px">${N(rf)}৳</span></td>
-      <td><span style="font-weight:600;color:var(--blue);font-size:12px">${don>0?N(don)+'৳':'—'}</span></td>
-      <td><strong>${N(tot)}৳</strong></td>
-      <td>${d.payMethod||'—'}</td>
+      ${fees}
       <td>${sb(d.status||'নতুন')}</td>
     </tr>`;
   }).join('');
@@ -431,8 +449,30 @@ function showTab(n){
   document.getElementById('tab-'+n).classList.add('active');
 }
 
+// ── AUTH ──
+let isAdmin = false, isUser = false;
+function checkAuth(){
+  isAdmin = !!sessionStorage.getItem('khs_admin');
+  isUser  = !!sessionStorage.getItem('khs_user');
+  const banner = document.getElementById('authBanner');
+  if(isAdmin){
+    banner.innerHTML='<span>🛡️ আয়োজক মোড — সম্পূর্ণ অ্যাক্সেস</span><a href="login.html" onclick="sessionStorage.removeItem(\'khs_admin\');return true">লগআউট</a>';
+    banner.className='auth-banner admin-view';
+  } else if(isUser){
+    const u=JSON.parse(sessionStorage.getItem('khs_user')||'{}');
+    banner.innerHTML=`<span>👤 স্বাগতম ${u.name||''} — সীমিত দেখার অধিকার</span><a href="login.html">প্রোফাইল</a><a href="login.html" onclick="sessionStorage.removeItem('khs_user');return true">লগআউট</a>`;
+  } else {
+    banner.style.display='flex';
+  }
+  // Finance page অ্যাক্সেস চেক
+  document.querySelectorAll('a[href="finance.html"]').forEach(a=>{
+    if(!isAdmin){a.onclick=e=>{e.preventDefault();alert('⚠️ অর্থিক বিবরণ দেখতে আয়োজক হিসেবে লগইন করুন।');window.location='login.html';};}
+  });
+}
+
 // ── LOAD ──
 async function load(){
+  checkAuth();
   document.getElementById('ri').textContent='ডাটা লোড হচ্ছে…';
   if(SCRIPT_URL==='YOUR_APPS_SCRIPT_WEB_APP_URL_HERE'){allData=DEMO;}
   else{try{const r=await fetch(SCRIPT_URL+'?action=getAll');const d=await r.json();allData=d.data||DEMO;}catch(e){allData=DEMO;}}
