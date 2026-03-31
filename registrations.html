@@ -107,6 +107,7 @@ mark.hl{background:#fef08a;border-radius:2px;padding:0 1px}
     <li><a href="index.html">হোম</a></li>
     <li><a href="registrations.html" class="active">নিবন্ধন তালিকা</a></li>
     <li><a href="finance.html">অর্থিক বিবরণ</a></li>
+        <li><a href="login.html" id="loginNavLink">🔐 লগইন</a></li>
     <li><a href="form.html" class="nbtn">নিবন্ধন করুন</a></li>
   </ul>
 </nav>
@@ -242,7 +243,7 @@ mark.hl{background:#fef08a;border-radius:2px;padding:0 1px}
 </div>
 
 <script>
-const SCRIPT_URL='https://script.google.com/macros/s/AKfycbym474tYLW4ZnP1nCRN4cHT9zNJgJwGDwcYTF-8rArCLQRyPNst2GsjbjxLkXzQR7Zq/exec';
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbxm2u_klkNHx-z8NMI2wYpsqrGtkU9xrWNBygwVXYbLLQp4h3Z8thH3FGKmYyiOszHS/exec';
 const PG=20;
 const SIZES=['XS','S','M','L','XL','XXL'];
 const SCLR=['#7c3aed','#2563eb','#1a6b3c','#c9962a','#dc2626','#0891b2'];
@@ -277,8 +278,16 @@ function pg2(d){
   try{return JSON.parse(d.guestDetails);}catch(e){return[];}
 }
 function phCell(url){
-  if(url&&url.length>10){
-    return `<img class="ptb" src="${url}" loading="lazy" onerror="this.outerHTML='<span class=noph>👤</span>'" onclick="openM('${url.replace(/'/g,"\\'")}')" alt="ছবি">`;
+  if(url && url.length>10){
+    // lh3.googleusercontent.com — Drive thumbnail, referrerpolicy লাগে
+    // drive.google.com/uc — সরাসরি CORS block হয়, thumbnail এ convert করি
+    let src = url;
+    // পুরনো format convert করি নতুনে
+    const driveIdMatch = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+    if (driveIdMatch) {
+      src = 'https://lh3.googleusercontent.com/d/' + driveIdMatch[1] + '=s400';
+    }
+    return `<img class="ptb" src="${src}" loading="lazy" referrerpolicy="no-referrer" crossorigin="anonymous" onerror="this.outerHTML='<span class=noph title=\\'ছবি লোড হয়নি\\'>👤</span>'" onclick="openM('${src.replace(/'/g,"\\'")}')" alt="ছবি">`;
   }
   return '<span class="noph">👤</span>';
 }
@@ -480,6 +489,18 @@ async function load(){
   updateStats();ls();renderGuests();renderBatch();renderTshirt();renderBatchTshirt();renderStage();
 }
 load();
+</script>
+
+<script>
+// Nav login link update
+(function(){
+  const u = sessionStorage.getItem('khs_user');
+  const a = sessionStorage.getItem('khs_admin');
+  const el = document.getElementById('loginNavLink');
+  if (!el) return;
+  if (a) { el.textContent = '🛡️ আয়োজক'; el.href = 'finance.html'; }
+  else if (u) { const p=JSON.parse(u); el.textContent = '👤 '+p.name.split(' ')[0]; el.href = 'login.html'; }
+})();
 </script>
 </body>
 </html>
