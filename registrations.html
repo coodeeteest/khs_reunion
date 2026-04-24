@@ -312,8 +312,8 @@ function ls(){
   const ft=document.getElementById('ft').value;
   const fp=document.getElementById('fp').value;
   flt=allData.filter(d=>{
-    const mq=!q||(d.name||'').toLowerCase().includes(q)||(d.phone||'').includes(q)||
-      String(d.batchBatch||'').toLowerCase().includes(q)||(d.regId||'').toLowerCase().includes(q);
+    const mq=!q||String(d.name||'').toLowerCase().includes(q)||String(d.phone||'').includes(q)||
+      String(d.batchBatch||'').toLowerCase().includes(q)||String(d.regId||'').toLowerCase().includes(q);
     return mq&&(!ft||d.regType===ft)&&(!fp||d.payMethod===fp);
   });
   pg=1;
@@ -479,7 +479,7 @@ async function loadData(){
     try {
       const {data, time} = JSON.parse(cached);
       if (Date.now()-time < CACHE_TTL && data.length > 0) {
-        allData = data; flt=[...allData];
+        allData = data.map(normalize); flt=[...allData];
         updateStats(); ls(); renderGuests(); renderBatch(); renderTshirt(); renderBTS(); renderStage();
         fetchFresh();
         return;
@@ -487,6 +487,29 @@ async function loadData(){
     } catch(e){}
   }
   await fetchFresh();
+}
+
+/* Apps Script row normalize — সব সম্ভাব্য field name handle */
+function normalize(d){
+  return {
+    regId:            d.regId||d.id||d.ID||d.RegId||'',
+    name:             d.name||d.Name||d.fullName||'',
+    phone:            String(d.phone||d.Phone||d.mobile||d.Mobile||''),
+    regType:          d.regType||d.type||d.Type||'',
+    batchBatch:       String(d.batchBatch||d.batch||d.Batch||''),
+    memberCount:      parseInt(d.memberCount||d.guestCount||0)||0,
+    guestDetails:     d.guestDetails||d.guests||'[]',
+    tshirtSize:       d.tshirtSize||d.tShirtSize||d.size||d.Size||'',
+    stagePerformance: d.stagePerformance||d.stage||'না',
+    stageDetail:      d.stageDetail||d.stageDetails||'',
+    regFee:           parseFloat(d.regFee||d.fee||0)||0,
+    donationAmount:   parseFloat(d.donationAmount||d.donation||0)||0,
+    totalFee:         parseFloat(d.totalFee||d.total||0)||0,
+    payMethod:        d.payMethod||d.payment||d.paymentMethod||'',
+    txnId:            d.txnId||d.txn||d.transactionId||'',
+    status:           d.status||d.Status||'নতুন',
+    photo:            d.photo||d.Photo||d.photoUrl||'',
+  };
 }
 
 async function fetchFresh(){
@@ -497,10 +520,12 @@ async function fetchFresh(){
       const res = await fetch(SCRIPT_URL + '?action=getAll');
       if (!res.ok) throw new Error('HTTP '+res.status);
       const d = await res.json();
-      if (d.success && Array.isArray(d.data)) {
-        allData = d.data;
+      if (d.success && Array.isArray(d.data) && d.data.length > 0) {
+        console.log('Apps Script field names:', Object.keys(d.data[0]));
+        allData = d.data.map(normalize);
         sessionStorage.setItem(CACHE_KEY, JSON.stringify({data:allData, time:Date.now()}));
       } else {
+        console.warn('Apps Script data empty, showing DEMO');
         allData = DEMO;
       }
     } catch(e) {
@@ -512,6 +537,12 @@ async function fetchFresh(){
   updateStats(); ls(); renderGuests(); renderBatch(); renderTshirt(); renderBTS(); renderStage();
 }
 
+// URL-এ ?debug=1 দিলে console এ raw data দেখা যাবে
+if(new URLSearchParams(location.search).get('debug')==='1'){
+  fetch(SCRIPT_URL+'?action=getAll').then(r=>r.json()).then(d=>{
+    if(d.data&&d.data[0]) console.table(d.data[0]);
+  }).catch(()=>{});
+}
 loadData();
 </script>
 </body>
