@@ -22,10 +22,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,107,60,.9
 .hero2 h1 span{color:var(--gdl)}
 .hero2 p{font-size:14px;opacity:.75}
 .pw{max-width:1100px;margin:0 auto;padding:28px 4% 80px}
-/* CARDS */
 .card{background:#fff;border-radius:16px;box-shadow:0 4px 18px rgba(0,0,0,.07);padding:24px;margin-bottom:20px}
 .ctitle{font-family:'Baloo Da 2',cursive;font-size:18px;font-weight:700;color:var(--dk);margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid var(--gp);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
-/* SUMMARY CARDS */
 .sumcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:24px}
 .sc{background:#fff;border-radius:14px;padding:18px;box-shadow:0 3px 14px rgba(0,0,0,.07);border-left:4px solid var(--g);transition:transform .2s}
 .sc:hover{transform:translateY(-2px)}
@@ -38,13 +36,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,107,60,.9
 .sc.exp .sv{color:var(--err)}.sc.don .sv{color:var(--blue)}
 .sc.bal.pos .sv{color:var(--g)}.sc.bal.neg .sv{color:var(--err)}
 .sc .ss{font-size:12px;color:var(--mu);margin-top:4px}
-/* INCOME TABLE */
 .itbl{width:100%;border-collapse:collapse;font-size:13px}
 .itbl th{background:var(--gp);color:var(--g);font-weight:700;font-size:11px;padding:10px 12px;text-align:left;text-transform:uppercase;letter-spacing:.5px}
 .itbl td{padding:10px 12px;border-bottom:1px solid #f3f4f6;color:var(--tx)}
 .itbl tr:last-child td{border-bottom:none;font-weight:700;background:var(--gp);color:var(--g)}
 .itbl tr:hover:not(:last-child) td{background:#fafffe}
-/* EXPENSE FORM */
 .erows{display:flex;flex-direction:column;gap:10px}
 .erow{display:grid;grid-template-columns:1fr 120px auto;gap:8px;align-items:center;padding:10px 12px;background:#f9fafb;border-radius:10px;border:1px solid #e5e7eb}
 .erow input{padding:8px 10px;border:1.5px solid #e5e7eb;border-radius:8px;font-family:'Hind Siliguri',sans-serif;font-size:13px;outline:none;background:#fff;transition:border .2s;width:100%}
@@ -52,24 +48,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,107,60,.9
 .erow .amt{text-align:right}
 .erow .rm2{background:none;border:none;cursor:pointer;color:var(--mu);font-size:18px;padding:4px;transition:color .2s;line-height:1}
 .erow .rm2:hover{color:var(--err)}
+/* READ-ONLY mode — admin না হলে expense section এ overlay */
+.erow.readonly input{background:#f3f4f6;color:var(--mu);cursor:not-allowed;border-color:#e5e7eb}
 .addbtn{display:flex;align-items:center;gap:7px;background:none;border:2px dashed #b2dfcc;color:var(--g);border-radius:10px;padding:10px 16px;font-size:13px;font-weight:600;cursor:pointer;width:100%;justify-content:center;transition:all .2s;font-family:'Hind Siliguri',sans-serif;margin-top:8px}
 .addbtn:hover{background:var(--gp)}
 .savebtn{background:var(--g);color:#fff;border:none;border-radius:10px;padding:9px 20px;font-family:'Baloo Da 2',cursive;font-size:14px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:all .2s}
 .savebtn:hover{background:var(--gl);transform:translateY(-1px)}
-/* BAR CHART */
 .bars{display:flex;flex-direction:column;gap:10px;margin-top:4px}
 .bitem{display:flex;align-items:center;gap:10px;font-size:13px}
 .blbl{min-width:130px;color:var(--tx);font-size:12px;flex-shrink:0}
 .btrack{flex:1;height:10px;background:#e5e7eb;border-radius:5px;overflow:hidden}
 .bfill{height:100%;border-radius:5px;transition:width .6s ease}
 .bval{min-width:80px;text-align:right;font-weight:600;font-size:12px}
-/* BIG BALANCE */
 .bigbal{text-align:center;padding:24px}
 .bigbal .num{font-family:'Baloo Da 2',cursive;font-size:52px;font-weight:800;line-height:1}
 .bigbal .lbl{font-size:14px;color:var(--mu);margin-top:6px}
 .cashrow{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;background:#f9fafb;border-radius:9px;font-size:14px;margin-bottom:8px}
 .cashrow:last-child{background:var(--gp);font-weight:700;margin-bottom:0}
-/* LEDGER */
 .ledger{width:100%;border-collapse:collapse;font-size:13px}
 .ledger th{background:var(--gp);color:var(--g);font-weight:700;font-size:11px;padding:10px 12px;text-align:left;text-transform:uppercase}
 .ledger td{padding:9px 12px;border-bottom:1px solid #f3f4f6}
@@ -77,12 +72,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,107,60,.9
 .ledger .inc{color:var(--g);font-weight:600}.ledger .exp{color:var(--err);font-weight:600}
 .badge{display:inline-block;padding:3px 9px;border-radius:50px;font-size:11px;font-weight:700}
 .bg{background:var(--gp);color:var(--g)}.br{background:var(--rp);color:var(--err)}
-/* NOTE */
 .notebox{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:13px 16px;font-size:13px;color:#92400e;line-height:1.7;margin-bottom:20px;display:flex;align-items:flex-start;gap:8px}
-/* GRID */
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-/* LOADING */
 .loading{text-align:center;padding:30px;color:var(--mu);font-size:14px}
+/* ব্যয় section পুরোটা hide করার জন্য */
+.exp-section-hidden .addbtn,
+.exp-section-hidden .savebtn,
+.exp-section-hidden .rm2{display:none!important}
+.exp-section-hidden .erow input{pointer-events:none;background:#f3f4f6;color:var(--mu);cursor:not-allowed}
 @media(max-width:800px){.grid2{grid-template-columns:1fr}.nlinks{display:none}}
 </style>
 </head>
@@ -96,7 +93,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,107,60,.9
     <li><a href="index.html">হোম</a></li>
     <li><a href="registrations.html">নিবন্ধন তালিকা</a></li>
     <li><a href="finance.html" class="active">অর্থিক বিবরণ</a></li>
-        <li><a href="login.html" id="loginNavLink">🔐 লগইন</a></li>
+    <li><a href="login.html" id="loginNavLink">🔐 লগইন</a></li>
     <li><a href="form.html" class="nbtn">নিবন্ধন করুন</a></li>
   </ul>
 </nav>
@@ -107,7 +104,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,107,60,.9
 </div>
 
 <div class="pw">
-  <div class="notebox">⚠️ <span>এই পেজটি আয়োজক কমিটির জন্য। ব্যয়ের তথ্য এখানে যোগ করুন। আয়ের ডাটা Google Sheet থেকে স্বয়ংক্রিয়ভাবে আসে।</span></div>
+  <div class="notebox" id="mainNotice">⚠️ <span>এই পেজটি আয়োজক কমিটির জন্য। ব্যয়ের তথ্য এখানে যোগ করুন। আয়ের ডাটা Google Sheet থেকে স্বয়ংক্রিয়ভাবে আসে।</span></div>
 
   <!-- SUMMARY CARDS -->
   <div class="sumcards">
@@ -121,7 +118,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,107,60,.9
   <div class="grid2">
     <!-- LEFT -->
     <div>
-      <!-- আয়ের বিবরণ -->
       <div class="card">
         <div class="ctitle">💰 আয়ের বিবরণ <span style="font-size:12px;font-weight:500;color:var(--mu)" id="lastUpdate">—</span></div>
         <div id="incLoading" class="loading">Sheet থেকে লোড হচ্ছে…</div>
@@ -130,8 +126,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,107,60,.9
           <tbody id="incBody"></tbody>
         </table>
       </div>
-
-      <!-- লেজার -->
       <div class="card">
         <div class="ctitle">📒 সম্পূর্ণ লেজার</div>
         <table class="ledger">
@@ -144,23 +138,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,107,60,.9
 
     <!-- RIGHT -->
     <div>
-      <!-- ব্যয়ের খাত -->
-      <div class="card">
+      <div class="card" id="expCard">
         <div class="ctitle">
           📤 ব্যয়ের খাত
-          <button class="savebtn" onclick="saveExpenses()">💾 শীটে সেভ করুন</button>
+          <button class="savebtn" id="savebtn" onclick="saveExpenses()">💾 শীটে সেভ করুন</button>
         </div>
         <div class="erows" id="expRows"></div>
-        <button class="addbtn" onclick="addExpRow()">+ নতুন খাত যোগ করুন</button>
+        <button class="addbtn" id="addExpBtn" onclick="addExpRow()">+ নতুন খাত যোগ করুন</button>
       </div>
-
-      <!-- বার চার্ট -->
       <div class="card">
         <div class="ctitle">📊 ব্যয়ের বিশ্লেষণ</div>
         <div class="bars" id="barChart"><div class="loading">ব্যয় যোগ করলে চার্ট দেখাবে</div></div>
       </div>
-
-      <!-- ক্যাশ স্ট্যাটাস -->
       <div class="card">
         <div class="ctitle">💵 ক্যাশ স্ট্যাটাস</div>
         <div class="bigbal">
@@ -176,29 +165,47 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,107,60,.9
 </div>
 
 <script>
-// ============ CONFIG ============
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxm2u_klkNHx-z8NMI2wYpsqrGtkU9xrWNBygwVXYbLLQp4h3Z8thH3FGKmYyiOszHS/exec';
-// ================================
 
 const COLORS = ['#1a6b3c','#2563eb','#c9962a','#7c3aed','#dc2626','#0891b2','#059669'];
 let expRows = [], expIdCnt = 0;
 let financeData = null;
 
-// ──────────────────────────────────────────────────────────────
-// LOAD DATA FROM SHEET
-// ──────────────────────────────────────────────────────────────
+// ── AUTH CHECK ─────────────────────────────────────────────────
+// admin হলে সব দেখবে + এডিট করবে
+// user বা লগইন ছাড়া — শুধু পড়তে পারবে, ব্যয় ইনপুট/বাটন হাইড
+const IS_ADMIN = !!sessionStorage.getItem('khs_admin');
+const IS_USER  = !!sessionStorage.getItem('khs_user');
+
+function applyAuth() {
+  if (IS_ADMIN) return; // সব দেখা + এডিট করার অনুমতি আছে
+
+  // ব্যয় এডিট করার উপাদান লুকানো (user বা লগইন ছাড়া উভয়ের জন্য)
+  document.getElementById('savebtn').style.display    = 'none';
+  document.getElementById('addExpBtn').style.display  = 'none';
+
+  // সব erow — input disable, rm2 hide
+  document.querySelectorAll('#expRows .erow input').forEach(i => i.disabled = true);
+  document.querySelectorAll('#expRows .rm2').forEach(b => b.style.display = 'none');
+
+  // লগইন ছাড়া হলে notice দেখাও
+  if (!IS_USER) {
+    const notice = document.getElementById('mainNotice');
+    notice.innerHTML = '🔒 <span>সম্পূর্ণ অর্থিক তথ্য দেখতে <a href="login.html" style="color:var(--g);font-weight:700">লগইন করুন</a> অথবা <a href="login.html" style="color:var(--g);font-weight:700">আয়োজক হিসেবে প্রবেশ করুন</a>।</span>';
+    notice.style.background = '#fef2f2';
+    notice.style.borderColor = '#fca5a5';
+    notice.style.color = '#991b1b';
+  }
+}
+
+// ── LOAD ───────────────────────────────────────────────────────
 async function loadFinance() {
   document.getElementById('incLoading').style.display = 'block';
-  document.getElementById('incTable').style.display = 'none';
+  document.getElementById('incTable').style.display   = 'none';
 
   if (SCRIPT_URL === 'YOUR_APPS_SCRIPT_WEB_APP_URL_HERE') {
-    // Demo mode
     financeData = {
-      totalRegFee: 35000,
-      totalDonation: 24700,
-      totalIncome: 59700,
-      totalExpense: 0,
-      balance: 59700,
+      totalRegFee: 35000, totalDonation: 24700, totalIncome: 59700,
       totalRegistrations: 24,
       byType: {
         'চাকরিজীবী প্রাক্তন': { count:12, regFee:20000, donation:22000 },
@@ -206,12 +213,12 @@ async function loadFinance() {
         'বর্তমান শিক্ষার্থী':   { count:4,  regFee:2000,  donation:0 },
       },
       expenses: [
-        { id:'EXP-001', name:'খাবার / মধ্যাহ্নভোজ', amount:0, note:'' },
-        { id:'EXP-002', name:'সাংস্কৃতিক অনুষ্ঠান',  amount:0, note:'' },
-        { id:'EXP-003', name:'স্মারক / গিফট',         amount:0, note:'' },
-        { id:'EXP-004', name:'ডেকোরেশন / সাজসজ্জা',   amount:0, note:'' },
-        { id:'EXP-005', name:'প্রিন্টিং / ব্যানার',    amount:0, note:'' },
-        { id:'EXP-006', name:'অন্যান্য',               amount:0, note:'' },
+        { id:'EXP-001', name:'খাবার / মধ্যাহ্নভোজ', amount:0 },
+        { id:'EXP-002', name:'সাংস্কৃতিক অনুষ্ঠান',  amount:0 },
+        { id:'EXP-003', name:'স্মারক / গিফট',         amount:0 },
+        { id:'EXP-004', name:'ডেকোরেশন / সাজসজ্জা',   amount:0 },
+        { id:'EXP-005', name:'প্রিন্টিং / ব্যানার',    amount:0 },
+        { id:'EXP-006', name:'অন্যান্য',               amount:0 },
       ],
     };
   } else {
@@ -221,7 +228,6 @@ async function loadFinance() {
       if (d.success) financeData = d.finance;
       else throw new Error(d.error);
     } catch (err) {
-      console.error('Finance load error:', err);
       document.getElementById('incLoading').textContent = '❌ ডাটা লোড হয়নি। Apps Script URL ঠিক আছে কিনা চেক করুন।';
       return;
     }
@@ -230,31 +236,30 @@ async function loadFinance() {
   renderFinance();
 }
 
-// ──────────────────────────────────────────────────────────────
-// RENDER
-// ──────────────────────────────────────────────────────────────
+// ── RENDER ─────────────────────────────────────────────────────
 function renderFinance() {
   if (!financeData) return;
-  const fd = financeData;
 
-  // Expense rows populate করা (Sheet থেকে আসা)
-  expRows = [];
+  // ── FIX: পুরনো rows ও কাউন্টার সম্পূর্ণ রিসেট করো ──
+  expRows     = [];
+  expIdCnt    = 0;
   document.getElementById('expRows').innerHTML = '';
-  (fd.expenses || []).forEach(x => addExpRow(x.name, x.amount, x.note, x.id));
+  // ─────────────────────────────────────────────────────
 
-  // Income table
+  (financeData.expenses || []).forEach(x => addExpRow(x.name, x.amount, x.note || '', x.id));
+
   document.getElementById('incLoading').style.display = 'none';
-  document.getElementById('incTable').style.display = 'table';
-  document.getElementById('lastUpdate').textContent = 'আপডেট: ' + new Date().toLocaleTimeString('bn-BD');
+  document.getElementById('incTable').style.display   = 'table';
+  document.getElementById('lastUpdate').textContent   = 'আপডেট: ' + new Date().toLocaleTimeString('bn-BD');
 
   const types = [
-    { label: 'চাকরিজীবী প্রাক্তন', key: 'চাকরিজীবী প্রাক্তন' },
-    { label: 'শিক্ষার্থী প্রাক্তন',  key: 'শিক্ষার্থী প্রাক্তন' },
-    { label: 'বর্তমান শিক্ষার্থী',   key: 'বর্তমান শিক্ষার্থী' },
+    { label:'চাকরিজীবী প্রাক্তন', key:'চাকরিজীবী প্রাক্তন' },
+    { label:'শিক্ষার্থী প্রাক্তন',  key:'শিক্ষার্থী প্রাক্তন' },
+    { label:'বর্তমান শিক্ষার্থী',   key:'বর্তমান শিক্ষার্থী' },
   ];
-  let tC=0, tR=0, tD=0;
+  let tC=0,tR=0,tD=0;
   document.getElementById('incBody').innerHTML = types.map(t => {
-    const d = fd.byType[t.key] || { count:0, regFee:0, donation:0 };
+    const d = financeData.byType[t.key] || { count:0, regFee:0, donation:0 };
     tC+=d.count; tR+=d.regFee; tD+=d.donation;
     return `<tr>
       <td>${t.label}</td>
@@ -266,24 +271,35 @@ function renderFinance() {
   }).join('') + `<tr><td>মোট</td><td style="text-align:center">${tC}</td><td style="color:var(--g);font-weight:700">${N(tR)} ৳</td><td style="color:var(--blue);font-weight:700">${N(tD)} ৳</td><td style="font-weight:800">${N(tR+tD)} ৳</td></tr>`;
 
   recalc();
+
+  // ── FIX: render শেষে auth apply করো যাতে নতুন rows এ ও কাজ করে ──
+  applyAuth();
 }
 
-// ──────────────────────────────────────────────────────────────
-// EXPENSE ROWS
-// ──────────────────────────────────────────────────────────────
+// ── EXPENSE ROWS ───────────────────────────────────────────────
 function addExpRow(name='', amount=0, note='', existingId='') {
   expIdCnt++;
   const id = existingId || ('e' + expIdCnt);
   expRows.push({ id, name, amount: parseFloat(amount)||0, note });
+
   const div = document.createElement('div');
-  div.className = 'erow'; div.id = 'er_'+id;
+  div.className = 'erow';
+  div.id = 'er_' + id;
   div.innerHTML = `
     <input type="text" placeholder="ব্যয়ের খাত" value="${esc(name)}" oninput="updExp('${id}','name',this.value)">
     <input type="number" class="amt" placeholder="০ টাকা" value="${amount||''}" min="0" oninput="updExp('${id}','amount',this.value);recalc()">
     <button class="rm2" onclick="remExp('${id}')">✕</button>`;
   document.getElementById('expRows').appendChild(div);
+
+  // নতুন row যোগ হলে auth অনুযায়ী সঙ্গে সঙ্গে lock করো (যদি admin না হয়)
+  if (!IS_ADMIN) {
+    div.querySelectorAll('input').forEach(i => i.disabled = true);
+    div.querySelector('.rm2').style.display = 'none';
+  }
+
   recalc();
 }
+
 function updExp(id, key, val) {
   const e = expRows.find(x=>x.id===id);
   if (e) e[key] = key==='amount' ? (parseFloat(val)||0) : val;
@@ -293,22 +309,19 @@ function remExp(id) {
   expRows = expRows.filter(x=>x.id!==id);
   recalc();
 }
-function esc(s){ return String(s||'').replace(/"/g,'&quot;'); }
+function esc(s){ return String(s||'').replace(/"/g,'&quot;').replace(/</g,'&lt;'); }
 
-// ──────────────────────────────────────────────────────────────
-// RECALCULATE
-// ──────────────────────────────────────────────────────────────
+// ── RECALCULATE ────────────────────────────────────────────────
 function recalc() {
-  const totalRegFee  = financeData?.totalRegFee  || 0;
-  const totalDon     = financeData?.totalDonation || 0;
-  const totalInc     = totalRegFee + totalDon;
-  const totalExp     = expRows.reduce((s,x)=>s+x.amount, 0);
-  const bal          = totalInc - totalExp;
-  const regCnt       = financeData?.totalRegistrations || 0;
-  const donCnt       = financeData
+  const totalRegFee = financeData?.totalRegFee  || 0;
+  const totalDon    = financeData?.totalDonation || 0;
+  const totalInc    = totalRegFee + totalDon;
+  const totalExp    = expRows.reduce((s,x)=>s+x.amount, 0);
+  const bal         = totalInc - totalExp;
+  const regCnt      = financeData?.totalRegistrations || 0;
+  const donCnt      = financeData
     ? Object.values(financeData.byType||{}).reduce((s,v)=>s+(v.donation>0?1:0),0) : 0;
 
-  // Summary cards
   el('c-reg').textContent     = N(totalRegFee) + ' ৳';
   el('c-reg-cnt').textContent = regCnt + ' জন নিবন্ধিত';
   el('c-don').textContent     = N(totalDon) + ' ৳';
@@ -320,19 +333,17 @@ function recalc() {
   const balEl   = el('c-bal');
   const balCard = document.getElementById('balCard');
   balEl.textContent = N(bal) + ' ৳';
-  balCard.className = 'sc bal ' + (bal >= 0 ? 'pos' : 'neg');
-  el('c-bal-note').textContent = bal >= 0 ? '✅ উদ্বৃত্ত' : '⚠️ ঘাটতি';
+  balCard.className = 'sc bal ' + (bal>=0?'pos':'neg');
+  el('c-bal-note').textContent = bal>=0 ? '✅ উদ্বৃত্ত' : '⚠️ ঘাটতি';
 
-  // Cash status
-  el('bigBal').textContent = Math.abs(bal).toLocaleString() + ' ৳';
-  el('bigBal').style.color = bal >= 0 ? 'var(--g)' : 'var(--err)';
-  el('cs-inc').textContent = N(totalInc) + ' ৳';
-  el('cs-exp').textContent = N(totalExp) + ' ৳';
+  el('bigBal').textContent   = Math.abs(bal).toLocaleString() + ' ৳';
+  el('bigBal').style.color   = bal>=0?'var(--g)':'var(--err)';
+  el('cs-inc').textContent   = N(totalInc) + ' ৳';
+  el('cs-exp').textContent   = N(totalExp) + ' ৳';
   const csb = el('cs-bal');
-  csb.textContent = N(bal) + ' ৳';
-  csb.style.color = bal >= 0 ? 'var(--g)' : 'var(--err)';
+  csb.textContent  = N(bal) + ' ৳';
+  csb.style.color  = bal>=0?'var(--g)':'var(--err)';
 
-  // Bar chart
   const activeExp = expRows.filter(x=>x.amount>0&&x.name);
   const barDiv = el('barChart');
   if (!activeExp.length) {
@@ -347,9 +358,7 @@ function recalc() {
       </div>`).join('');
   }
 
-  // Ledger
   const ledgerRows = [];
-  // আয়
   if (financeData?.byType) {
     Object.entries(financeData.byType).forEach(([t,v])=>{
       if(v.regFee>0) ledgerRows.push({desc:t+' (ফী)', type:'আয়', amt:v.regFee, cls:'inc'});
@@ -357,86 +366,55 @@ function recalc() {
     const donTotal = financeData.totalDonation||0;
     if(donTotal>0) ledgerRows.push({desc:'অনুদান (সকল)', type:'আয়', amt:donTotal, cls:'inc'});
   }
-  // ব্যয়
   expRows.forEach(x=>{ if(x.amount>0) ledgerRows.push({desc:x.name, type:'ব্যয়', amt:x.amount, cls:'exp'}); });
   el('ledgerBody').innerHTML = ledgerRows.length
     ? ledgerRows.map(r=>`<tr><td>${r.desc}</td><td><span class="badge ${r.cls==='inc'?'bg':'br'}">${r.type}</span></td><td class="${r.cls}">${r.cls==='inc'?'+':'-'}${N(r.amt)} ৳</td></tr>`).join('')
     : '<tr><td colspan="3" style="text-align:center;color:var(--mu);padding:16px">কোনো তথ্য নেই</td></tr>';
+
   const lb = el('ledgerBal');
   lb.textContent = N(bal) + ' ৳';
-  lb.style.color = bal >= 0 ? 'var(--g)' : 'var(--err)';
+  lb.style.color = bal>=0?'var(--g)':'var(--err)';
 }
 
-// ──────────────────────────────────────────────────────────────
-// SAVE EXPENSES TO SHEET
-// ──────────────────────────────────────────────────────────────
+// ── SAVE ───────────────────────────────────────────────────────
 async function saveExpenses() {
+  if (!IS_ADMIN) return; // double check
   if (SCRIPT_URL === 'YOUR_APPS_SCRIPT_WEB_APP_URL_HERE') {
-    alert('✅ Demo mode: ব্যয়ের তথ্য সংরক্ষিত। Apps Script URL দিলে Sheet এ সেভ হবে।');
+    alert('✅ Demo mode: ব্যয়ের তথ্য সংরক্ষিত।');
     return;
   }
-  const btn = document.querySelector('.savebtn');
+  const btn = document.getElementById('savebtn');
   btn.textContent = '⏳ সেভ হচ্ছে…'; btn.disabled = true;
   try {
     for (const x of expRows) {
       await fetch(SCRIPT_URL, {
-        method: 'POST', mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain' },
-        body: JSON.stringify({ action: 'saveExpense', id: x.id, name: x.name, amount: x.amount, note: x.note }),
+        method:'POST', mode:'no-cors',
+        headers:{'Content-Type':'text/plain'},
+        body: JSON.stringify({ action:'saveExpense', id:x.id, name:x.name, amount:x.amount, note:x.note }),
       });
     }
     btn.textContent = '✅ সংরক্ষিত হয়েছে!';
-  } catch (err) {
+  } catch {
     btn.textContent = '❌ ত্রুটি হয়েছে';
   }
   setTimeout(()=>{ btn.textContent='💾 শীটে সেভ করুন'; btn.disabled=false; }, 2500);
 }
 
-// ──────────────────────────────────────────────────────────────
-// HELPERS
-// ──────────────────────────────────────────────────────────────
-const N = n => n ? Number(n).toLocaleString('bn-BD') : '০';
+const N  = n => n ? Number(n).toLocaleString('bn-BD') : '০';
 const el = id => document.getElementById(id);
 
-// ──────────────────────────────────────────────────────────────
-// AUTH — সবাই দেখতে পারবে, শুধু admin ব্যয় এডিট করতে পারবে
-// ──────────────────────────────────────────────────────────────
-function setupAuth() {
-  const isAdmin = !!sessionStorage.getItem('khs_admin');
-  const isUser  = !!sessionStorage.getItem('khs_user');
-
-  // নিবন্ধনকারী বা admin — সবাই finance দেখতে পারবে
-  // শুধু ব্যয় সেভ করার বাটন admin ছাড়া hide থাকবে
-  if (!isAdmin) {
-    // ব্যয় ইনপুট সেকশন hide — শুধু দেখার অনুমতি
-    document.querySelectorAll('.addbtn, .savebtn').forEach(el => el.style.display = 'none');
-    document.querySelectorAll('.erow .rm2').forEach(el => el.style.display = 'none');
-    document.querySelectorAll('.erow input').forEach(el => el.disabled = true);
-    if (!isUser) {
-      // লগইন ছাড়া — auth notice দেখাও
-      const notice = document.createElement('div');
-      notice.style.cssText = 'background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 16px;font-size:13px;color:#92400e;margin-bottom:16px;display:flex;align-items:center;gap:10px';
-      notice.innerHTML = '🔒 <span>সম্পূর্ণ অর্থিক তথ্য দেখতে <a href="login.html" style="color:var(--g);font-weight:700">লগইন করুন</a> অথবা <a href="login.html" style="color:var(--g);font-weight:700">আয়োজক হিসেবে প্রবেশ করুন</a>।</span>';
-      document.querySelector('.pw').insertBefore(notice, document.querySelector('.pw').firstChild);
-    }
-  }
-}
-
-// ──────────────────────────────────────────────────────────────
-// INIT
-// ──────────────────────────────────────────────────────────────
-setupAuth();
+// ── INIT ───────────────────────────────────────────────────────
+// applyAuth() এখন renderFinance() এর ভেতরে কল হয়, ডেটা লোডের পরে
 loadFinance();
 </script>
 
 <script>
-// Nav login link update
 (function(){
-  const u = sessionStorage.getItem('khs_user');
-  const a = sessionStorage.getItem('khs_admin');
+  const u  = sessionStorage.getItem('khs_user');
+  const a  = sessionStorage.getItem('khs_admin');
   const el = document.getElementById('loginNavLink');
   if (!el) return;
-  if (a) { el.textContent = '🛡️ আয়োজক'; el.href = 'finance.html'; }
+  if (a)      { el.textContent = '🛡️ আয়োজক'; el.href = 'finance.html'; }
   else if (u) { const p=JSON.parse(u); el.textContent = '👤 '+p.name.split(' ')[0]; el.href = 'login.html'; }
 })();
 </script>
