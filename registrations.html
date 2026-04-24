@@ -9,7 +9,6 @@
 :root{--g:#1a6b3c;--gl:#2d9b5a;--gp:#e8f5ee;--gold:#c9962a;--gdl:#f0c060;--cream:#fdf8ef;--dk:#1a1a1a;--tx:#2c2c2c;--mu:#6b7280;--err:#dc2626;--blue:#2563eb;--bp:#eff6ff}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{font-family:'Hind Siliguri',sans-serif;background:var(--cream);min-height:100vh}
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,107,60,.97);backdrop-filter:blur(10px);height:64px;padding:0 4%;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 16px rgba(0,0,0,.2)}
 .nb{display:flex;align-items:center;gap:10px;text-decoration:none}
 .nl{width:36px;height:36px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px}
@@ -18,83 +17,78 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(26,107,60,.9
 .nlinks a{color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;padding:6px 10px;border-radius:8px;transition:all .2s;white-space:nowrap}
 .nlinks a:hover,.nlinks a.active{background:rgba(255,255,255,.12);color:#fff}
 .nlinks .nbtn{background:var(--gold);color:var(--dk)!important;padding:7px 14px!important;border-radius:50px;font-weight:700!important}
-/* AUTH BAR */
 .auth-bar{margin-top:64px;background:linear-gradient(90deg,#1a6b3c,#2d9b5a);color:#fff;padding:9px 4%;display:flex;align-items:center;justify-content:center;gap:14px;font-size:13px;flex-wrap:wrap}
 .auth-bar a{color:var(--gdl);font-weight:700;text-decoration:none;border:1px solid rgba(240,192,96,.4);padding:4px 12px;border-radius:50px;font-size:12px;transition:all .2s}
 .auth-bar a:hover{background:rgba(240,192,96,.15)}
 .auth-bar.admin-bar{background:linear-gradient(90deg,#1d4ed8,#2563eb)}
-/* HERO */
 .hero{background:linear-gradient(135deg,#0a3d1f,#1a6b3c);padding:36px 4% 36px;color:#fff}
 .hero h1{font-family:'Baloo Da 2',cursive;font-size:clamp(22px,4vw,38px);font-weight:800;margin-bottom:6px}
 .hero h1 span{color:var(--gdl)}
 .hero p{font-size:14px;opacity:.75}
 .pw{max-width:1200px;margin:0 auto;padding:24px 4% 80px}
-/* STATS */
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin-bottom:20px}
 .sc{background:#fff;border-radius:12px;padding:13px 10px;box-shadow:0 3px 12px rgba(0,0,0,.06);text-align:center;border-top:3px solid var(--g)}
 .sc.b{border-color:var(--blue)}.sc.o{border-color:var(--gold)}.sc.p{border-color:#7c3aed}
 .sc .n{font-family:'Baloo Da 2',cursive;font-size:23px;font-weight:800;color:var(--g)}
 .sc.b .n{color:var(--blue)}.sc.o .n{color:var(--gold)}.sc.p .n{color:#7c3aed}
 .sc .l{font-size:10px;color:var(--mu);margin-top:2px}
-/* TABS */
 .tabs{display:flex;border-bottom:2px solid #e5e7eb;margin-bottom:16px;overflow-x:auto;gap:0}
 .tab{padding:9px 14px;font-size:13px;font-weight:600;color:var(--mu);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;white-space:nowrap;user-select:none}
 .tab:hover{color:var(--g)}.tab.on{color:var(--g);border-color:var(--g);background:rgba(26,107,60,.04)}
 .tabp{display:none}.tabp.on{display:block}
-/* SEARCH */
+
+/* ── SEARCH BAR ── */
 .sbar{background:#fff;border-radius:14px;padding:14px;box-shadow:0 3px 12px rgba(0,0,0,.06);margin-bottom:14px}
 .srow{display:flex;flex-wrap:wrap;gap:9px;align-items:flex-end}
 .sf{display:flex;flex-direction:column;gap:4px;flex:2;min-width:150px}
 .sf label{font-size:11px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.8px}
 .sf input,.sf select{padding:9px 12px;border:2px solid #e5e7eb;border-radius:9px;font-family:'Hind Siliguri',sans-serif;font-size:14px;outline:none;transition:border .2s;width:100%;background:#fff}
 .sf input:focus,.sf select:focus{border-color:var(--g);box-shadow:0 0 0 3px rgba(26,107,60,.07)}
+
+/* সার্চ ইনপুট wrapper */
+.search-wrap{flex:3;min-width:150px;display:flex;flex-direction:column;gap:4px}
+.search-wrap label{font-size:11px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.8px}
+.search-wrap input{padding:9px 12px;border:2px solid #e5e7eb;border-radius:9px;font-family:'Hind Siliguri',sans-serif;font-size:14px;outline:none;transition:border .2s;background:#fff;width:100%}
+.search-wrap input:focus{border-color:var(--g);box-shadow:0 0 0 3px rgba(26,107,60,.07)}
+.search-btn{padding:9px 16px;background:var(--g);color:#fff;border:2px solid var(--g);border-radius:9px;font-size:13px;cursor:pointer;font-family:'Hind Siliguri',sans-serif;font-weight:700;transition:all .2s;white-space:nowrap;align-self:flex-end}
+.search-btn:hover{background:#155c30;border-color:#155c30}
+.search-btn:active{transform:scale(.97)}
 .clr{padding:9px 14px;background:var(--gp);color:var(--g);border:2px solid #b2dfcc;border-radius:9px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Hind Siliguri',sans-serif;transition:all .2s;align-self:flex-end;white-space:nowrap}
 .clr:hover{background:#d4ede0}
 .rinfo{font-size:13px;color:var(--mu);margin-top:8px}
 .rinfo strong{color:var(--g)}
-/* TABLE */
+
 .tbl{overflow-x:auto;border-radius:12px;box-shadow:0 3px 12px rgba(0,0,0,.06)}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:13px}
 th{background:var(--gp);color:var(--g);font-weight:700;font-size:11px;padding:10px 11px;text-align:left;white-space:nowrap;position:sticky;top:0;z-index:1;text-transform:uppercase;letter-spacing:.3px}
 td{padding:9px 11px;border-bottom:1px solid #f3f4f6;color:var(--tx);vertical-align:middle}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:#f8fffe}
-/* BADGES */
 .bg{background:var(--gp);color:var(--g)}.bb{background:var(--bp);color:var(--blue)}
 .bo{background:#fff7ed;color:#c2410c}.br{background:#fef2f2;color:var(--err)}.bpu{background:#faf5ff;color:#7c3aed}
 .badge{display:inline-block;padding:3px 8px;border-radius:50px;font-size:11px;font-weight:700}
 mark.hl{background:#fef08a;border-radius:2px;padding:0 1px}
-/* LOCKED */
-.locked-cell{filter:blur(4px);user-select:none;pointer-events:none;font-size:12px;color:var(--mu)}
 .lock-note{font-size:11px;color:var(--mu);display:flex;align-items:center;gap:4px}
-/* PHOTO */
 .ptb{width:32px;height:43px;border-radius:5px;object-fit:cover;border:1px solid #e5e7eb;cursor:pointer;display:block}
 .noph{width:32px;height:43px;border-radius:5px;background:#f3f4f6;display:inline-flex;align-items:center;justify-content:center;font-size:14px;color:#d1d5db}
-/* MODAL */
 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:1000;align-items:center;justify-content:center}
 .modal.on{display:flex}
 .mimg{max-width:300px;max-height:90vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
 .mcls{position:absolute;top:14px;right:18px;color:#fff;font-size:26px;cursor:pointer;background:none;border:none;line-height:1;z-index:2}
-/* SUMMARY TABLE */
 .stbl{width:100%;border-collapse:collapse;background:#fff;font-size:13px;border-radius:12px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.06)}
 .stbl th{background:linear-gradient(135deg,var(--g),#1d5c34);color:#fff;font-size:11px;font-weight:700;padding:10px 12px;text-align:left;text-transform:uppercase;letter-spacing:.3px}
 .stbl td{padding:9px 12px;border-bottom:1px solid #f3f4f6;color:var(--tx)}
 .stbl tr:last-child td{border-bottom:none;font-weight:700;background:var(--gp);color:var(--g)}
 .stbl tr:hover:not(:last-child) td{background:#f8fffe}
-/* TSHIRT */
 .tsg{display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:10px;margin-bottom:16px}
 .tsb{background:#fff;border-radius:10px;padding:12px;text-align:center;box-shadow:0 3px 10px rgba(0,0,0,.06);border-top:3px solid var(--g)}
 .tsb .sz{font-family:'Baloo Da 2',cursive;font-size:20px;font-weight:800}.tsb .cnt{font-size:17px;font-weight:700;margin:2px 0}.tsb .lb{font-size:10px;color:var(--mu)}
-/* PAG */
 .pag{display:flex;gap:5px;justify-content:center;margin-top:12px;flex-wrap:wrap;align-items:center}
 .pag button{padding:5px 11px;border:1.5px solid #e5e7eb;border-radius:7px;background:#fff;font-size:12px;cursor:pointer;transition:all .2s;font-family:'Hind Siliguri',sans-serif}
 .pag button:hover,.pag button.on{background:var(--g);color:#fff;border-color:var(--g)}
 .pag .pi{font-size:11px;color:var(--mu)}
 .empty{text-align:center;padding:28px;color:var(--mu);font-size:13px}
-/* LOADING SKELETON */
-.skeleton{animation:pulse 1.5s infinite;background:linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);background-size:200% 100%;border-radius:6px;height:40px;margin-bottom:8px}
-@keyframes pulse{0%{background-position:200% 0}100%{background-position:-200% 0}}
-@media(max-width:800px){.nlinks{display:none}.srow{flex-direction:column}.sf{min-width:100%}}
+@media(max-width:800px){.nlinks{display:none}.srow{flex-direction:column}.sf,.search-wrap{min-width:100%}.search-btn,.clr{width:100%}}
 </style>
 </head>
 <body>
@@ -151,13 +145,17 @@ mark.hl{background:#fef08a;border-radius:2px;padding:0 1px}
   <div class="tabp on" id="tab-list">
     <div class="sbar">
       <div class="srow">
-        <div class="sf" style="flex:3">
-          <label>🔍 নাম / ফোন / ব্যাচ দিয়ে লাইভ সার্চ</label>
-          <input type="text" id="sq" placeholder="টাইপ করুন…" oninput="ls()">
+
+        <!-- সার্চ বক্স -->
+        <div class="search-wrap">
+          <label>🔍 নাম / ফোন / ব্যাচ / আইডি দিয়ে সার্চ করুন</label>
+          <input type="text" id="sq" placeholder="এখানে টাইপ করুন…"
+            oninput="autoSearch()" onkeydown="if(event.key==='Enter')doSearch()">
         </div>
+
         <div class="sf">
           <label>ধরন</label>
-          <select id="ft" onchange="ls()">
+          <select id="ft" onchange="doSearch()">
             <option value="">সব ধরন</option>
             <option>চাকরিজীবী প্রাক্তন</option>
             <option>শিক্ষার্থী প্রাক্তন</option>
@@ -166,11 +164,13 @@ mark.hl{background:#fef08a;border-radius:2px;padding:0 1px}
         </div>
         <div class="sf">
           <label>পেমেন্ট</label>
-          <select id="fp" onchange="ls()">
+          <select id="fp" onchange="doSearch()">
             <option value="">সব</option>
             <option>বিকাশ</option><option>নগদ</option><option>রকেট</option><option>ক্যাশ</option>
           </select>
         </div>
+        <!-- সার্চ বাটন ক্লিয়ারের আগে -->
+        <button class="search-btn" onclick="doSearch()" title="সার্চ করুন">🔍 সার্চ</button>
         <button class="clr" onclick="clrS()">✕ ক্লিয়ার</button>
       </div>
       <div class="rinfo" id="ri">লোড হচ্ছে…</div>
@@ -235,19 +235,17 @@ mark.hl{background:#fef08a;border-radius:2px;padding:0 1px}
 </div>
 
 <script>
-// ─── CONFIG ──────────────────────────────────────
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzyqlcqA8SxaNMZmtO4IWmb2cSYvixIv1nO5zloxQz5ITLz9EGojuA-wZWEI0ntiR8/exec';
 const PG = 25;
 const SIZES  = ['XS','S','M','L','XL','XXL'];
 const SCLR   = ['#7c3aed','#2563eb','#1a6b3c','#c9962a','#dc2626','#0891b2'];
 const CACHE_KEY = 'khs_reg_cache';
-const CACHE_TTL = 5 * 60 * 1000; // 5 মিনিট cache
-// ─────────────────────────────────────────────────
+const CACHE_TTL = 5 * 60 * 1000;
 
 let allData = [], flt = [], pg = 1;
-let isLoggedIn = false; // user বা admin যে কেউ লগইন করলে true
+let isLoggedIn = false;
+let autoSearchTimer = null; // debounce টাইমার
 
-// ── DEMO DATA ────────────────────────────────────
 const DEMO = [
   {regId:'KHS-A1',name:'মোঃ রহিম উদ্দিন',phone:'01711000001',regType:'চাকরিজীবী প্রাক্তন',batchBatch:'২০০৫',memberCount:2,guestDetails:'[{"name":"ফাতেমা","relation":"স্ত্রী/স্বামী","age":"28","fee":"1000","tshirt":"L"},{"name":"রাহেল","relation":"সন্তান","age":"8","fee":"500","tshirt":"S"}]',tshirtSize:'XL',stagePerformance:'গান',stageDetail:'আমার সোনার বাংলা',regFee:2500,donationAmount:2000,totalFee:4500,payMethod:'বিকাশ',txnId:'TXN001',status:'নিশ্চিত',photo:'https://placehold.co/300x400/1a6b3c/white?text=ছবি'},
   {regId:'KHS-A2',name:'নাসরিন বেগম',phone:'01722000002',regType:'শিক্ষার্থী প্রাক্তন',batchBatch:'২০১০',memberCount:0,guestDetails:'[]',tshirtSize:'S',stagePerformance:'না',stageDetail:'',regFee:500,donationAmount:0,totalFee:500,payMethod:'নগদ',txnId:'TXN002',status:'নতুন',photo:''},
@@ -257,7 +255,6 @@ const DEMO = [
   {regId:'KHS-A6',name:'মরিয়ম বেগম',phone:'01766000006',regType:'শিক্ষার্থী প্রাক্তন',batchBatch:'২০১৫',memberCount:0,guestDetails:'[]',tshirtSize:'XS',stagePerformance:'নৃত্য',stageDetail:'লোকগীতি নৃত্য',regFee:500,donationAmount:200,totalFee:700,payMethod:'রকেট',txnId:'TXN006',status:'নতুন',photo:''},
 ];
 
-// ── HELPERS ──────────────────────────────────────
 const N = n => n?Number(n).toLocaleString('bn-BD'):'০';
 function g2(d){try{return JSON.parse(d.guestDetails||'[]');}catch(e){return[];}}
 function hl(t,q){if(!q||!t)return String(t||'');return String(t).replace(new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi'),'<mark class="hl">$1</mark>');}
@@ -270,7 +267,6 @@ function tb(t){
 function sb(s){return s==='নিশ্চিত'?'<span class="badge bg">✓ নিশ্চিত</span>':'<span class="badge br">নতুন</span>';}
 function phCell(url){
   if(!url||url.length<5) return '<span class="noph">👤</span>';
-  // Drive URL convert
   let src=url;
   const m=url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
   if(m) src='https://lh3.googleusercontent.com/d/'+m[1]+'=s400';
@@ -279,15 +275,12 @@ function phCell(url){
     onclick="openM('${src.replace(/'/g,"\\'")}')" alt="ছবি">`;
 }
 
-// ── AUTH ─────────────────────────────────────────
 function setupAuth(){
   const isAdmin = !!sessionStorage.getItem('khs_admin');
   const isUser  = !!sessionStorage.getItem('khs_user');
   isLoggedIn = isAdmin || isUser;
-
   const bar  = document.getElementById('authBar');
   const link = document.getElementById('loginLink');
-
   if (isAdmin) {
     bar.innerHTML='<span>🛡️ আয়োজক মোড — সম্পূর্ণ অ্যাক্সেস</span><a href="login.html" onclick="sessionStorage.removeItem(\'khs_admin\');return true">লগআউট</a>';
     bar.className='auth-bar admin-bar';
@@ -297,12 +290,23 @@ function setupAuth(){
     bar.innerHTML=`<span>👤 স্বাগতম <strong>${u.name||''}</strong> — সম্পূর্ণ অ্যাক্সেস</span><a href="login.html">প্রোফাইল</a><a href="login.html" onclick="sessionStorage.removeItem('khs_user');return true">লগআউট</a>`;
     link.textContent='👤 '+(u.name||'').split(' ')[0];
   } else {
-    // লগইন ছাড়া
     link.textContent='🔐 লগইন';
   }
 }
 
-// ── LIVE SEARCH ──────────────────────────────────
+/* ── সার্চ লজিক ──
+   doSearch()   → সার্চ বাটন ক্লিক বা Enter চাপলে তাৎক্ষণিক সার্চ
+   autoSearch() → টাইপ করলে 400ms debounce দিয়ে অটো সার্চ (live search)
+*/
+function doSearch(){
+  if(autoSearchTimer) clearTimeout(autoSearchTimer);
+  ls();
+}
+function autoSearch(){
+  if(autoSearchTimer) clearTimeout(autoSearchTimer);
+  autoSearchTimer = setTimeout(ls, 400);
+}
+
 function ls(){
   const q=(document.getElementById('sq').value||'').trim().toLowerCase();
   const ft=document.getElementById('ft').value;
@@ -323,22 +327,17 @@ function clrS(){
   ls();
 }
 
-// ── RENDER LIST ───────────────────────────────────
 function renderList(){
   const q=(document.getElementById('sq').value||'').trim();
   const start=(pg-1)*PG;
   const slice=flt.slice(start,start+PG);
   const tbody=document.getElementById('lb');
-
   if(!slice.length){
     tbody.innerHTML='<tr><td colspan="13" class="empty">কোনো ডাটা পাওয়া যায়নি</td></tr>';
     renderPag(); return;
   }
-
   tbody.innerHTML=slice.map((d,i)=>{
     const rf=parseFloat(d.regFee)||0, don=parseFloat(d.donationAmount)||0, tot=parseFloat(d.totalFee)||(rf+don);
-
-    // ✅ লগইন করলে সব দেখবে, না করলে কিছু কিছু ঢাকা থাকবে
     const phone = isLoggedIn
       ? hl(d.phone,q)
       : `<span class="lock-note">🔒 <a href="login.html" style="color:var(--g);font-size:11px">লগইন করুন</a></span>`;
@@ -349,7 +348,6 @@ function renderList(){
          <td><strong>${N(tot)}৳</strong></td>
          <td>${d.payMethod||'—'}</td>`
       : `<td colspan="4"><span class="lock-note">🔒 <a href="login.html" style="color:var(--g);font-size:11px">লগইন করুন</a></span></td>`;
-
     return`<tr>
       <td style="color:var(--mu);font-size:11px">${start+i+1}</td>
       <td>${phCell(d.photo)}</td>
@@ -375,7 +373,6 @@ function renderPag(){
 }
 function goP(n){pg=n;renderList();window.scrollTo({top:300,behavior:'smooth'});}
 
-// ── GUEST ─────────────────────────────────────────
 function renderGuests(){
   let rows=[],cnt=0;
   allData.forEach(d=>{
@@ -390,7 +387,7 @@ function renderGuests(){
         <td><strong style="color:var(--g)">${g.tshirt||'—'}</strong></td>
         <td style="color:var(--blue);font-weight:600">${fee>0?N(fee)+'৳':'বিনামূল্যে'}</td>
         <td style="font-weight:600">${d.name}</td>
-        <td style="color:var(--mu)">${d.phone}</td>
+        <td style="color:var(--mu)">${isLoggedIn ? d.phone : '<span style="font-size:11px;color:var(--mu)">🔒 <a href="login.html" style="color:var(--g)">লগইন করুন</a></span>'}</td>
         <td>${d.batchBatch||'—'}</td>
       </tr>`);
     });
@@ -398,7 +395,6 @@ function renderGuests(){
   document.getElementById('gb').innerHTML=rows.length?rows.join(''):'<tr><td colspan="9" class="empty">কোনো গেস্ট নেই</td></tr>';
 }
 
-// ── BATCH ─────────────────────────────────────────
 function renderBatch(){
   const m={};
   allData.forEach(d=>{
@@ -414,7 +410,6 @@ function renderBatch(){
     :'<tr><td colspan="6" class="empty">ডাটা নেই</td></tr>';
 }
 
-// ── TSHIRT ────────────────────────────────────────
 function renderTshirt(){
   const rc={},gc={};SIZES.forEach(s=>{rc[s]=0;gc[s]=0;});
   allData.forEach(d=>{
@@ -429,7 +424,6 @@ function renderTshirt(){
     `<tr><td>মোট</td><td>${SIZES.reduce((a,s)=>a+rc[s],0)}</td><td>${SIZES.reduce((a,s)=>a+gc[s],0)}</td><td style="font-weight:800">${tot}</td><td>100%</td></tr>`;
 }
 
-// ── BATCH×TSHIRT ──────────────────────────────────
 function renderBTS(){
   const bm={};
   allData.forEach(d=>{
@@ -450,7 +444,6 @@ function renderBTS(){
   document.getElementById('btt').innerHTML=h;
 }
 
-// ── STAGE ─────────────────────────────────────────
 function renderStage(){
   const p=allData.filter(d=>d.stagePerformance&&d.stagePerformance!=='না'&&d.stagePerformance!=='না, শুধু উপস্থিত থাকব');
   document.getElementById('stb').innerHTML=p.length
@@ -458,7 +451,6 @@ function renderStage(){
     :'<tr><td colspan="6" class="empty">কোনো স্টেজ পারফর্মার নেই</td></tr>';
 }
 
-// ── STATS ─────────────────────────────────────────
 function updateStats(){
   const tg=allData.reduce((s,d)=>s+(parseInt(d.memberCount)||0),0);
   document.getElementById('s-tot').textContent=allData.length+tg;
@@ -469,11 +461,9 @@ function updateStats(){
   document.getElementById('s-sg').textContent=allData.filter(d=>d.stagePerformance&&d.stagePerformance!=='না'&&d.stagePerformance!=='না, শুধু উপস্থিত থাকব').length;
 }
 
-// ── PHOTO MODAL ───────────────────────────────────
 function openM(src){document.getElementById('modalImg').src=src;document.getElementById('photoModal').classList.add('on');}
 function closeM(){document.getElementById('photoModal').classList.remove('on');}
 
-// ── TAB ───────────────────────────────────────────
 function showTab(n){
   document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
   document.querySelectorAll('.tabp').forEach(p=>p.classList.remove('on'));
@@ -481,12 +471,9 @@ function showTab(n){
   document.getElementById('tab-'+n).classList.add('on');
 }
 
-// ── LOAD DATA with CACHE ──────────────────────────
 async function loadData(){
   setupAuth();
   document.getElementById('ri').textContent='ডাটা লোড হচ্ছে…';
-
-  // Cache চেক করি — 5 মিনিটের মধ্যে ডাটা থাকলে cache থেকে দেখাই
   const cached = sessionStorage.getItem(CACHE_KEY);
   if (cached) {
     try {
@@ -494,7 +481,6 @@ async function loadData(){
       if (Date.now()-time < CACHE_TTL && data.length > 0) {
         allData = data; flt=[...allData];
         updateStats(); ls(); renderGuests(); renderBatch(); renderTshirt(); renderBTS(); renderStage();
-        // Background refresh
         fetchFresh();
         return;
       }
@@ -513,7 +499,6 @@ async function fetchFresh(){
       const d = await res.json();
       if (d.success && Array.isArray(d.data)) {
         allData = d.data;
-        // Cache সেভ করি
         sessionStorage.setItem(CACHE_KEY, JSON.stringify({data:allData, time:Date.now()}));
       } else {
         allData = DEMO;
