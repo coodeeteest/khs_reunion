@@ -178,23 +178,22 @@ const IS_ADMIN = !!sessionStorage.getItem('khs_admin');
 const IS_USER  = !!sessionStorage.getItem('khs_user');
 
 function applyAuth() {
-  if (IS_ADMIN) return; // সব দেখা + এডিট করার অনুমতি আছে
+  if (IS_ADMIN) return; // admin — সব দেখা ও এডিট করার অনুমতি আছে
 
-  // ব্যয় এডিট করার উপাদান লুকানো (user বা লগইন ছাড়া উভয়ের জন্য)
-  document.getElementById('savebtn').style.display    = 'none';
-  document.getElementById('addExpBtn').style.display  = 'none';
+  // admin ছাড়া যে কেউ (user বা লগইন ছাড়া) — পুরো ব্যয়ের খাত card hide
+  document.getElementById('expCard').style.display = 'none';
 
-  // সব erow — input disable, rm2 hide
-  document.querySelectorAll('#expRows .erow input').forEach(i => i.disabled = true);
-  document.querySelectorAll('#expRows .rm2').forEach(b => b.style.display = 'none');
-
-  // লগইন ছাড়া হলে notice দেখাও
+  // লগইন ছাড়া হলে notice পরিবর্তন করো
   if (!IS_USER) {
     const notice = document.getElementById('mainNotice');
-    notice.innerHTML = '🔒 <span>সম্পূর্ণ অর্থিক তথ্য দেখতে <a href="login.html" style="color:var(--g);font-weight:700">লগইন করুন</a> অথবা <a href="login.html" style="color:var(--g);font-weight:700">আয়োজক হিসেবে প্রবেশ করুন</a>।</span>';
+    notice.innerHTML = '🔒 <span>ব্যয়ের তথ্য দেখতে ও এডিট করতে <a href="login.html" style="color:#991b1b;font-weight:700">আয়োজক হিসেবে লগইন করুন</a>।</span>';
     notice.style.background = '#fef2f2';
     notice.style.borderColor = '#fca5a5';
     notice.style.color = '#991b1b';
+  } else {
+    // user login করেছে কিন্তু admin না — ভিন্ন notice
+    const notice = document.getElementById('mainNotice');
+    notice.innerHTML = 'ℹ️ <span>ব্যয়ের খাত শুধুমাত্র আয়োজকরা দেখতে ও পরিবর্তন করতে পারবেন।</span>';
   }
 }
 
@@ -290,13 +289,6 @@ function addExpRow(name='', amount=0, note='', existingId='') {
     <input type="number" class="amt" placeholder="০ টাকা" value="${amount||''}" min="0" oninput="updExp('${id}','amount',this.value);recalc()">
     <button class="rm2" onclick="remExp('${id}')">✕</button>`;
   document.getElementById('expRows').appendChild(div);
-
-  // নতুন row যোগ হলে auth অনুযায়ী সঙ্গে সঙ্গে lock করো (যদি admin না হয়)
-  if (!IS_ADMIN) {
-    div.querySelectorAll('input').forEach(i => i.disabled = true);
-    div.querySelector('.rm2').style.display = 'none';
-  }
-
   recalc();
 }
 
